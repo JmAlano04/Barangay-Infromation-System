@@ -1,0 +1,275 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+
+    --other-color :rgb(0, 183, 255);
+}
+body{
+ 
+}
+main{
+  
+    width: max-content;
+    margin-left: 200px;
+}
+.cedula{
+    width: 70vw;
+   
+}
+.cedula_div{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    
+}
+p{  
+    font-size: 1vw;
+}
+.year{
+    position: relative;
+    top:125px;
+    left: 25px;
+}
+.issue_date {
+    display: flex;
+   
+    position: relative;
+    width: 260px;
+    justify-content: space-evenly;
+    left: 47%;
+    top:110px;
+    font-size: 1vw;
+    
+}
+.place_issued{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 33%;
+    top:120px;
+    font-size: 0.9vw;
+}
+.name_div{
+    display: flex;
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 10%;
+    top:150px;
+    font-size: 0.9vw;
+}
+.address{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 20%;
+    top:180px;
+    font-size: 0.9vw;
+}
+.citizenship{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 20%;
+    top:210px;
+    font-size: 0.9vw;
+}
+.place_of_birth{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 60%;
+    top:210px;
+    font-size: 0.9vw;
+}
+
+.birthday{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 67%;
+    top:250px;
+    font-size: 0.5vw;
+}
+.tax1{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 79%;
+    top:320px;
+    font-size: 0.5vw;
+}
+.tax2{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 79%;
+    top:390px;
+    font-size: 0.5vw;
+}
+.sum{
+    position: absolute;
+    width: 760px;
+    justify-content: space-evenly;
+    left: 79%;
+    top:480px;
+    font-size: 0.5vw;
+}
+
+@media print {
+    @font-face {
+        font-family: "main_text";
+        src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+    }
+    @font-face {
+        font-family: "sub_text";
+        src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+    }
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: content-box;
+    }
+    html {
+        scroll-behavior: smooth;
+      }
+    :root{
+        --bg-color:#FCFAEE;
+        --2nd-bg-color:#4A9D4f;
+        --sub-bg-color: #005720 ;
+     
+        --1st-text-color: #005720 ;
+        --2nd-text-color: rgb(53, 53, 53);
+        --3rd-text-color: #FCFAEE;
+       
+        --btn-color: #F5E402;
+    
+        --other-color :rgb(0, 183, 255);
+    }
+   
+    .cedula{
+        width: 70vw;
+       
+    }
+    .cedula_div{
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    p{  
+        font-size: 0.9vw;
+    }
+    .year{
+        position: relative;
+        top:105px;
+        left: 25px;
+    }
+    .issue_date {
+        display: flex;
+       
+        position: relative;
+        width: 260px;
+        justify-content: space-evenly;
+        left: 44%;
+        top:95px;
+        font-size: 1vw;
+        
+    }
+    .place_issued{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 33%;
+        top:105px;
+        font-size: 0.9vw;
+    }
+    .name_div{
+        display: flex;
+        position: absolute;
+        width: 660px;
+        justify-content: space-evenly;
+        left: 10%;
+        top:130px;
+        font-size: 0.9vw;
+    }
+    .address{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left:25%;
+        top:150px;
+        font-size: 0.9vw;
+    }
+    .citizenship{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 20%;
+        top:180px;
+        font-size: 0.9vw;
+    }
+    .place_of_birth{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 60%;
+        top:180px;
+        font-size: 0.9vw;
+    }
+    
+    .birthday{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 72%;
+        top:210px;
+        font-size: 0.5vw;
+    }
+    .tax1{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 83%;
+        top:260px;
+        font-size: 0.5vw;
+    }
+    .tax2{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 83%;
+        top:320px;
+        font-size: 0.5vw;
+    }
+    .sum{
+        position: absolute;
+        width: 760px;
+        justify-content: space-evenly;
+        left: 83%;
+        top:390px;
+        font-size: 0.5vw;
+    }
+}

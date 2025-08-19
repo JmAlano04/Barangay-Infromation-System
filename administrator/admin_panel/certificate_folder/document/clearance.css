@@ -1,0 +1,435 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+
+    --other-color :rgb(0, 183, 255);
+}
+body{
+ 
+}
+
+.main_bg{
+    
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    z-index: -99;
+}
+.main_bg img{
+  
+    width: 100%;
+    height: 200px;
+ 
+    opacity: 80%;
+  
+ 
+}
+.republic{
+   
+    margin-top: -20px;
+}
+.republic h2{
+    text-align: center;
+    margin-left: 100px;
+    font-size: 1.3rem;
+    font-weight: 200;
+    margin-top: 5px;
+}
+.header .republic h1 {
+    margin-left: 70px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-top: -10px;
+    
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+.header div img {
+    width: 180px;
+    margin-left: 110px;
+   
+    
+}
+.main{
+
+    height:  max-content;
+    border: #005720 3px solid;
+    margin: 0px 0.75in 1in 0.75in;
+    display: flex;
+
+}
+.main .officer{
+    height: 1210px;
+    width: fit-content;
+    border-right: #005720  solid;
+    padding: 5px;
+   
+}
+.main .officer .img_div{
+    background-color: #DBF0C1;
+    padding: 5px;
+    height: 350px;
+}
+.main .officer .img_div img{
+    width: 300px;
+    
+}
+.main .officer .img_div .header_chairman{
+    text-align: center;
+    position: relative;
+    top:-40px;
+    padding: 5px;
+    background-color: #f3f2f17c;
+}
+.main .officer .img_div .header_chairman h5{
+   font-size: 1.2rem;
+   text-decoration: underline;
+   font-style: bold;
+}
+.main .officer .img_div .header_chairman h6{
+    font-size: 1rem;
+    color: red;
+    font-style: bold;
+ }
+
+ .main .officer .name_official{
+ 
+    line-height: 30px;
+    padding-top: 30px;
+    padding-bottom: 70px;
+
+}
+.main .officer .name_official h4{
+    font-size: 1.4rem;
+
+}
+.main .officer .name_official p{
+    font-size: 1.1rem;
+
+}
+
+.main .content{
+   
+    width: 100%;
+    padding: 30px 40px 5px 40px;
+    display: block;
+}
+.main .content .control_number{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    font-weight: 100;
+    font-style: italic;
+}   
+.main .content .h1{
+    text-align: center;
+    margin-top: 50px;
+    text-decoration: underline;
+}
+.main .content .p{
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-family: sans-serif;
+}
+.main .sub_content p{
+    font-size: 1.4rem;
+    text-align: justify;
+    margin-top: 30px;
+    text-indent: 60px;
+    line-height: 30px;
+    font-family: sans-serif;
+}
+.main .sub_content_info{
+   display: flex;
+   margin-top: 30px;
+   line-height: 40px;
+   width: 650px;
+   line-height: 40px;
+
+}
+.main .sub_content_info .item1 h6{
+    font-size: 1.4rem;
+    font-weight: 200;
+ 
+    width: 200px;
+   
+}
+.main .sub_content_info .item2{
+    font-size: 2rem;
+    margin-left: 0px;
+    font-weight: 200;
+}
+.main .sub_content_2nd{
+display: flex;
+
+justify-content: space-between;
+margin-top: 50px;
+}
+.main .signature{
+    width: 250px;
+    height: 200px;
+   
+    
+}
+.main .signature h2{
+    text-align: center;
+   border-top: 2px solid black;
+   margin-top: 170px;
+   font-weight: 200;
+}
+.main .chairman{
+    width: 250px;
+    height: 200px;
+    
+    font-size: 0.9rem;
+    text-align: center;
+}
+.main .chairman h2{
+    border-top: 2px solid black;
+    margin-top: 100px;
+    font-weight: 200;
+}
+.main .footer{
+
+    margin-top: 20px;
+}
+
+@media print {
+    @font-face {
+        font-family: "main_text";
+        src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+    }
+    @font-face {
+        font-family: "sub_text";
+        src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+    }
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: content-box;
+    }
+    html {
+        scroll-behavior: smooth;
+      }
+    :root{
+        --bg-color:#FCFAEE;
+        --2nd-bg-color:#4A9D4f;
+        --sub-bg-color: #005720 ;
+     
+        --1st-text-color: #005720 ;
+        --2nd-text-color: rgb(53, 53, 53);
+        --3rd-text-color: #FCFAEE;
+       
+        --btn-color: #F5E402;
+    
+        --other-color :rgb(0, 183, 255);
+    }
+    .main_bg{
+    
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        z-index: -99;
+    }
+    .main_bg img{
+      
+        width: 100%;
+        height: 200px;
+        opacity: 80%;
+    }
+    .republic{
+       
+        margin-top: -20px;
+    }
+    .republic h2{
+        text-align: center;
+        margin-left: -20px;
+        font-size: 1.3rem;
+        font-weight: 200;
+        margin-top: 5px;
+    }
+    .header .republic h1 {
+        margin-left: -20px;
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 1px;
+        margin-top: -10px;
+        
+    }
+    .header{
+        display: flex;
+        align-items: center;
+    }
+    .header div img {
+        width: 180px;
+        margin-left: 10px;
+    }
+    .main{
+        height:  max-content;
+        border: #005720 3px solid;
+        margin: 0px 0px 0px 0px;
+        display: flex;
+        margin-top: 0px;
+    }
+    .main .officer{
+        height: max-content;
+        width: fit-content;
+        border-right: #005720  solid;
+        padding: 5px;
+       
+    }
+    .main .officer .img_div{
+        background-color: #DBF0C1;
+        padding: 5px;
+        height: 270px;
+    }
+    .main .officer .img_div img{
+        width: 250px;
+        
+    }
+    .main .officer .img_div .header_chairman{
+        text-align: center;
+        position: relative;
+        top:-40px;
+        padding: 5px;
+        background-color: #f3f2f17c;
+    }
+    .main .officer .img_div .header_chairman h5{
+       font-size: 1.2rem;
+       text-decoration: underline;
+       font-style: bold;
+    }
+    .main .officer .img_div .header_chairman h6{
+        font-size: 1rem;
+      
+        font-style: bold;
+     }
+    
+     .main .officer .name_official{
+     
+        line-height: 20px;
+        padding-top: 30px;
+        padding-bottom: 70px;
+    
+    }
+    .main .officer .name_official h4{
+        font-size: 1.4rem;
+    
+    }
+    .main .officer .name_official p{
+        font-size: 1.1rem;
+    
+    }
+    .main .content{
+   
+        width: 100%;
+        padding: 30px 40px 5px 40px;
+        display: block;
+    }
+    .main .content .control_number{
+        display: flex;
+        justify-content: space-between;
+        font-size: 1.2rem;
+        font-weight: 100;
+        font-style: italic;
+    }   
+    .main .content .h1{
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: underline;
+        font-size: 1.5rem;
+    }
+    .main .content .p{
+        margin-top: 30px;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+    }
+    .main .sub_content p{
+        font-size: 1.2rem;
+        text-align: justify;
+        margin-top: 30px;
+        text-indent: 60px;
+        line-height: 30px;
+        font-family: sans-serif;
+    }
+    .main .sub_content_info{
+       display: flex;
+       margin-top: 30px;
+       line-height: 40px;
+       width: 600px;
+       line-height: 30px;
+    
+    }
+    .main .sub_content_info .item1 h6{
+        font-size: 1.2rem;
+        font-weight: 200;
+     
+        width: 200px;
+       
+    }
+    .main .sub_content_info .item2{
+        font-size: 1.8rem;
+        margin-left: 0px;
+        font-weight: 200;
+    }
+    .main .sub_content_2nd{
+    display: flex;
+    
+    justify-content: space-between;
+    margin-top: 10px;
+    }
+    .main .signature{
+        width: 250px;
+        height: 200px;
+       
+        
+    }
+    .main .signature h2{
+        text-align: center;
+       border-top: 2px solid black;
+       margin-top: 170px;
+       font-weight: 200;
+    }
+    .main .chairman{
+        width: 250px;
+        height: 200px;
+        
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    .main .chairman h2{
+        border-top: 2px solid black;
+        margin-top: 100px;
+        font-weight: 200;
+    }
+    .main .footer{
+    
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,84 @@
+    @font-face {
+        font-family: "main_text";
+        src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
+    }
+    @font-face {
+        font-family: "sub_text";
+        src: url(../../../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+    }
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: content-box;
+        list-style-type: none ;
+    }
+    :root{
+        --bg-color: #FCFAEE;
+        --2nd-bg-color:#4A9D4f;
+        --sub-bg-color: #005720 ;
+    
+        --1st-text-color: #005720 ;
+        --2nd-text-color: rgb(53, 53, 53);
+        --3rd-text-color: #FCFAEE;
+    
+        --btn-color: #d4b62f;
+    
+        --other-color :rgb(0, 183, 255);
+    }
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #FCFAEE;
+    }
+
+    table{
+        border: 2px solid rgba(228, 228, 228, 0.39);
+        margin-left:40px;
+        margin-top: 20px;
+        background-color: rgba(226, 226, 226, 0.322);
+        width: 77vw;
+        border-collapse: collapse;
+        transition: all 0.5s ease;
+        border-radius:4px;
+        font-family: "sub_text";
+        text-align: center;
+        color: var(--1st-text-color);
+        overflow-x: scroll;
+        }
+        .sidebar.active ~ .dashboard_content #content_certificate table{
+            width: 93vw;
+            margin-left: 10px;
+        }
+        table .img img{
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
+        border: 1px solid var(--btn-color);
+        margin-left: -10px;
+        }
+        table td{
+        padding: 8px;
+            
+        }
+        table th{
+            border: 2px solid rgba(211, 211, 211, 0.562);
+        padding: 8px;
+            
+        }
+        table tr:nth-child(even){background-color: #a7a5a548;}
+        
+        .table_hover:hover{
+            background-image: linear-gradient(140deg,var(--2nd-bg-color),var(--btn-color));
+            color: var(--bg-color);
+        }
+        
+        caption {
+            font-size: 2vw;
+            letter-spacing: 2px;
+            background-color: var(--2nd-bg-color);
+            padding-bottom: 10px;
+            padding-top: 10px;
+            color: var(--bg-color);
+            border-radius: 4px;
+            
+        }

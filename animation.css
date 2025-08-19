@@ -1,0 +1,118 @@
+header {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+}
+        /* Add this to your index.css or create a new animations.css file */
+
+/* Keyframes for fading in the page */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Keyframes for subtle floating effect */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Keyframes for pulse effect */
+@keyframes pulse {
+    0% { transform: scale(1.2); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1.2); }
+}
+
+/* Apply animations to elements */
+body {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Floating animation for the welcome section */
+#home h1 {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Pulse animation for service buttons */
+#services .btn_proceed {
+    animation: pulse 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+#services .btn_proceed:hover {
+    animation: none;
+    transform: scale(1.1);
+}
+
+/* Fade-in animation for gallery images */
+.img {
+    animation: fadeIn 1s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Animation for the online request section */
+#online_request {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+#online_request button {
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#online_request button:hover {
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(245, 228, 2, 0.4);
+}
+
+/* Animation for official photos */
+#official img {
+    transition: all 0.3s ease;
+}
+
+#official img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+
+/* #hotlines div {
+    transition: all 0.3s ease;
+   
+}
+#hotlines div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255,0,0,0.1);
+    background-color: #FCFAEE;
+    border-radius: 20px;
+}  */
+
+/* Animation for footer */
+footer {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Animation for the login button when active */
+.svg_login {
+    transition: all 0.5s ease;
+}
+
+/* Scroll animation for sections */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}

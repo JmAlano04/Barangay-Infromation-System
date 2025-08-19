@@ -1,0 +1,243 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+
+    --other-color :rgb(0, 183, 255);
+}
+body{
+ 
+}
+#main_bg_logo{
+    position: absolute;
+    margin-top: 400px;
+    z-index: -99;
+    margin-left: 150px;
+}
+.main_bg{
+    
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    z-index: -99;
+}
+.main_bg img{
+  
+    width: 100%;
+    height: 200px;
+ 
+    opacity: 80%;
+  
+ 
+}
+.republic{
+   
+    margin-top: -20px;
+}
+.republic h2{
+    text-align: center;
+    margin-left: 60px;
+    font-size: 1.3rem;
+    font-weight: 200;
+    margin-top: 5px;
+}
+.header .republic h1 {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-top: -10px;
+    
+}
+.header{
+    display: flex;
+    align-items: center;
+}
+.header div img {
+    width: 180px;
+    margin-left: 170px;
+   
+    
+}
+
+
+.main h1{
+    text-align: center;
+    padding: 25px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+}
+.main .crtl_no{
+    text-align: right;
+    font-size: 1.5rem;
+    padding:10px 160px 10px 10px;
+}
+.main .to_whom{
+    font-size: 2rem;
+    padding: 40px 10px 10px 170px;
+}
+.main .dear{
+    font-size: 2rem;
+    padding: 40px 10px 30px 170px;
+}
+.main .p1,.p2,.p3,.p4{
+    font-size: 2rem;
+    text-indent: 100px;
+    letter-spacing: 1px;
+    text-align: justify;
+    padding: 30px 170px 30px 160px;
+    line-height: 40px;
+}
+.main .brgy_chair{
+    text-align: right;
+    margin-top: 150px;
+    padding-right: 170px;
+    font-size: 1.2rem;
+}
+.main .footer{
+    display: flex;
+    justify-content: center;
+}
+.main .footer img{
+    margin-top: 100px;
+    width: 500px;
+}
+
+@media print{
+    body{
+        margin: 0in;
+        padding: 0in;
+        box-sizing: content-box;
+    }
+    #main_bg_logo{
+        position: fixed;
+        margin-top: 250px;
+        z-index: -99;
+        margin-left: 50px;
+        width: 600px;
+        opacity: 50%;
+    }
+    .main_bg img{
+      
+        width: 100%;
+        height: 150px;
+     
+        opacity: 80%;
+      
+     
+    }
+    .header{
+        display: flex;
+        align-items: center;
+
+    }
+    .header div img {
+        width: 150px;
+        margin-left: 0px;
+        margin-top: -20px;
+       
+        
+    }
+    .header_div{
+        letter-spacing: 3px;
+        font-size: 2rem;
+    }
+    .republic{
+   
+        margin-top: -20px;
+       
+    }
+    .republic h2{
+        text-align: center;
+        margin-left: 10px;
+        font-size: 1rem;
+        font-weight: 200;
+        margin-top: 5px;
+    }
+    .header .republic h1 {
+        margin-left: 10px;
+        text-align: center;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+        
+    }
+    
+    .main h1{
+        text-align: center;
+        padding: 0px;
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    .main .to_whom{
+        font-size: 1.3rem;
+        padding:40px 10px 10px 30px;
+    }
+    .main .dear{
+        font-size: 1.3rem;
+        padding: 30px 10px 20px 30px;
+    }
+    .main .p1,.p2,.p3{
+        font-size: 1.3rem;
+        text-indent: 70px;
+        letter-spacing: 0px;
+        text-align: justify;
+        padding: 15px 30px 15px 30px;
+        line-height: 20px;
+        margin-top: -5px;
+    }
+    .main .p4{
+        font-size: 1.3rem;
+        text-indent: 0px;
+        letter-spacing: 0px;
+        text-align: justify;
+        padding: 15px 30px 15px 30px;
+        line-height: 20px;
+        margin-top: 0px;
+    }
+    .main .brgy_chair{
+        text-align: right;
+        margin-top: 130px;
+        padding-right: 30px;
+        font-size: 0.8rem;
+    }
+    .main .footer{
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        
+        width: 100%;
+     
+        position: absolute;
+        margin-top: 70px;
+    }
+    .main .footer img{
+        margin-top: -20px;
+        width: 300px;
+        height: 60px;
+        margin-bottom: 0px;
+    }
+    }

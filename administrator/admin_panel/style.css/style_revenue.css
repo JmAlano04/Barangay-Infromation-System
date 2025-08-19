@@ -1,0 +1,2869 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
+  }
+  @font-face {
+    font-family: "sub_text";
+    src: url(../../../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+  }
+  *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    list-style-type: none ;
+  }
+  :root{
+    --bg-color: #FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+  
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #d4b62f;
+  
+    --other-color :rgb(0, 183, 255);
+  }
+  .main_content{
+    background-color: #005720;
+    width: 75vw;
+    height: 0vh;
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 20px;
+   
+  }
+  body{
+ background-color: var(--bg-color);
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+  .main_content  #create_registered{
+    border: none;
+    border-radius: 4px;
+    padding: 15px;
+    background-color: var(--2nd-bg-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    margin-top: 30px;
+    width: max-content;
+    transition: all 0.5s ease;
+    letter-spacing: 2px;
+    
+  }
+  .sidebar.active ~ .dashboard_content .main_content  #create_registered{
+    margin-left: -220px;
+  }
+  #pop_success{
+    animation-name: validation;
+    animation-duration: 1s;
+    font-family: sans-serif;
+    position: absolute;
+    background-color: rgb(230,46,45);
+    right: 10px;
+    top: 15px;
+    padding: 5px;
+    height: 70px;
+    width: 17vw;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 1px 1px 20px #7a8077d0;
+    border-radius: 4px;
+    display: none;
+    
+  }
+  
+  @keyframes validation {
+    from {opacity: 1%;
+        right: -20px;}
+    to {opacity: 100%;}
+    
+  }
+  .dashboard_content #pop_success p{
+    color: var(--bg-color);
+    font-size: 16px;
+    margin-top:0px;
+    font-weight: 400;
+    padding: 20px;
+    margin-left: 0px;
+    font-family: "sub_text";
+  }
+  .closebtn{
+    width: 30px;
+    margin-right: -1px;
+    margin-top: 2px;
+    color: rgb(37, 37, 37);
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .closebtn:hover {
+    color: rgba(248, 248, 248, 0.966);
+  }
+  
+  /* ----------------CRUD BUTTON Style------------------------------------- */
+  /* The Modal (background) */
+  .modal_registered {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: scroll; /* Enable scroll if needed */
+    background-color: rgb(153, 0, 0); /* Fallback color */
+    background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+    animation-name: background ;
+    animation-duration: 0.7s; 
+    display: none;
+  }
+  /* Modal Content/Box */
+  .modal-content_registered {
+    background-color: rgb(235, 235, 235);
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    animation-name: down ;
+    animation-duration: 0.7s; 
+    border-radius: 8px;
+    
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .delete-modal,.delete-modals,.delete-modal_user,.delete-modal_revenue{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: scroll; /* Enable scroll if needed */
+    background-color: rgb(153, 0, 0); /* Fallback color */
+    background-color:rgba(58, 58, 58, 0.548);; /* Black w/ opacity */
+    animation-name: background ;
+    animation-duration: 0.7s; 
+    display: flex;
+    align-items: center;
+    display: none;
+  }
+  .delete-modal-content,.delete-modal-contents,.delete-modal-content_user,.delete-modal-content_revenue{
+    background-color: rgb(235, 235, 235);
+    margin: 6% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: none;
+    width: 40%; /* Could be more or less, depending on screen size */
+    animation-name: down ;
+    animation-duration: 0.7s; 
+    border-radius: 4px;
+    text-align: center;
+    font-family: "sub_text";
+    border-radius: 8px;
+  }
+  .delete-modal-content svg, .delete-modal-contents svg, .delete-modal-content_user svg, .delete-modal-content_revenue svg{
+    width: 100px;
+    fill: #d4b62f;
+    padding-top: 20px;
+  }
+  .delete-modal-content h2,.delete-modal-contents h2, .delete-modal-content_user h2, .delete-modal-content_revenue h2{
+    padding: 20px 0px 40px 0px;
+    font-size: 2.5rem;
+    color: var(--1st-text-color);
+  }
+  .delete-modal-content h3,.delete-modal-contents h3, .delete-modal-content_user h3, .delete-modal-content_revenue h3{
+    padding: 20px 0px 50px 0px;
+    font-size: 1.4rem;
+    color: var(--1st-text-color);
+  }
+  .delete-modal-content .div-delete,.delete-modal-contents .div-delete,  .delete-modal-content .div-delete_user,  .delete-modal-content .div-delete_revenue{
+  display: flex;
+  justify-content: space-evenly;
+  }
+  #confirm-delete,#confirm-deletes,  #confirm-delete_user,  #confirm-delete_revenue{
+    background-color: red;
+    width: 10vw;
+    padding: 20px;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    border-radius: 4px;
+    
+  }
+  #cancel-delete, #cancel-deletes,  #cancel-delete_user,  #cancel-delete_revenue{
+    background-color: var(--2nd-bg-color);
+    width: 10vw;
+    padding: 20px;
+    border: none;
+    font-size: 1.2rem;
+    color: var(--bg-color);
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+  .edit-modal,.edit-modals,.edit-modal_blotter{
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width:100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: scroll; /* Enable scroll if needed */
+    background-color: rgb(153, 0, 0); /* Fallback color */
+    background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+    animation-name: background ;
+    animation-duration: 0.7s; 
+    display: none;
+  }
+  .edit-modal-content,.edit-modal-contents{
+  background-color: rgb(235, 235, 235);
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 20px 50px 20px 50px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    animation-name: down ;
+    animation-duration: 0.7s; 
+    border-radius: 8px;
+  }
+  .edit-modal-content_blotter{
+    background-color: rgb(235, 235, 235);
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 20px 50px 20px 50px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    animation-name: down ;
+    animation-duration: 0.7s; 
+    border-radius: 8px;
+  }
+  .update-close-btn,.update-close-btns{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  }
+  .update-close-btn:hover,
+  .update-close-btn:focus,.update-close-btns:hover,
+  .update-close-btns:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @keyframes background {
+    from {
+        opacity: 10%;
+    }
+    to {opacity: 100%;}
+  }
+  @keyframes down {
+    from {
+        margin-top: -20%;
+    }
+    to {opacity: 100%;}
+  }
+
+  /*-------------------------  TABLE STYLE ------------------------------------*/ 
+  
+  
+  table{
+    border: 2px solid rgba(228, 228, 228, 0.39);
+    margin-left: 40px;
+    margin-top: 20px;
+    background-color: rgba(226, 226, 226, 0.322);
+    width: 77vw;
+    border-collapse: collapse;
+    transition: all 0.5s ease;
+    border-radius:4px;
+    font-family: "sub_text";
+    color: var(--1st-text-color);
+    
+  
+    
+  }
+  .sidebar.active ~ .dashboard_content .table_div table{
+    width: 93vw;
+    margin-left: -180px;
+  }
+  table td{
+  padding: 5px;
+    text-align: center;
+  }
+  table .img img{
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--btn-color);
+  }
+  table th{
+    border: 2px solid rgba(226, 226, 226, 0.562);
+    padding: 12px;
+    
+  }
+  table tr:nth-child(even){background-color: #a7a5a548;}
+  
+  .table_hover:hover{
+    background-image: linear-gradient(140deg,var(--2nd-bg-color),var(--btn-color));
+    color: var(--bg-color);
+  }
+  
+  caption {
+    font-size: 2vw;
+    letter-spacing: 2px;
+    background-color: var(--2nd-bg-color);
+    padding-bottom: 10px;
+    padding-top: 10px;
+    color: var(--bg-color);
+    border-radius: 4px;
+    
+  }
+  .pagination {
+  margin: 20px 0;
+  float: right;
+  margin-right: 20px;
+  padding-bottom: 60px;
+  
+  }
+  
+  .pagination a {
+  margin: 0 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: var(--1st-text-color);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  }
+  
+  .pagination a.active {
+  background-color: var(--2nd-bg-color);
+  color: white;
+  border: 1px solid var(--2nd-bg-color);
+  }
+  
+  .pagination a:hover {
+  background-color: var(--2nd-bg-color);
+  color: white;
+  }
+  .sidebar.active ~ .dashboard_content .limit-selector{
+  margin-left: -220px;
+  }
+  .limit-selector {
+  margin-top: 100px;
+  padding-left: 40px;
+  color: #005720;
+  font-family: "sub_text";
+  transition: all 0.5s ease;
+  font-size: 1.2rem;
+  
+  }
+  
+  .limit-selector select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: max-content;
+  color: #005720;
+  }
+
+  
+  
+  
+  #form_up_del_official{
+   display: flex;
+   justify-content:space-evenly ;
+   align-items: center;
+  }
+  
+  #barangay_cert{
+    color: var(--bg-color);
+    cursor: pointer;
+    padding: 3px 5px 3px 5px;
+    background-color: transparent;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    outline: none;
+    border: none;
+  }
+  #barangay_cert svg{
+  width: 20px;
+  fill: var(--other-color);
+  }
+  
+  #barangay_cert svg:hover{
+    fill: rgb(150, 202, 250);
+    color: var(--1st-text-color);
+  }
+  #delete_official_btn{
+    color: var(--bg-color);
+    cursor: pointer;
+    padding: 3px 5px 3px 5px;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 1px solid rgb(197, 197, 197);
+    outline: none;
+    border: none;
+    font-size: 0.9rem;
+  }
+  #delete_official_btn svg{
+  width: 18px;
+  fill: red;
+  }
+  #delete_official_btn svg:hover{
+    fill: rgb(252, 134, 134);
+    color: var(--1st-text-color);
+  }
+
+  
+  
+  /*--------------------SEARCH BUTTON ---------------------  */
+  
+
+  @font-face {
+    font-family: "main_text";
+    src: url(../asset/font/Syncopate/Syncopate-Regular.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+
+    --other-color :rgb(0, 183, 255);
+}
+
+
+#validation{
+    animation-name: validation;
+    animation-duration: 1s;
+    font-family: sans-serif;
+    position: absolute;
+    background-color: rgb(226, 15, 0);
+    right: 10px;
+    top: 25px;
+    padding: 5px;
+    height: 100px;
+    width: 20vw;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 1px 1px 20px #1841061f;
+     display: none;
+     border-radius: 10px;
+ }
+
+ @keyframes validation {
+    from {opacity: 10%;}
+    to {opacity: 100%;}
+  }
+ #validation p{
+    color: var(--bg-color);
+    font-size: 20px;
+    margin-top: 0px;
+    padding: 20px;
+    font-family: "sub_text";
+ }
+.closebtn{
+    width: 30px;
+    margin-right: -1px;
+    margin-top: 2px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+  }
+  body::before{
+    opacity: 10%;
+  }
+body{
+    background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+   
+}
+.header{
+    background-color: var(--2nd-bg-color);
+    width:100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px; 
+    box-shadow: #63636338 10px 10px 10px;
+}
+.header h1{
+    font-family: "main_text";
+    padding-right: 550px;
+    font-size: 1.5rem;
+}
+.header img{
+    margin-left: 100px;
+    width: 110px;
+}
+#main{
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+    animation-name: example;
+    animation-duration: 1.5s ;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+/* The animation code */
+@keyframes example {
+    from {margin-top: 50%;
+        opacity: 0;}
+    to {opacity: 1;}
+  }
+
+#main .sub_main_div{
+    background-color: var(--1st-text-color);
+    width: fit-content;
+    padding: 30px 50px 40px 50px;
+    border-radius: 4px;
+    box-shadow: 10px 20px 10px #5858585e;
+} 
+#main form{
+    width: fit-content;
+   
+    border-radius: 4px;
+    color: #FCFAEE;
+    
+}
+#main .div_registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#main .div_registration button{
+    width: 80%;
+    display: flex;
+   border-radius: 20px;
+    margin-top: 30px;
+    padding: 3px;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    background-color: #FEFCD4;
+    border: none;
+}
+#main .div_registration button:hover{
+    background-color: #fcf8af;
+}
+#main .div_registration button span{
+    color: #005720;
+    font-weight: 900;
+}
+#main .div_registration button svg{
+    width: 25px;
+    fill: #005720;
+}
+#main h1{
+   margin-bottom: 20px;
+    font-family: "main_text";
+    color:#FCFAEE;
+    text-align: center;
+    border-radius: 2px;
+    font-size: 2rem;
+    font-weight: 1000;
+    
+}
+#main form div{
+    width: fit-content;
+    background-color: var(--2nd-bg-color);
+    padding: 30px 30px 20px 30px;
+    
+
+}
+#main form input{
+    width: 20vw;
+    height: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color:#FCFAEE;
+    border: none;
+    outline: none;
+    color: var(--1st-text-color);
+    border-radius: 2px;
+}
+#main form input:focus{
+    outline: #f7ec5681 solid 4px;
+}
+#main form #checkbox{
+    width: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#main form #checkbox:focus{
+    outline: none;
+}
+#main form #check_span{
+    font-family: "sub_text";
+    font-size: 12px;
+    color: #fcfaeec9;
+    letter-spacing: 1px;
+}
+#main form label{
+    font-family: "sub_text";
+    font-size: 1rem;
+    color: #FCFAEE;
+    font-style: normal;
+    letter-spacing: 3px;
+
+}
+#main h1 span svg{
+    width: 50px;
+    position: relative;
+    top: 10px;
+    fill: #FCFAEE;
+    margin-right: 15px;
+}
+
+#main span svg{
+    width: 25px;
+    position: relative;
+    top: 5px;
+    fill: #FCFAEE;
+}
+
+#main button h3{
+    color: #ad9f06;
+    margin-top: 20px;
+    font-size: 0.7rem;
+    font-weight: 200;
+    letter-spacing: 1px;
+}
+
+#main div h2{
+    width: 200px;
+    font-family: "sub_text";
+    line-height: 30px;
+    text-align: left;
+    
+    font-size: 1.5rem;
+  
+    color: var(--1st-text-color);
+}
+
+#main #submit{
+    background-color: var(--btn-color);
+    color: #005720;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+#main #submit:focus{
+  outline: none;
+}
+
+
+
+
+
+.modal_blotter {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow-y: scroll; /* Enable scroll if needed */
+    background-color: rgb(153, 0, 0); /* Fallback color */
+    background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+    animation-name: background ;
+    animation-duration: 0.7s; 
+    display: none;
+  }
+  /* Modal Content/Box */
+  .modal-content_blotter {
+    background-color: rgb(235, 235, 235);
+    margin: 2% auto; /* 15% from the top and centered */
+    padding: 40px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+    animation-name: down ;
+    animation-duration: 0.7s; 
+    border-radius: 8px;
+    
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  @keyframes background {
+    from {
+        opacity: 10%;
+    }
+    to {opacity: 100%;}
+  }
+  @keyframes down {
+    from {
+        margin-top: -20%;
+    }
+    to {opacity: 100%;}
+  }
+.registration_h1 svg {
+    width: 40px;
+    margin-right: 10px;
+    fill: #4A9D4f;
+}
+.registration_h1, h2{
+    font-family: "sub_text";
+    color: #4A9D4f;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.form_registration .item1{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+}
+.form_registration .item1 label{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "sub_text";
+    color: #005720;
+    
+}
+.form_registration .item1 input{
+    height: 30px;
+    width: 200px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+.form_registration .item1 input:focus{
+    outline: #4A9D4f 3px solid;
+}
+.form_registration .item2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: left;
+}
+.form_registration .item2 input{
+    height: 30px;
+    width: 200px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 5px;
+    padding-left: 5px;
+  
+}
+.form_registration .item2 label{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "sub_text";
+    color: #005720;
+}
+.form_registration .item2 select{
+    font-size: 1.1rem;
+    font-weight: 400;
+    font-family: "sub_text";
+    color: #005720;
+    margin-top: 5px;
+    padding-left: 5px;
+    width: 200px;
+    border: none;
+    border-radius: 4px;
+    height: 30px;
+    
+}
+.form_registration .item2 select:focus{
+    outline: #4A9D4f 3px solid;
+}
+.form_registration .item2 input:focus{
+    outline: #4A9D4f 3px solid;
+}
+
+.form_registration .item3{
+    display: grid;
+    grid-template-columns: auto;
+
+}
+.form_registration .item3 label{
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "sub_text";
+    color: #005720;
+    
+}
+.form_registration .item3 input{
+    height: 30px;
+    width: 400px;
+    border-radius: 4px;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+.form_registration .item3 input:focus{
+    outline: #4A9D4f 3px solid;
+}
+
+.form_registration .item4{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.form_registration .item4 input{
+    font-size: 1rem;
+    padding: 5px;
+    width: 120px;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+.form_registration .item4 #submit_btn{
+    background-color: #4A9D4f;
+    
+}
+.form_registration .item4 #reset{
+    background-color: rgb(0, 183, 255);
+}
+.form_registration .item4 #submit_btn:focus{
+    outline: solid 3px #4A9D4f;
+}
+.form_registration .item4 #reset:focus{
+    outline: solid 3px  rgb(69, 197, 248);
+}
+
+
+
+
+
+
+  
+  /* The message box is shown when the user clicks on the password field */
+  #message {
+    display: none;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: -20px;
+  }
+  #message h3{
+    margin-bottom: 10px;
+    font-size: medium;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    color: var(--2nd-bg-color);
+    text-align: left;
+  }
+  #message p {
+    text-align: left;
+    font-size: 18px;
+    font-size: medium;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    margin-left: 50px;
+    padding-top: 1px;
+  }
+  
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: rgb(45, 192, 45);
+  }
+  
+  .valid::before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+
+
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid {
+    color: rgb(218, 15, 0);
+  }
+  
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+
+
+
+  #btn_confirm {
+    display: none;
+    position: relative;
+    bottom: 40px;
+    background-color: black;
+
+  } 
+    .valid_confirm {
+      color: rgb(2, 148, 2);
+    }
+    
+    
+  .invalid_confirm {
+    color: blue;
+  }
+  
+  
+
+  .form_registration .item3 #eye{
+    position: relative;
+    left: 370px;
+    bottom: 29px;
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: var(--1st-text-color);
+    width: 20px;
+}
+
+.form_registration .item3 #eye_confirm{
+    position: relative;
+    left: 370px;
+    bottom: 29px;
+    font-size: 1.5vw;
+    cursor: pointer;
+    color: var(--1st-text-color);
+}
+
+
+/* Extra Small Mobile (Portrait):*/
+@media only screen and (min-width: 320px ){
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 50vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 12px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.2rem;
+      text-align: left;
+      padding-left: 20px;
+      line-height: 25px;
+      width: 100%;
+      margin-right: 0px;
+     
+  }
+  .header img{
+      margin-left: 20px;
+      width: 90px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: fit-content;
+      padding: 20px 20px 20px 20px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 60vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+      overflow-x: hidden;
+     
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 65%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      margin-top: 100px;
+    }
+    .registration_h1 svg {
+      width: 20px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 0.8rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 30px;
+      width:25vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      font-size: 0.7rem;
+      color: #4A9D4f;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 30px;
+      width: 27vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      font-size: 0.7rem;
+      color: #4A9D4f;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 0.8rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 0.7rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 27vw;
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: -10px;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 0.7rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      width: max-content;
+    
+  }
+  .form_registration .item3 input{
+      height: 30px;
+      width: 200px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      font-size: 0.7rem;
+      color: #4A9D4f;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 190px;
+      bottom: 30px;
+      font-size:3vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 190px;
+      bottom: 30px;
+      font-size:3vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+      
+  }
+  
+  .form_registration .item4 input{
+      font-size: 0.7rem;
+      padding: 2px;
+      width: 50px;
+      color: var(--bg-color);
+      cursor: pointer;
+     
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+  #message {
+      display: none;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: -20px;
+      
+    }
+    #message h3{
+      margin-bottom: 10px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: var(--2nd-bg-color);
+      text-align: left;
+    }
+    #message p {
+      text-align: left;
+      font-size: 0.7rem;
+     
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      margin-left: 30px;
+      padding-top: 1px;
+    }
+   
+   
+}
+@media only screen and (min-width: 481px ){
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 50vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 15px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.2rem;
+      text-align: left;
+      line-height: 30px;
+      padding-left: 20px;
+      width: 100%;
+      margin-right: 0px;
+     
+  }
+  .header img{
+      margin-left: 80px;
+      width: 90px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: fit-content;
+      padding: 20px 20px 20px 20px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 50vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 60%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      margin-top: 100px;
+    }
+    .registration_h1 svg {
+      width: 20px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1rem;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 30px;
+      width: 25vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 30px;
+      width: 25vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 25vw;
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: -10px;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item3 input{
+      height: 30px;
+      width: 280px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: #4A9D4f;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 260px;
+      bottom: 30px;
+      font-size: 2.4vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 260px;
+      bottom: 30px;
+      font-size: 2.4vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+  
+  }
+  
+  .form_registration .item4 input{
+      font-size: 0.7rem;
+      padding: 5px;
+      width: 70px;
+      color: var(--bg-color);
+      cursor: pointer;
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+  #message {
+      display: none;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: -20px;
+    }
+    #message h3{
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: var(--2nd-bg-color);
+      text-align: left;
+    }
+    #message p {
+      text-align: left;
+      font-size: 0.7rem;
+     
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      margin-left: 50px;
+      padding-top: 1px;
+    }
+    
+}
+@media only screen and (min-width: 601px ){
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 40vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 15px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.2rem;
+      text-align: left;
+      line-height: 30px;
+      padding-left: 20px;
+      width: 100%;
+      margin-right:  0px;
+     
+     
+  }
+  .header img{
+      margin-left: 80px;
+      width: 100px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: fit-content;
+      padding: 20px 20px 20px 20px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 40vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 65%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      margin-top: 100px;
+    }
+    .registration_h1 svg {
+      width: 30px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 30px;
+      width: 25vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 30px;
+      width: 25vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+     
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 25vw;
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 5px;
+      color: #4A9D4f;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item3 input{
+      height: 30px;
+      width: 370px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: #4A9D4f;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 350px;
+      bottom: 30px;
+      font-size: 1.9vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 350px;
+      bottom: 30px;
+      font-size: 1.9vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+  
+  }
+  
+  .form_registration .item4 input{
+      font-size: 0.9rem;
+      padding: 5px;
+      width: 120px;
+      color: var(--bg-color);
+      cursor: pointer;
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+  #message {
+      display: none;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: -20px;
+    }
+    #message h3{
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: var(--2nd-bg-color);
+      text-align: left;
+    }
+    #message p {
+      text-align: left;
+      font-size: 0.7rem;
+     
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      margin-left: 50px;
+      padding-top: 1px;
+    }
+    
+}
+@media only screen and (min-width: 769px ){
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 20vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 15px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.4rem;
+      text-align: left;
+      line-height: 30px;
+      padding-left: 20px;
+      width: 100%;
+      margin-right: 0px;
+    
+     
+     
+  }
+  .header img{
+      margin-left: 80px;
+      width: 100px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: max-content;
+      padding: 30px 30px 30px 30px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 30vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 50%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      margin-top: 100px;
+    }
+    .registration_h1 svg {
+      width: 40px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1.4rem;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 30px;
+      width: 15vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 30px;
+      width: 15vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 15vw;
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: -10px;
+      color: #4A9D4f;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item3 input{
+      height: 30px;
+      width: 370px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: #4A9D4f;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 350px;
+      bottom: 30px;
+      font-size: 1.7vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 350px;
+      bottom: 30px;
+      font-size: 1.7vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+  
+  }
+  
+  .form_registration .item4 input{
+      font-size: 0.9rem;
+      padding: 5px;
+      width: 120px;
+      color: var(--bg-color);
+      cursor: pointer;
+      
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+  #message {
+      display: none;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: -20px;
+    }
+    #message h3{
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: var(--2nd-bg-color);
+      text-align: left;
+    }
+    #message p {
+      text-align: left;
+      font-size: 0.7rem;
+     
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      margin-left: 50px;
+      padding-top: 1px;
+    }
+       
+}
+
+@media only screen and (min-width: 1281px ){
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 20vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 15px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.5rem;
+      text-align: left;
+      line-height: 30px;
+      padding-left: 20px;
+      width: 100%;
+      margin-right: 0px;
+  
+     
+  }
+  .header img{
+      margin-left: 100px;
+       width: 110px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: fit-content;
+      padding: 30px 30px 30px 30px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 20vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 60%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      
+    }
+    .registration_h1 svg {
+      width: 40px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 30px;
+      width: 15vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 30px;
+      width: 15vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 15vw;
+      border: none;
+      border-radius: 4px;
+      height: 30px;
+      margin-right: 40px;
+      color: #4A9D4f;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item3 input{
+      height: 30px;
+      width: 400px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: #4A9D4f;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 375px;
+      bottom: 30px;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 375px;
+      bottom: 30px;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+  
+  }
+  
+  .form_registration .item4 input{
+      font-size: 0.9rem;
+      padding: 5px;
+      width: 150px;
+      color: var(--bg-color);
+      cursor: pointer;
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+  #message {
+      display: none;
+      color: #000;
+      position: relative;
+      padding: 20px;
+      margin-top: -20px;
+    }
+    #message h3{
+      margin-bottom: 10px;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-family: sans-serif;
+      color: var(--2nd-bg-color);
+      text-align: left;
+    }
+    #message p {
+      text-align: left;
+      font-size: 0.9rem;
+     
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      margin-left: 50px;
+      padding-top: 1px;
+    }
+  
+}
+@media only screen and (min-width: 1441px) {
+  #validation{
+      animation-name: validation;
+      animation-duration: 1s;
+      font-family: sans-serif;
+      position: absolute;
+      background-color: rgb(226, 15, 0);
+      right: 10px;
+      top: 30px;
+      padding: 5px;
+      height: 80px;
+      width: 20vw;
+      justify-content: center;
+      align-content: center;
+      box-shadow: 1px 1px 20px #1841061f;
+       display: none;
+       border-radius: 10px;
+   }
+   #validation p{
+      color: var(--bg-color);
+      font-size: 15px;
+      margin-top: 0px;
+      padding: 20px;
+      font-family: "sub_text";
+   }
+  body{
+      background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei (1).png");
+      background-repeat: repeat;
+      background-size: cover;
+      overflow-x: hidden;
+     
+  }
+  .header{
+      background-color: var(--2nd-bg-color);
+      width:100vw;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 100px; 
+      box-shadow: #63636338 10px 10px 10px;
+  }
+  .header h1{
+      font-family: "main_text";
+      padding-right: 20px;
+      font-size: 1.8rem;
+      text-align: left;
+      line-height: 30px;
+      padding-left: 20px;
+      width: 100%;
+      margin-right: 0px;
+      
+  
+     
+  }
+  .header img{
+      margin-left: 150px;
+       width: 110px;
+  }
+  #main{
+      display: flex;
+      justify-content: center;
+      margin-top: 70px;
+      margin-bottom: 100px;
+      animation-name: example;
+      animation-duration: 1.5s ;
+      padding-left: 100px;
+      padding-right: 100px
+  }
+  #main .sub_main_div{
+      background-color: var(--1st-text-color);
+      width: fit-content;
+      padding: 30px 30px 30px 30px;
+      border-radius: 4px;
+      box-shadow: 10px 20px 10px #5858585e;
+  } 
+  #main h1{
+      margin-bottom: 20px;
+       font-family: "main_text";
+       color:#FCFAEE;
+       text-align: center;
+       border-radius: 2px;
+       font-size: 2rem;
+       font-weight: 1000;
+   }
+   #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form{
+      width: fit-content;
+     
+      border-radius: 4px;
+      color: #FCFAEE;
+      
+  }
+  #main form div{
+      width: fit-content;
+      background-color: var(--2nd-bg-color);
+      padding: 30px 30px 20px 30px;
+  }
+  #main form input{
+      width: 20vw;
+      height: 15px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+      background-color:#FCFAEE;
+      border: none;
+      outline: none;
+      color: var(--1st-text-color);
+      border-radius: 2px;
+  }
+  .modal_blotter {
+      display: none;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow-y: scroll; /* Enable scroll if needed */
+      background-color: rgb(153, 0, 0); /* Fallback color */
+      background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+      animation-name: background ;
+      animation-duration: 0.7s; 
+      display: none;
+    }
+    /* Modal Content/Box */
+    .modal-content_blotter {
+      background-color: rgb(235, 235, 235);
+      margin: 2% auto; /* 15% from the top and centered */
+      padding: 40px;
+      border: 1px solid #888;
+      width: 60%; /* Could be more or less, depending on screen size */
+      animation-name: down ;
+      animation-duration: 0.7s; 
+      border-radius: 8px;
+      
+    }
+    .registration_h1 svg {
+      width: 40px;
+      margin-right: 10px;
+      fill: #4A9D4f;
+  }
+  .registration_h1, h2{
+      font-family: "sub_text";
+      color: #4A9D4f;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin-bottom: 10px;
+  }
+  .form_registration .item1 label{
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item1 input{
+      height: 40px;
+      width: 15vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+      font-size: 0.9rem;
+  }
+  .form_registration .item1 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2{
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-between;
+      padding-right: 400px;
+  }
+  .form_registration .item2 input{
+      height: 40px;
+      width: 20vw;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      padding-left: 5px;
+      color: #4A9D4f;
+      font-size: 0.9rem;
+    
+  }
+  .form_registration .item2 label{
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+  }
+  .form_registration .item2 select{
+      font-size: 1.1rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      margin-top: 5px;
+      padding-left: 5px;
+      width: 15vw;
+      border: none;
+      border-radius: 4px;
+      height: 40px;
+      margin-right: 60px;
+      
+  }
+  .form_registration .item2 select:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  .form_registration .item2 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item3{
+      display: grid;
+      grid-template-columns: auto;
+  
+  }
+  .form_registration .item3 label{
+      font-size: 1.3rem;
+      font-weight: 400;
+      font-family: "sub_text";
+      color: #005720;
+      
+  }
+  .form_registration .item3 input{
+      height: 40px;
+      width: 400px    ;
+      border-radius: 4px;
+      border: none;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      padding-left: 10px;
+      color: #4A9D4f;
+      font-size: 0.9rem;
+  }
+  
+  .form_registration .item3 #eye{
+      position: relative;
+      left: 370px;
+      bottom: 35px;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+      width: 20px;
+  }
+  
+  .form_registration .item3 #eye_confirm{
+      position: relative;
+      left: 370px;
+      bottom: 35px;
+      font-size: 1.2vw;
+      cursor: pointer;
+      color: var(--1st-text-color);
+  }
+  
+
+  .form_registration .item3 input:focus{
+      outline: #4A9D4f 3px solid;
+  }
+  
+  .form_registration .item4{
+      display: flex;
+      justify-content: space-evenly;
+  
+  }
+  
+  .form_registration .item4 input{
+      font-size: 1rem;
+      padding: 5px;
+      width: 200px;
+      color: var(--bg-color);
+      cursor: pointer;
+  }
+  .form_registration .item4 #submit_btn{
+      background-color: #4A9D4f;
+      
+  }
+  .form_registration .item4 #reset{
+      background-color: rgb(0, 183, 255);
+  }
+  .form_registration .item4 #submit_btn:focus{
+      outline: solid 3px #4A9D4f;
+  }
+  .form_registration .item4 #reset:focus{
+      outline: solid 3px  rgb(69, 197, 248);
+  }
+
+}

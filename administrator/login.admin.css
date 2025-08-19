@@ -1,0 +1,227 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../asset/font/Syncopate/Syncopate-Bold.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt\,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+
+    --other-color :rgb(0, 183, 255);
+}
+
+#validation{
+    animation-name: validation;
+    animation-duration: 1s;
+    font-family: sans-serif;
+    position: absolute;
+    background-color: rgb(226, 15, 0);
+    right: 10px;
+    top: 25px;
+    padding: 5px;
+    height: 100px;
+    width: 20vw;
+    justify-content: center;
+    align-content: center;
+    box-shadow: 1px 1px 20px #1841061f;
+   display: none;
+   border-radius: 10px;
+ }
+
+ @keyframes validation {
+    from {opacity: 10%;}
+    to {opacity: 100%;}
+  }
+ #validation p{
+    color: var(--bg-color);
+    font-size: 20px;
+    margin-top: 0px;
+    padding: 20px;
+    font-family: "sub_text";
+ }
+.closebtn{
+    width: 30px;
+    margin-right: -1px;
+    margin-top: 2px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.closebtn:hover {
+    color: black;
+  }
+
+
+
+
+body{
+   background-image: url("../asset/image/background/admin_bg/circle-scatter-haikei\ \(1\).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+   
+}
+.header{
+    background-color: var(--2nd-bg-color);
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100px;
+    padding-left: 40px ;
+}
+.header h1{
+    font-family: "main_text";
+    padding-right: 20px;
+    font-size: 1.5rem;
+    text-align: left;
+    line-height: 30px;
+    padding-left: 0px;
+    width: 100%;
+    margin-right: 0px;
+    font-weight: 100;
+
+   
+}
+.header img{
+    margin-left: 60px;
+    width: 90px;
+}
+#main{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation-name: example;
+    animation-duration: 1.5s ;
+    
+}
+/* The animation code */
+@keyframes example {
+    from {margin-top: 50%;
+        opacity: 0;}
+    to {opacity: 1;}
+  }
+#main form{
+    width: fit-content;
+    background-color: var(--1st-text-color);
+    padding: 50px;
+    box-shadow: 10px 20px 10px #5858585e;
+    border-radius: 4px;
+    
+}
+#main h1{
+   margin-bottom: 20px;
+    font-family: "main_text";
+    color: var(--bg-color);
+    text-align: center;
+    border-radius: 2px;
+}
+#main form div{
+    width: fit-content;
+    background-color: var(--2nd-bg-color);
+    padding: 40px;
+
+}
+#main form input{
+    width: 20vw;
+    height: 15px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color:#FCFAEE;
+    border: none;
+    outline: none;
+    color: var(--1st-text-color);
+    border-radius: 2px;
+}
+#main form input:focus{
+    outline: #f7ec5681 solid 4px;
+}
+#main form #checkbox{
+    width: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+#main form #checkbox:focus{
+    outline: none;
+}
+#main form #check_span{
+    font-family: "sub_text";
+    font-size: 12px;
+    color: #fcfaeec9;
+    letter-spacing: 1px;
+}
+#main form label{
+    font-family: "sub_text";
+    font-size: 1rem;
+    color: #FCFAEE;
+    font-style: normal;
+    letter-spacing: 2px;
+
+}
+#main h1 span svg{
+    width: 50px;
+    position: relative;
+    top: 10px;
+    fill: #FCFAEE;
+    margin-right: 15px;
+}
+
+#main span svg{
+    width: 20px;
+    position: relative;
+    top: 3px;
+   
+    fill: #FCFAEE;
+}
+
+#main div img{
+    width: 300px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+#main div h4{
+    width: 300px;
+    margin-top: 70px;
+    font-family: "sub_text";
+    line-height: 30px;
+    text-align: justify;
+    width: 500px;
+    font-size: 1.3rem;
+    color: var(--1st-text-color);
+}
+
+#main #submit{
+    background-color: var(--btn-color);
+    color: #005720;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+#main #submit:focus{
+  outline: none;
+}
+

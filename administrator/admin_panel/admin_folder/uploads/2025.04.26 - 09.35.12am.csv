@@ -1,0 +1,4 @@
+"User Type",Firstname,Middlename,Lastname,Email,Username,Password,"Date Created","Admin Profile",Gender,Age,Status
+ADMINISTRATOR,Alex,Peralta,Peralta,alex@gmail.com,admin,JMalano0411,2025-03-22,67ebcf473752d.png,Female,25,1
+ADMINISTRATOR,Jm,Alano,Alano,tmc.jenmar.alano@cvsu.edu.ph,admin,admin123,2025-03-22,67ebcf4e814e0.png,Male,25,1
+ADMINISTRATOR,Niel,Acantilado,Alegiojo,niel@gmail.com,,niel,2025-04-01,67ebcf56041b1.png,Male,23,1

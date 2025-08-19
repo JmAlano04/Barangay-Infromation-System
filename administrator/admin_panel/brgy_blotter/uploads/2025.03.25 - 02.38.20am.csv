@@ -1,0 +1,76 @@
+Subject,"Cell No",Place,Tanod,Date,Time,Status,Complainant,Age,"Address Complainant","Complained Name","Address Complained Name","Details Reason",Type
+"Noise Complaint",09171234567,"Barangay A","Juan Dela Cruz",2025-03-22,10:30:00,1,"Maria Santos",30,"123 Main St, Barangay A","Carlos Reyes",None,"Loud music disturbing the neighbors",Noise
+"Illegal Parking",09182345678,"Barangay B","Pedro Garcia",2025-03-21,02:00:00,0,"Josefa Bautista",45,"456 Elm St, Barangay B","Ricardo Lopez",None,"Car parked in front of a fire hydrant",Traffic
+Vandalism,09191234567,"Barangay C","Andres Martinez",2025-03-20,04:45:00,1,"Rafael Cruz",24,"789 Oak St, Barangay C","Emma Ramos",None,"Graffiti on public property",Crime
+Littering,09123456789,"Barangay D","Leandro Flores",2025-03-19,08:00:00,0,"Nina Garcia",35,"101 Pine St, Barangay D","Victor Dizon",None,"Trash thrown on the street",Environment
+"Domestic Dispute",09211234567,"Barangay E","Teresa Lopez",2025-03-18,08:30:00,1,"Alfredo Perez",55,"102 Maple St, Barangay E","Lina Martinez",None,"Loud arguments coming from the house",Social
+"Public Disturbance",09301234567,"Barangay F","Miguel Santiago",2025-03-17,11:15:00,0,"Luis Morales",28,"202 Cedar St, Barangay F","Juan de la Cruz",None,"Drunken individuals causing a scene in the public park",Noise
+"Drug Activity",09222334455,"Barangay G","Carmen Aguilar",2025-03-16,01:45:00,1,"Gabriela Reyes",40,"303 Birch St, Barangay G","Carlos Reyes",None,"Suspicious individuals seen exchanging items",Crime
+"Street Fighting",09194567890,"Barangay H","Luis Perez",2025-03-15,09:00:00,0,"Armando Santos",32,"404 Birch St, Barangay H","Pedro Garcia",None,"Fight between two men on the street",Social
+"Fire Hazard",09336677788,"Barangay I","Felipe Gomez",2025-03-14,07:30:00,1,"Celia Cruz",60,"505 Pine St, Barangay I","Maria Reyes",None,"Burnt debris near residential area, potential fire hazard",Environment
+Overcrowding,09237658901,"Barangay J","Hernan Torres",2025-03-13,06:00:00,0,"Diego Lopez",27,"606 Cedar St, Barangay J","Juan de la Cruz",None,"Too many people gathering in a small area",Social
+"Noise Pollution",09123456780,"Barangay K","Eva Martinez",2025-03-12,10:15:00,1,"Cristina Reyes",39,"707 Elm St, Barangay K","Ricardo Lopez",None,"Loud generator noise in the area",Noise
+"Illegal Construction",09162345678,"Barangay L","Manuel Garcia",2025-03-11,06:45:00,1,"Martha Dizon",50,"808 Maple St, Barangay L","Antonio Cruz",None,"Unapproved construction work in residential area",Environment
+"Animal Abuse",09212345678,"Barangay M","Esteban Garcia",2025-03-10,03:30:00,1,"Joana Reyes",22,"909 Oak St, Barangay M","Carlos Dizon",None,"Neglect of pet animals in the area",Crime
+"Excessive Smoking",09123457901,"Barangay N","Diana Cruz",2025-03-09,12:00:00,0,"Bernardo Reyes",30,"1011 Cedar St, Barangay N","Nina Lopez",None,"People smoking near children in public places",Health
+"Spitting in Public",09123456710,"Barangay O","Ana Ramos",2025-03-08,05:00:00,1,"Oscar Reyes",28,"1111 Pine St, Barangay O","Sofia Garcia",None,"People spitting on sidewalks and public areas",Health
+"Public Urination",09132345678,"Barangay P","Ricardo Perez",2025-03-07,07:30:00,1,"Santiago Lopez",42,"1212 Birch St, Barangay P","Pablo Reyes",None,"Individuals urinating in public",Health
+"Electricity Theft",09141122334,"Barangay Q","María Hernández",2025-03-06,02:20:00,0,"Diana Perez",60,"1313 Elm St, Barangay Q","Carlos Reyes",None,"Suspected illegal connection to electric line",Crime
+"Water Pollution",09152033445,"Barangay R","Luisa Martinez",2025-03-05,10:40:00,1,"Francisco Reyes",33,"1414 Maple St, Barangay R","Vicente Cruz",None,"Waste being dumped in the local water supply",Environment
+"Illegal Logging",09163456789,"Barangay S","Carlos Gomez",2025-03-04,01:00:00,0,"Monica Reyes",47,"1515 Oak St, Barangay S","Eduardo Lopez",None,"Unregulated cutting of trees in protected area",Environment
+"Hawking without Permit",09234567890,"Barangay T","Ricardo Cruz",2025-03-03,04:30:00,1,"Raul Martinez",53,"1616 Cedar St, Barangay T","Ana Reyes",None,"Street vendors operating without a permit",Business
+"Illegal Waste Dumping",09193456789,"Barangay U","Teresa Santos",2025-03-02,09:30:00,0,"Evelyn Lopez",41,"1717 Pine St, Barangay U","Marcos Dizon",None,"Non-recyclable waste dumped in public area",Environment
+"Sexual Harassment",09182345679,"Barangay V","Daniel Reyes",2025-03-01,08:00:00,1,"Victoria Cruz",25,"1818 Maple St, Barangay V","José Garcia",None,"Unwanted advances made by a neighbor",Social
+"Abandoned Vehicle",09241234567,"Barangay W","Sofia Garcia",2025-02-28,11:00:00,1,"Roberto Lopez",38,"1919 Oak St, Barangay W","Pedro Cruz",None,"Car abandoned on the side of the road",Traffic
+"Electric Line Issues",09256789012,"Barangay X","Ricardo Lopez",2025-02-27,02:00:00,1,"Patricia Reyes",31,"2020 Elm St, Barangay X","Javier Dizon",sadadasdsd,"Flickering lights in the neighborhood",Environment
+Trespassing,09262345678,"Barangay Y","Fernando Perez",2025-02-26,12:30:00,1,"Angela Cruz",29,"2121 Pine St, Barangay Y","Raul Reyes",None,"Individuals trespassing in private property",Crime
+"Noise Complaint",09171234567,"Barangay A","Juan Dela Cruz",2025-03-22,10:30:00,1,"Maria Santos",30,"123 Main St, Barangay A","Carlos Reyes",None,"Loud music disturbing the neighbors",Noise
+"Illegal Parking",09182345678,"Barangay B","Pedro Garcia",2025-03-21,02:00:00,0,"Josefa Bautista",45,"456 Elm St, Barangay B","Ricardo Lopez",None,"Car parked in front of a fire hydrant",Traffic
+Vandalism,09191234567,"Barangay C","Andres Martinez",2025-03-20,04:45:00,1,"Rafael Cruz",24,"789 Oak St, Barangay C","Emma Ramos",None,"Graffiti on public property",Crime
+Littering,09123456789,"Barangay D","Leandro Flores",2025-03-19,08:00:00,0,"Nina Garcia",35,"101 Pine St, Barangay D","Victor Dizon",None,"Trash thrown on the street",Environment
+"Domestic Dispute",09211234567,"Barangay E","Teresa Lopez",2025-03-18,08:30:00,1,"Alfredo Perez",55,"102 Maple St, Barangay E","Lina Martinez",None,"Loud arguments coming from the house",Social
+"Public Disturbance",09301234567,"Barangay F","Miguel Santiago",2025-03-17,11:15:00,0,"Luis Morales",28,"202 Cedar St, Barangay F","Juan de la Cruz",None,"Drunken individuals causing a scene in the public park",Noise
+"Drug Activity",09222334455,"Barangay G","Carmen Aguilar",2025-03-16,01:45:00,1,"Gabriela Reyes",40,"303 Birch St, Barangay G","Carlos Reyes",None,"Suspicious individuals seen exchanging items",Crime
+"Street Fighting",09194567890,"Barangay H","Luis Perez",2025-03-15,09:00:00,0,"Armando Santos",32,"404 Birch St, Barangay H","Pedro Garcia",None,"Fight between two men on the street",Social
+"Fire Hazard",09336677788,"Barangay I","Felipe Gomez",2025-03-14,07:30:00,1,"Celia Cruz",60,"505 Pine St, Barangay I","Maria Reyes",None,"Burnt debris near residential area, potential fire hazard",Environment
+Overcrowding,09237658901,"Barangay J","Hernan Torres",2025-03-13,06:00:00,0,"Diego Lopez",27,"606 Cedar St, Barangay J","Juan de la Cruz",None,"Too many people gathering in a small area",Social
+"Noise Pollution",09123456780,"Barangay K","Eva Martinez",2025-03-12,10:15:00,1,"Cristina Reyes",39,"707 Elm St, Barangay K","Ricardo Lopez",None,"Loud generator noise in the area",Noise
+"Illegal Construction",09162345678,"Barangay L","Manuel Garcia",2025-03-11,06:45:00,1,"Martha Dizon",50,"808 Maple St, Barangay L","Antonio Cruz",None,"Unapproved construction work in residential area",Environment
+"Animal Abuse",09212345678,"Barangay M","Esteban Garcia",2025-03-10,03:30:00,1,"Joana Reyes",22,"909 Oak St, Barangay M","Carlos Dizon",None,"Neglect of pet animals in the area",Crime
+"Excessive Smoking",09123457901,"Barangay N","Diana Cruz",2025-03-09,12:00:00,0,"Bernardo Reyes",30,"1011 Cedar St, Barangay N","Nina Lopez",None,"People smoking near children in public places",Health
+"Spitting in Public",09123456710,"Barangay O","Ana Ramos",2025-03-08,05:00:00,1,"Oscar Reyes",28,"1111 Pine St, Barangay O","Sofia Garcia",None,"People spitting on sidewalks and public areas",Health
+"Public Urination",09132345678,"Barangay P","Ricardo Perez",2025-03-07,07:30:00,1,"Santiago Lopez",42,"1212 Birch St, Barangay P","Pablo Reyes",None,"Individuals urinating in public",Health
+"Electricity Theft",09141122334,"Barangay Q","María Hernández",2025-03-06,02:20:00,0,"Diana Perez",60,"1313 Elm St, Barangay Q","Carlos Reyes",None,"Suspected illegal connection to electric line",Crime
+"Water Pollution",09152033445,"Barangay R","Luisa Martinez",2025-03-05,10:40:00,1,"Francisco Reyes",33,"1414 Maple St, Barangay R","Vicente Cruz",None,"Waste being dumped in the local water supply",Environment
+"Illegal Logging",09163456789,"Barangay S","Carlos Gomez",2025-03-04,01:00:00,0,"Monica Reyes",47,"1515 Oak St, Barangay S","Eduardo Lopez",None,"Unregulated cutting of trees in protected area",Environment
+"Hawking without Permit",09234567890,"Barangay T","Ricardo Cruz",2025-03-03,04:30:00,1,"Raul Martinez",53,"1616 Cedar St, Barangay T","Ana Reyes",None,"Street vendors operating without a permit",Business
+"Illegal Waste Dumping",09193456789,"Barangay U","Teresa Santos",2025-03-02,09:30:00,0,"Evelyn Lopez",41,"1717 Pine St, Barangay U","Marcos Dizon",None,"Non-recyclable waste dumped in public area",Environment
+"Sexual Harassment",09182345679,"Barangay V","Daniel Reyes",2025-03-01,08:00:00,1,"Victoria Cruz",25,"1818 Maple St, Barangay V","José Garcia",None,"Unwanted advances made by a neighbor",Social
+"Abandoned Vehicle",09241234567,"Barangay W","Sofia Garcia",2025-02-28,11:00:00,1,"Roberto Lopez",38,"1919 Oak St, Barangay W","Pedro Cruz",None,"Car abandoned on the side of the road",Traffic
+"Electric Line Issues",09256789012,"Barangay X","Ricardo Lopez",2025-02-27,02:00:00,1,"Patricia Reyes",31,"2020 Elm St, Barangay X","Javier Dizon",sadadasdsd,"Flickering lights in the neighborhood",Environment
+Trespassing,09262345678,"Barangay Y","Fernando Perez",2025-02-26,12:30:00,1,"Angela Cruz",29,"2121 Pine St, Barangay Y","Raul Reyes",None,"Individuals trespassing in private property",Crime
+"Noise Complaint",09171234567,"Barangay A","Juan Dela Cruz",2025-03-22,10:30:00,1,"Maria Santos",30,"123 Main St, Barangay A","Carlos Reyes",None,"Loud music disturbing the neighbors",Noise
+"Illegal Parking",09182345678,"Barangay B","Pedro Garcia",2025-03-21,02:00:00,0,"Josefa Bautista",45,"456 Elm St, Barangay B","Ricardo Lopez",None,"Car parked in front of a fire hydrant",Traffic
+Vandalism,09191234567,"Barangay C","Andres Martinez",2025-03-20,04:45:00,1,"Rafael Cruz",24,"789 Oak St, Barangay C","Emma Ramos",None,"Graffiti on public property",Crime
+Littering,09123456789,"Barangay D","Leandro Flores",2025-03-19,08:00:00,0,"Nina Garcia",35,"101 Pine St, Barangay D","Victor Dizon",None,"Trash thrown on the street",Environment
+"Domestic Dispute",09211234567,"Barangay E","Teresa Lopez",2025-03-18,08:30:00,1,"Alfredo Perez",55,"102 Maple St, Barangay E","Lina Martinez",None,"Loud arguments coming from the house",Social
+"Public Disturbance",09301234567,"Barangay F","Miguel Santiago",2025-03-17,11:15:00,0,"Luis Morales",28,"202 Cedar St, Barangay F","Juan de la Cruz",None,"Drunken individuals causing a scene in the public park",Noise
+"Drug Activity",09222334455,"Barangay G","Carmen Aguilar",2025-03-16,01:45:00,1,"Gabriela Reyes",40,"303 Birch St, Barangay G","Carlos Reyes",None,"Suspicious individuals seen exchanging items",Crime
+"Street Fighting",09194567890,"Barangay H","Luis Perez",2025-03-15,09:00:00,0,"Armando Santos",32,"404 Birch St, Barangay H","Pedro Garcia",None,"Fight between two men on the street",Social
+"Fire Hazard",09336677788,"Barangay I","Felipe Gomez",2025-03-14,07:30:00,1,"Celia Cruz",60,"505 Pine St, Barangay I","Maria Reyes",None,"Burnt debris near residential area, potential fire hazard",Environment
+Overcrowding,09237658901,"Barangay J","Hernan Torres",2025-03-13,06:00:00,0,"Diego Lopez",27,"606 Cedar St, Barangay J","Juan de la Cruz",None,"Too many people gathering in a small area",Social
+"Noise Pollution",09123456780,"Barangay K","Eva Martinez",2025-03-12,10:15:00,1,"Cristina Reyes",39,"707 Elm St, Barangay K","Ricardo Lopez",None,"Loud generator noise in the area",Noise
+"Illegal Construction",09162345678,"Barangay L","Manuel Garcia",2025-03-11,06:45:00,1,"Martha Dizon",50,"808 Maple St, Barangay L","Antonio Cruz",None,"Unapproved construction work in residential area",Environment
+"Animal Abuse",09212345678,"Barangay M","Esteban Garcia",2025-03-10,03:30:00,1,"Joana Reyes",22,"909 Oak St, Barangay M","Carlos Dizon",None,"Neglect of pet animals in the area",Crime
+"Excessive Smoking",09123457901,"Barangay N","Diana Cruz",2025-03-09,12:00:00,0,"Bernardo Reyes",30,"1011 Cedar St, Barangay N","Nina Lopez",None,"People smoking near children in public places",Health
+"Spitting in Public",09123456710,"Barangay O","Ana Ramos",2025-03-08,05:00:00,1,"Oscar Reyes",28,"1111 Pine St, Barangay O","Sofia Garcia",None,"People spitting on sidewalks and public areas",Health
+"Public Urination",09132345678,"Barangay P","Ricardo Perez",2025-03-07,07:30:00,1,"Santiago Lopez",42,"1212 Birch St, Barangay P","Pablo Reyes",None,"Individuals urinating in public",Health
+"Electricity Theft",09141122334,"Barangay Q","María Hernández",2025-03-06,02:20:00,0,"Diana Perez",60,"1313 Elm St, Barangay Q","Carlos Reyes",None,"Suspected illegal connection to electric line",Crime
+"Water Pollution",09152033445,"Barangay R","Luisa Martinez",2025-03-05,10:40:00,1,"Francisco Reyes",33,"1414 Maple St, Barangay R","Vicente Cruz",None,"Waste being dumped in the local water supply",Environment
+"Illegal Logging",09163456789,"Barangay S","Carlos Gomez",2025-03-04,01:00:00,0,"Monica Reyes",47,"1515 Oak St, Barangay S","Eduardo Lopez",None,"Unregulated cutting of trees in protected area",Environment
+"Hawking without Permit",09234567890,"Barangay T","Ricardo Cruz",2025-03-03,04:30:00,1,"Raul Martinez",53,"1616 Cedar St, Barangay T","Ana Reyes",None,"Street vendors operating without a permit",Business
+"Illegal Waste Dumping",09193456789,"Barangay U","Teresa Santos",2025-03-02,09:30:00,0,"Evelyn Lopez",41,"1717 Pine St, Barangay U","Marcos Dizon",None,"Non-recyclable waste dumped in public area",Environment
+"Sexual Harassment",09182345679,"Barangay V","Daniel Reyes",2025-03-01,08:00:00,1,"Victoria Cruz",25,"1818 Maple St, Barangay V","José Garcia",None,"Unwanted advances made by a neighbor",Social
+"Abandoned Vehicle",09241234567,"Barangay W","Sofia Garcia",2025-02-28,11:00:00,1,"Roberto Lopez",38,"1919 Oak St, Barangay W","Pedro Cruz",None,"Car abandoned on the side of the road",Traffic
+"Electric Line Issues",09256789012,"Barangay X","Ricardo Lopez",2025-02-27,02:00:00,1,"Patricia Reyes",31,"2020 Elm St, Barangay X","Javier Dizon",sadadasdsd,"Flickering lights in the neighborhood",Environment
+Trespassing,09262345678,"Barangay Y","Fernando Perez",2025-02-26,12:30:00,1,"Angela Cruz",29,"2121 Pine St, Barangay Y","Raul Reyes",None,"Individuals trespassing in private property",Crime

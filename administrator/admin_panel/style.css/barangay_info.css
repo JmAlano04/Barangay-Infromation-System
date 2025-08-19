@@ -1,0 +1,201 @@
+@font-face {
+    font-family: "main_text";
+    src: url(../../../asset/font/Syncopate/Syncopate-Regular.ttf);
+}
+@font-face {
+    font-family: "sub_text";
+    src: url(../../../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf);
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+    list-style-type: none ;
+}
+html {
+    scroll-behavior: smooth;
+  }
+:root{
+    --bg-color:#FCFAEE;
+    --2nd-bg-color:#4A9D4f;
+    --sub-bg-color: #005720 ;
+ 
+    --1st-text-color: #005720 ;
+    --2nd-text-color: rgb(53, 53, 53);
+    --3rd-text-color: #FCFAEE;
+   
+    --btn-color: #F5E402;
+    
+    --other-color :rgb(0, 183, 255);
+}
+body{
+   background-color: var(--bg-color);
+    background-size: cover;
+  }
+#main{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 95%;
+    margin-left: 40px;
+    padding: 0px 0px 100px 0px ;
+}
+#main form{
+    display: flex;
+    justify-content: space-evenly;
+    transition: all 0.5s ease;
+
+}
+.sidebar.active ~ .dashboard_content #main form{
+    margin-left: -220px;
+}
+#main form .display_info{
+    background-color: rgb(235, 235, 235);
+    box-shadow: 10px 10px 10px rgba(70, 70, 70, 0.13);
+    padding: 70px 40px 40px 60px;
+    border-radius: 4px;
+}
+.sidebar.active ~ .display_info{
+    width: 200px;
+}
+#main form .display_info .div-main{
+    font-size: 0.8rem;
+}
+.div-main{
+    display:flex;
+    color:#005720;
+    font-size:0.8rem;
+    justify-content:space-between;
+    margin-top:60px;
+    width: 100%;
+    line-height:60px;
+    font-family:"sub_text";
+    margin-top: 100px;
+}
+.div-main .div-1{
+    padding: 0px 0px 0px 10px;
+    
+}
+.div-main .div-2{
+    padding: 0px 0px 0px 10px;
+}
+#main form .display_info #images{
+    width: 200px;
+    height: 200px;
+    margin-top: -40px;
+    margin-bottom: -10px;
+}
+#main form .display_info .image{
+    
+    position: relative;
+    bottom: 390px;
+    left: 80px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 2px solid #4a9d50bd;
+}
+#main form .form_info__update input{
+    width: 300px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: none;
+    padding: 5px 5px 5px 10px;
+    color: var(--1st-text-color);
+}
+#main form .form_info__update input:focus{
+    outline: var(--2nd-bg-color) 3px solid;
+}
+#main form .form_info__update label{
+    font-family: "sub_text";
+    font-size: 1.2rem;
+    color: var(--1st-text-color);
+    font-weight: 600;
+    
+}
+   #main form .display_info .image{
+    margin-top: 20px;
+   }
+#main form .form_info__update{
+ background-color: rgb(235, 235, 235);
+ padding: 40px 40px 40px 40px;
+ border-radius: 4px;
+ box-shadow: 10px 10px 10px rgba(70, 70, 70, 0.13);
+}
+#main span svg {
+    height: 32px;
+    margin-right: 20px;
+    fill: var(--1st-text-color);
+}
+#main h1 {
+   color: #005720;
+   font-family: "sub_text";
+   letter-spacing: 2px;
+}
+#main form .form_info__update #UPDATE{
+   background-color: var(--other-color);
+   font-weight: 500;
+   font-size: 1rem;
+   margin-top: 80px;
+   color: var(--bg-color);
+   cursor: pointer;
+   }
+   #main form .form_info__update #UPDATE:hover{
+    background-color: rgb(86, 205, 252);
+   }
+   #main form .form_info__update #UPDATE:focus{
+    outline: none;
+   }
+
+
+   .updload_multi{
+    background-color: rgb(235, 235, 235);
+    padding: 40px;
+    margin-top: 30px;
+    max-width: 450px;
+    margin-left: 50px;
+    border-radius: 8px;
+    color: #005720;
+    font-weight:600;
+    box-shadow: 10px 10px 10px rgba(70, 70, 70, 0.13);
+   }
+   .updload_multi .upload_2nd{
+    display: inline-block;
+    font-family: "sub_text";
+    font-size: 1.2rem;
+    align-items: center;
+    
+   }
+   .updload_multi .upload_2nd input{
+    border-radius:8px;
+    padding: 10px;
+    margin-top: 40px;
+    width: 100%;
+    border:2px solid #4A9D4f;
+   }
+  
+   .updload_multi .upload_2nd #submit_div{
+    background-color: rgb(0, 183, 255);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    width: 100%;
+    cursor: pointer;
+   }
+   .updload_multi .upload_2nd #submit_div:hover{
+    background-color: rgb(76, 203, 253);
+   }
+
+   @media screen and (min-width: 1440px) {
+    .updload_multi{
+       background-color: rgb(235, 235, 235);
+    padding: 40px;
+    margin-top: 30px;
+    max-width: 450px;
+    margin-left: 120px;
+    border-radius: 8px;
+    color: #005720;
+    font-weight:600;
+    box-shadow: 10px 10px 10px rgba(70, 70, 70, 0.13);
+   }
+}
