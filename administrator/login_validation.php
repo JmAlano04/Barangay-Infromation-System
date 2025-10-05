@@ -5,7 +5,6 @@ if ($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
     // set default session invalid
     $_SESSION['status'] = 'invalid';
 }
-
 if ($_SESSION['status'] == 'valid'){
     header('location: admin_panel/dashboard.php');
 }

@@ -131,8 +131,7 @@
                                   <?php id_notif() ?>
                         </span>
                          </button>
-                        
-
+                        <br>
                          <button id = "barangay_id" onclick="loadContent('certificate_folder/permit.php')" >Business Permit
                             <span class = "notif" id = "permit_notif" style="margin-left:65px;">
                            <?php permit_notif() ?>

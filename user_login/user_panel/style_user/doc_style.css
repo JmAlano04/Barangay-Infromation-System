@@ -2073,11 +2073,10 @@ caption {
 }
 .submit_reset_return_div{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
     margin-top: -60px;
-    padding-top: 30px;
- 
+    padding-top: 0px;
 }
 .submit_reset_return_div #submit{
     width: 150px;
@@ -2087,6 +2086,7 @@ caption {
     color: var(--bg-color);
     letter-spacing: 2px;
     cursor: pointer;
+    margin-left: 10px;
 }
 .submit_reset_return_div #submit:focus{
     outline: none;
@@ -2101,7 +2101,7 @@ caption {
     background-color:rgb(0, 183, 255);
     color: var(--bg-color);
     letter-spacing: 2px;
-    margin-left: 20px;
+    margin-left:0px;
     cursor: pointer;
 }
 .submit_reset_return_div #reset:focus{

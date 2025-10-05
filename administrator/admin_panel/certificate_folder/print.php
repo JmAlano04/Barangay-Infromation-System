@@ -77,7 +77,7 @@
         <input type="number" name = "amount" min = "0" placeholder = "Enter Amount"  id = "amount"  step="0.00001" required><br>
 
         <label for="">Date issue</label><br>
-        <input type="date" name = "current_date" placeholder = "Enter Amount"  id = "date_issue_print" required><br>
+        <input type="date" name = "current_date" placeholder = "Enter Amount" min="<?php echo date('Y-m-d')?>" max="<?php echo date('Y-m-d')?>"  id = "date_issue_print" required><br>
 
         <label for="">Purpose</label><br>
         <input type="text" name = "purpose_print" id = "purpose_print" required><br>

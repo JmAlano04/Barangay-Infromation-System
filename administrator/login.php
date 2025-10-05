@@ -60,9 +60,6 @@
     </header>
 
 
-        
-   
-
     
     <main id = "main">
 
@@ -136,7 +133,7 @@
     </script>
 
 
-<script>
+        <script>
                 let logo = document.getElementById("logo_get").textContent;
              
                 ;

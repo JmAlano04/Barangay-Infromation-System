@@ -87,9 +87,9 @@
 
       <input type="hidden" name="profile_default" value="images.png" />
       <input type="hidden" name="verify" value="Not Verified" />
-
+    <br>
       <div class="item4" style=" display: flex; justify-content: left; align-items: center;">
-        <input type="reset" name="reset" value="Reset" id="reset" />
+        <input type="reset" name="reset" value="Reset" id="reset" style ="margin-right:20px"/>
         <input type="submit" name="registration" value="Submit" id="submit_btn" /><br />
       </div>
     </div>

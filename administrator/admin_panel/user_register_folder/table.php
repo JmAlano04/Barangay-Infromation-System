@@ -283,7 +283,7 @@
         <caption>User Registered List</caption>
         <tr>
             <th>Profile</th>
-            <th>HOA/ID</th>
+            <th>Document</th>
             <th>Fullname</th>
             <th>Age</th>
             <th>Gender</th>

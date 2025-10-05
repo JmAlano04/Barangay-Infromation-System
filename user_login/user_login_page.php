@@ -56,10 +56,10 @@
 
     <label for=""><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" transform: ;msFilter:;"><path d="M20 12c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7z"></path></svg></span>Password</label><br>
     <input type="Password" id = "pwd" name = "pword" placeholder = "Password"><br>
-
+   
 
     <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><span style = "margin-left:50px; font-size:0.9rem; "> <a href="forgot_password.php" class = "forgot_pass">Forgot Password</a> </span><br>
-
+    
     <input type="submit" id = "submit" name = "user_login" value = "Sign in"> 
     </div>
 
@@ -69,43 +69,41 @@
     <div class = "div_registration">
          <button id = "user_registration">
          <span>Sign Up</span> 
-           
+
         </button>
      </div>
     </div>
     
     <div id = "logo">
-        
         <img src="../asset/image/logo/67a89c6822aa9.png" alt="" id = "img_logo" >
         <h4 >Secure Access to Barangay Information System.</h4>
+       
     </div>
 
 
 
-    <div id = "validation">
+    <div id = "validation" id="test">
         <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-            <p><?php include('user_validation.php'); ?></p>
-        </div>
+        <p><?php
+         include ('user_validation.php');?>
+        </p>
+    </div>
 
    
 
       
     </main>
-
-
-
       <!-- ADD FORM -->
       <div id="modal_add_blotter" class="modal_blotter">
-                                <!-- Modal content -->
-                                <div class="modal-content_blotter">
-                                <span class="close">&times;</span>
-                                    <?php  include('registration.php') ;?>
-                                </div>
-                        </div>
-      <!-- Js function visibility eye -->
-      <script>
-    
+         <!-- Modal content -->
+         <div class="modal-content_blotter">
+         <span class="close">&times;</span>
+         <?php  include('registration.php') ;?>
+         </div>
+       </div>
 
+<!-- Js function visibility eye -->
+<script>
     function show_pwd() {
         var x = document.getElementById("pwd");
         if (x.type === "password") {
@@ -123,18 +121,17 @@
         <script src = "validation.js"></script>
 
 
-        <script>
+     <script>
         // Function to close the modal
         function closeModal() {
             document.getElementById('validation').style.display = 'none';
         }
-
         // Set a timer to automatically close the modal after 5 seconds (5000 ms)
-        setTimeout(closeModal, 5000);   
-    </script>
+        setTimeout(closeModal, 3000);   
+    </script>   
 
     
-<script>
+        <script>
                 let logo = document.getElementById("logo_get_image").textContent;
                 let logo_image = document.getElementById("logo_get_image").textContent;
                 

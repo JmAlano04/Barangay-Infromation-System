@@ -8,8 +8,10 @@ if (isset($_POST['new_pass'])) {
     $firstname = trim($_POST['firstname']);
     $lastname = trim($_POST['lastname']);
     $new_pass = trim($_POST['new_password']);
-        
-    $sql = "UPDATE user_account SET password='$new_pass' WHERE email='$email' AND firstname='$firstname' AND lastname='$lastname'";
+
+    $hashed_password = password_hash($new_pass, PASSWORD_DEFAULT);
+    
+    $sql = "UPDATE user_account SET password='$hashed_password' WHERE email='$email' AND firstname='$firstname' AND lastname='$lastname'";
 
     if ($conn->query($sql) === TRUE) {
     echo "<script>window.location.href = 'loading_new_password.php'</script>";

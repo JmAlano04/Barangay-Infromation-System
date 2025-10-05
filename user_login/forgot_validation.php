@@ -40,7 +40,7 @@ if (isset($_POST['forgot'])) {
             if (mysqli_num_rows($result) > 0) {
                 $rowValidate = mysqli_fetch_array($result);
                 
-                  $_SESSION['status_input'] = 'invalid_input';
+                $_SESSION['status_input'] = 'invalid_input';
                 $_SESSION['firstname'] = $rowValidate['firstname'];
                 $_SESSION['lastname'] = $rowValidate['lastname'];
                 

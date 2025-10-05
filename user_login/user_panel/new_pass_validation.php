@@ -9,10 +9,10 @@ require('../../database/conn_db.php');
             $Password = trim($_POST["pword"]);
            
     
-    
+             $hashed_password = password_hash($Password, PASSWORD_DEFAULT);
     
           
-                  $sql = "UPDATE user_account SET password= '$Password' WHERE user_id=$id";
+                  $sql = "UPDATE user_account SET password= '$hashed_password' WHERE user_id=$id";
     
     
                   if (mysqli_query($conn, $sql)) {

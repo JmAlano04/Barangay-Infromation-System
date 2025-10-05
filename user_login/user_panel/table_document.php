@@ -336,15 +336,6 @@
             <tr>
                 <td colspan="6">
                     <div>Total Records: <?php echo $statusCounts['total']; ?></div>
-                    <div class="status-count">
-                        Status Counts: 
-                        No Data (<?php echo $statusCounts['no_data']; ?>) | 
-                        Pending (<?php echo $statusCounts['pending']; ?>) | 
-                        Processing (<?php echo $statusCounts['processing']; ?>) | 
-                        Ready (<?php echo $statusCounts['ready']; ?>) | 
-                        Released (<?php echo $statusCounts['released']; ?>) | 
-                        Invalid (<?php echo $statusCounts['invalid']; ?>)
-                    </div>
                 </td>
             </tr>
         </tfoot>
