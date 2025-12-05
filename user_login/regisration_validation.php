@@ -2,62 +2,113 @@
 require('../database/conn_db.php');
 
 if (isset($_POST['registration'])) {
-    $firstname = trim($_POST['fname']);
-    $middlename = trim($_POST['mname']);
-    $lastname = trim($_POST['lname']);
-    $gender = trim($_POST['gender']);
-    $age = trim($_POST['age']);
-    $email = trim($_POST['ename']);
-    $password = trim($_POST['pword']);
-    $confirm_pword = trim($_POST['confirm_pword']);
-    $profile_default = trim($_POST['profile_default']);
-    $verify = trim($_POST['verify']);
+
+    // ================================
+    // SANITIZE USER INPUT
+    // ================================
+    $firstname       = mysqli_real_escape_string($conn, trim($_POST['fname']));
+    $middlename      = mysqli_real_escape_string($conn, trim($_POST['mname']));
+    $lastname        = mysqli_real_escape_string($conn, trim($_POST['lname']));
+    $suffix          = mysqli_real_escape_string($conn, trim($_POST['suffix']));
+    $gender          = mysqli_real_escape_string($conn, trim($_POST['gender']));
+    $birthday        = mysqli_real_escape_string($conn, trim($_POST['birthday'])); // YYYY-MM-DD
+    $email           = mysqli_real_escape_string($conn, trim($_POST['ename']));
+    $password        = mysqli_real_escape_string($conn, trim($_POST['pword']));
+    $confirm_pword   = mysqli_real_escape_string($conn, trim($_POST['confirm_pword']));
+    $profile_default = mysqli_real_escape_string($conn, trim($_POST['profile_default']));
+    $verify          = mysqli_real_escape_string($conn, trim($_POST['verify']));
 
     date_default_timezone_set("Asia/Manila");
-    $date_issue = date("Y-m-d");
+    $date_registered = date("Y-m-d");
 
-    // Check if passwords match
+    // ================================
+    // VALIDATE BIRTHDAY
+    // ================================
+    if (empty($birthday)) {
+        echo "<script>
+            alert('Please select a valid birthday.');
+            window.location.href = '/BIS/user_login/registration_form.php';
+        </script>";
+        exit;
+    }
+
+    $birthday_formatted = $birthday;
+
+    // ================================
+    // AGE COMPUTATION
+    // ================================
+    $bday  = new DateTime($birthday_formatted);
+    $today = new DateTime();
+    $age   = $bday->diff($today)->y;
+
+    if ($age < 18) {
+        echo "<script>
+            window.location.href = '/BIS/user_login/error_popup_age.php';
+        </script>";
+        exit;
+    }
+
+    // ================================
+    // PASSWORD CHECK
+    // ================================
     if ($password !== $confirm_pword) {
-        echo "<script>alert('Passwords do not match.');
-            window.location.href = '/BIS/user_login/user_login_page.php';
+        echo "<script>
+            window.location.href = '/BIS/user_login/error_popup_password.php';
         </script>";
         exit;
     }
 
-    // Check if email or name already exists
-    $checkQuery = "SELECT COUNT(*) AS c FROM user_account WHERE (firstname = ? AND lastname = ?) OR email = ?";
-    $stmt = $conn->prepare($checkQuery);
-    $stmt->bind_param("sss", $firstname, $lastname, $email);
-    $stmt->execute();
-    $stmt->bind_result($count);
-    $stmt->fetch();
-    $stmt->close();
-
-    if ($count > 0) {
-        echo "<script>alert('Name or Email already exists.');
-            window.location.href = '/BIS/user_login/user_login_page.php';
+    // ================================
+    // CHECK IF EMAIL EXISTS
+    // ================================
+    $email_check_sql = "SELECT user_id FROM user_account WHERE email = '$email'";
+    $result = mysqli_query($conn, $email_check_sql);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>
+            window.location.href = '/BIS/user_login/error_popup_email.php';
         </script>";
         exit;
     }
 
-    // Hash the password
+    // ================================
+    // CHECK IF SAME PERSON EXISTS
+    // ================================
+    $person_check_sql = "SELECT user_id FROM user_account 
+                         WHERE firstname='$firstname' 
+                         AND lastname='$lastname' 
+                         AND birthday='$birthday_formatted' 
+                         AND suffix='$suffix'";
+    $result = mysqli_query($conn, $person_check_sql);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>
+            window.location.href = '/BIS/user_login/error_popup_information.php';
+        </script>";
+        exit;
+    }
+
+    // ================================
+    // HASH PASSWORD
+    // ================================
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Insert new user into database
-    $insertQuery = "INSERT INTO user_account (firstname, middlename, lastname, email, password, gender, age, date_registered, profile, verify)
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($insertQuery);
-    $stmt->bind_param("ssssssisss", $firstname, $middlename, $lastname, $email, $hashed_password, $gender, $age, $date_issue, $profile_default, $verify);
+    // ================================
+    // INSERT NEW USER
+    // ================================
+    $insert_sql = "INSERT INTO user_account 
+        (firstname, middlename, lastname, suffix, email, password, gender, birthday, age, date_registered, profile, verify)
+        VALUES ('$firstname', '$middlename', '$lastname', '$suffix', '$email', '$hashed_password', '$gender', '$birthday_formatted', '$age', '$date_registered', '$profile_default', '$verify')";
 
-    if ($stmt->execute()) {
-        echo "<script>alert('Registration successful.');
-            window.location.href = '/BIS/user_login/user_login_page.php';
+    if (mysqli_query($conn, $insert_sql)) {
+        echo "<script>
+            window.location.href = '/BIS/user_login/register_success.php';
         </script>";
     } else {
-        echo "Error: " . $stmt->error;
+        echo "<script>
+            alert('Database error: " . mysqli_error($conn) . "');
+            window.location.href = '/BIS/user_login/registration_form.php';
+        </script>";
     }
 
-    $stmt->close();
-    $conn->close();
+    mysqli_close($conn);
 }
 ?>

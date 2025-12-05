@@ -7,7 +7,7 @@
         include 'maintenance.php';
         exit;
     } 
-// Rest of your index.php code...
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

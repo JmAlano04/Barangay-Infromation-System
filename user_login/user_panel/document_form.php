@@ -116,7 +116,7 @@
             <label for="">Contact Person : </label><br>
             <input type="text" name = "contact_person"  placeholder = "Enter fullname of contact Person" id = "contact_person_my_profile_id" >
             <label for="">Contact # of Contact Person: </label><br>
-            <input type="text" name = "contact_person_no"  placeholder = "Enter your fullname" id = "contact_no_contact_person_my_profile_id" required>
+            <input type="texl" name = "contact_person_no"  placeholder = "Enter your fullname" id = "contact_no_contact_person_my_profile_id" required>
             <label for="">How long do you live here and what year (Month/Year): </label><br>
             <input type="month" name = "live_since_year"  placeholder = "Enter your fullname" id = "live_since_year_my_profile_id" required>
            

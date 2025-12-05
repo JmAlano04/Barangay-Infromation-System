@@ -44,7 +44,7 @@
         document.getElementById("email_edit").value = email_edit;
 
 
-        document.getElementById("password_edit").value = password_edit;
+        // document.getElementById("password_edit").value = password_edit;
 
         document.getElementById("images_edit").src = admin_profile_edit;
     

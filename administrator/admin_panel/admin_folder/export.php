@@ -1,44 +1,62 @@
 <?php
-// Headers for download
-header("Content-Type: text/csv");
-header("Content-Disposition: attachment; filename=Barangay-Administrator_Accont.csv");
+// Set headers for CSV file download
+header('Content-Type: text/csv; charset=utf-8');
+header('Content-Disposition: attachment; filename="Barangay-Administrator_Account_'.date('Y-m-d').'.csv"');
 
-// Open output stream to write the file
+// Open output stream
 $output = fopen('php://output', 'w');
 
-// Column headers for the CSV file
-$columns = [ "User Type", "Firstname", "Middlename", "Lastname", "Email", "Username", "Password", "Date Created", "Admin Profile", "Gender", "Age","Status"];
-fputcsv($output, $columns);
+// Add BOM for UTF-8 compatibility with Excel
+fwrite($output, "\xEF\xBB\xBF");
+
+// CSV Column Headers
+fputcsv($output, [
+    "User Type",
+    "Full Name",
+    "Email",
+    "Username",
+    "Password",
+    "Date Created",
+    "Admin Profile",
+    "Gender",
+    "Age",
+    "Status"
+]);
 
 // Database connection
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "barangay_information_system";
-$port = "3306";
+$conn = mysqli_connect("localhost", "root", "", "barangay_information_system", 3306);
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
-
-// Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-}   
-
-// Query to fetch data from the database
-$sql = "SELECT user_type, firstname, middlename, lastname, email, 	username, password, date_created , admin_profile, gender, age, status FROM admin_account";
-$result = mysqli_query($conn, $sql);
-
-// Fetch rows and write to CSV
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        fputcsv($output, $row); // Write each row of data to the CSV file
-    }
+    exit("Database Error");
 }
 
-// Close the database connection
-mysqli_close($conn);
+// Query
+$sql = "SELECT user_type, firstname, middlename, lastname, email, username, password, date_created, admin_profile, gender, age, status FROM admin_account";
+$result = mysqli_query($conn, $sql);
 
-// Close the file
+// Write rows
+while ($row = mysqli_fetch_assoc($result)) {
+
+    // Full name formatting (same logic as revenue export)
+    $fullname = ($row['firstname'] ?? '') . ' ' . ($row['middlename'] ?? '') . ' ' . ($row['lastname'] ?? '');
+
+    // Prevent Excel misformatting usernames (optional)
+    $username = "\t" . ($row['username'] ?? '');
+
+    fputcsv($output, [
+        $row['user_type'] ?? '',
+        $fullname,
+        $row['email'] ?? '',
+        $username,
+        $row['password'] ?? '',
+        date('m/d/Y', strtotime($row['date_created'])),
+        $row['admin_profile'] ?? '',
+        $row['gender'] ?? '',
+        $row['age'] ?? '',
+        $row['status'] ?? ''
+    ]);
+}
+
+mysqli_close($conn);
 fclose($output);
-?>
+exit;

@@ -167,6 +167,7 @@
 
                                     </div>
                                     <div class = "status">
+                                        
                                         <h2>Date Request : </h2>
 
                                         <h2><?php $date = $row['date_request'];
@@ -180,6 +181,8 @@
                                         </h2>
 
                                     </div>
+
+                                   
                                     <div class = "status">
                                         <h2>Purpose : </h2>
                                       
@@ -195,6 +198,23 @@
                                         ?></h2>
 
                                     </div>
+
+                                      <div class="status">
+                                            <h2>Processing Fee :</h2>
+
+                                            <?php
+                                                
+                                                // Correct amount source from barangay_revenue table
+                                                $processing_fee = isset($rev['document_amount']) ? $rev['document_amount'] : null;
+
+                                                if (!empty($processing_fee) && $processing_fee > 0) {
+                                                    echo "<h2>₱ " . number_format($processing_fee, 2) . "</h2>";
+                                                } else {
+                                                    echo "<h2 style='color:#00572060;'>No data</h2>";
+                                                }
+                                            ?>
+                                        </div>
+
                                    
                                     
                                     <div class = "status">
@@ -221,6 +241,7 @@
                                             else if ($satus_document == "Invalid Purpose"){
                                                 echo "<p style = 'color:red;'>Invalid Purpose</p>";
                                             }
+                                            
                                         ?>
                                         </h2>
                                     </div>

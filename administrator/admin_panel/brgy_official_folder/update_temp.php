@@ -9,7 +9,7 @@
 
       <style>
     
-        body{}
+        
       .form{
         color:#005720;
         padding:10px;

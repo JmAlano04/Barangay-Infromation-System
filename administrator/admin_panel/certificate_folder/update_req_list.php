@@ -138,7 +138,7 @@
             <input type="text" name = "firstname_upd" id = "firstname_upd" required><br>
 
             <label for="">Middlename</label><br>
-            <input type="text" name = "middlename_upd" id = "middlename_upd" required><br>
+            <input type="text" name = "middlename_upd" id = "middlename_upd" ><br>
             
             <label for="">Lastname</label><br>
             <input type="text" name = "lastname_upd" id = "lastname_upd" required><br>

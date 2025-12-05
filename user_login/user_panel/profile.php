@@ -14,6 +14,53 @@
         body::-webkit-scrollbar{
             display:none;
         }
+
+        .sex_radio_group {
+            display: flex;
+            align-items: center;
+           
+            margin-top: 20px;
+             font-family: "sub_text";
+        }
+
+        .thin_radio input[type="radio"] {
+            width: 15px;
+            height: 15px;
+            accent-color: #1ca828ff; /* black thin look */
+            
+        }
+        .thin_radio input[type="radio"]:focus{
+            outline: none;
+        }
+
+        .sex_label {
+            width: 120px;
+            font-weight: bold;
+        }
+        @media only screen and (min-width: 320px ){
+            .sex_radio_group {
+            display: flex;
+            align-items: center;
+           font-size: 0.8rem;
+            margin-top: 20px;
+             font-family: "sub_text";
+        }
+
+        .thin_radio input[type="radio"] {
+            width: 12px;
+            height: 12px;
+            accent-color: #1ca828ff; /* black thin look */
+            
+        }
+        .thin_radio input[type="radio"]:focus{
+            outline: none;
+        }
+
+        .sex_label {
+            width: 120px;
+            font-weight: bold;
+        }
+        }
        </style>
 </head>
 <body>
@@ -122,9 +169,10 @@
                 <label for="">Firstname</label>
                 <label for="">Middlename</label>
                 <label for="">Lastname</label>
+                <label for="">Suffix</label>
                 <label for="">Age</label>
                 <label for="">Birthday</label>
-                <label for="">Gender</label>
+                <label for="" >Sex</label>
                 </div>
              
                 
@@ -132,19 +180,35 @@
             <div class="input_div">
             <input type="file"  name="image_profile" accept=".jpg, .jpeg, .png" id = "images" style = "padding-top:10px;">
                 <input type="text" id = "firstname_my_profile_id" name = "firstname" value ="" required>
-                <input type="text" id = "middlename_my_profile_id" name = "middlename" value =""  required>
+                <input type="text" id = "middlename_my_profile_id" name = "middlename" value ="" >
+             
                 <input type="text" id = "lastname_my_profile_id"  name = "lastname" value ="" required>
-                <input type="number" id = "age_my_profile_id" name = "age" value = "" min = "18" max = "110" required>
+                 <input name="suffix" id = "suffix_id_my_profile" style="width: 130px; margin-right:200px;" placeholder="Enter Suffix here">
+               
+                <input type="number" id = "age_my_profile_id"  style="width: 70px; margin-right:200px;" readonly name = "age" value = "" max = "110" >
                 <input type="date" id = "birthday_my_profile_id" name = "birthday" value = "" required>
 
+                
+                
 
-                <select name="gender" id="gender_my_profile_id" value = ""  required>
-        
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Prefer not to say">Prefer not to say</option>
-                 </select>
-       
+              <div class="sex_radio_group">
+
+                <label class="thin_radio">
+                    <input type="radio" name="gender" value="Male" id="gender_male" required>
+                    Male
+                </label>
+
+                <label class="thin_radio">
+                    <input type="radio" name="gender" value="Female" id="gender_female">
+                    Female
+                </label>
+
+                <label class="thin_radio">
+                    <input type="radio" name="gender" value="Prefer not to say" id="gender_none">
+                    Prefer not to say
+                </label>
+            </div>
+
                 
             </div>
             
@@ -154,13 +218,10 @@
             <hr>
         <div class="container">
             <div class="label_div">
-                
                 <label for="" class = "label2">Contact Phone</label>
-     
-                
             </div>
             <div class="input_div">
-                <input type="tel" id = "contact_phone_my_profile_id"  name = "contact_no" value ="" pattern="[0-9]{11}" >
+                <input type="tel"  id = "contact_phone_my_profile_id"  name = "contact_no" placeholder="ex. 09123456789" value ="" pattern="[0-9]{11}" >
             </div>
             
             
@@ -177,23 +238,18 @@
                 
             </div>
             <div class="input_div">
-                <input type="text" id = "house_no_my_profile_id" name = "house_no" value ="" ><br>
+                <input type="text" id = "house_no_my_profile_id" name = "house_no" value ="" placeholder="ex. Blk 123 lot 2" ><br>
 
-                <input type ="text" name="sitio_pook" id="select">
-                <input type="file"  name="image_document" accept=".jpg, .jpeg, .png"  id = "images" style = "padding-top:10px;" >
-                <input type="hidden" name = "user_id" id = "user_id_my_profile_id"  value ="" ><br>
+                <input type ="text" name="sitio_pook" placeholder="ex. Mabuhay homes" id="select">
+                <input type="file"  name="image_document"    accept=".jpg, .jpeg, .png"  id = "images" style = "padding-top:10px;" >
+                <input type="hidden" name = "user_id" id = "user_id_my_profile_id"   value ="" ><br>
                 
             </div>
               
             </div>
             <input type="submit" value = "Save Changes" id = "submit" name = "save_Changes">
         </form>
-                  
-     
-                 
-                            
-                           
-                          
+        
                 </div>
             <!-- ------------------------ -->
             </div>
@@ -226,11 +282,26 @@
                 let age_my_profile = document.getElementById("age_my_profile").textContent;
                 document.getElementById("age_my_profile_id").value =  age_my_profile;
 
-                let gender_my_profile = document.getElementById("gender_my_profile").textContent;
-                document.getElementById("gender_my_profile_id").value =  gender_my_profile;
+                
+
+                let gender_my_profile = document.getElementById("gender_my_profile").textContent.trim();
+
+                if (gender_my_profile === "Male") {
+                    document.getElementById("gender_male").checked = true;
+                } 
+                else if (gender_my_profile === "Female") {
+                    document.getElementById("gender_female").checked = true;
+                }
+                else {
+                    document.getElementById("gender_none").checked = true;
+                }
+
 
                  let user_id_my_profile = document.getElementById("user_id_my_profile").textContent;
                 document.getElementById("user_id_my_profile_id").value = user_id_my_profile;
+
+                let suffix_id_my_profile = document.getElementById("suffix_my_profile").textContent;
+                document.getElementById("suffix_id_my_profile").value = suffix_id_my_profile;
 
                 let birthday_my_profile = document.getElementById("birthday_my_profile").textContent;
                 document.getElementById("birthday_my_profile_id").value = birthday_my_profile;
@@ -259,6 +330,20 @@
 
 
 
+        </script>
+
+
+        <script>
+            // Compute today's date minus 18 years
+            const today = new Date();
+            const year = today.getFullYear() - 18;
+            const month = ("0" + (today.getMonth() + 1)).slice(-2);
+            const day = ("0" + today.getDate()).slice(-2);
+
+            const maxDate = `${year}-${month}-${day}`;
+
+            // Apply max date
+            document.getElementById("birthday_my_profile_id").setAttribute("max", maxDate);
         </script>
 
 

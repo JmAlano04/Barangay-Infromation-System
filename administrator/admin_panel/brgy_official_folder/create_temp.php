@@ -16,7 +16,7 @@
     font-family: "sub_text";
     src: url("../../../asset/font/Afacad_Flux/AfacadFlux-VariableFont_slnt,wght.ttf");
         }
-        body{}
+        
       .form{
         color:#005720;
         padding:10px;

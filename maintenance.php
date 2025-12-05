@@ -21,8 +21,8 @@
         
             background-image: url("asset/image/background/admin_bg/circle-scatter-haikei\ \(1\).png");
             background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
+            background-size: cover;
+            overflow-x: hidden;
         }
         
         .maintenance-container {
@@ -90,8 +90,6 @@
         <img src="asset/image/6798e1930e952.png" alt="Barangay Logo" class="logo" id ="logo">
         <h1>UNDER MAINTENANCE</h1>
         <p>We're currently performing scheduled maintenance on our system to improve your experience. We apologize for any inconvenience this may cause and appreciate your patience.</p>
-        
-       
         
         <!-- <p>Expected completion time: <strong>Today, 5:00 PM</strong></p> -->
         

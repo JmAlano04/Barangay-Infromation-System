@@ -23,7 +23,7 @@
         <input type="text" name="fname" placeholder="Enter Firstname" required /><br />
         <p class="required-message" style="display:none;"></p>
       </div>
-      <div>
+      <div >
         <label>Middlename</label><br />
         <input type="text" name="mname" placeholder="Enter Middlename" /><br />
         <p class="required-message" style="display:none;"></p>
@@ -32,14 +32,32 @@
         <label>Lastname</label><br />
         <input type="text" name="lname" placeholder="Enter Lastname" required /><br />
         <p class="required-message" style="display:none;"></p>
+        
       </div>
+
+      <div>
+        <label>Suffix</label><br />
+        <select name="suffix" style="width: 70px; margin-right:200px;">
+           <option value="">Suffix</option>
+            <option value="Jr.">Jr.</option>
+            <option value="Sr.">Sr.</option>
+            <option value="II">II</option>
+            <option value="III">III</option>
+            <option value="IV">IV</option>
+            <option value="V">V</option>
+        </select>
+         <p class="required-message" style="display:none;"></p>
+      </div>
+    
+      
+
     </div>
 
     <div class="item2">
       <div>
-        <label>Gender</label><br />
+        <label>Sex</label><br />
         <select name="gender" required>
-          <option value="">Select Gender</option>
+          <option value="">Select Sex</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Prefer not to say">Prefer not to say</option>
@@ -48,11 +66,21 @@
       </div>
 
       <div>
-        <label style="margin-left:20px;">Age</label><br />
-        <input type="number" name="age" style="margin-left:20px;" min="18" max="120" placeholder="Enter Age" required />
+        <label style="margin-left:20px;">Birthday</label><br />
+
+        <input 
+            type="date" 
+            name="birthday" 
+            id="birthday"
+            style="margin-left:20px;" 
+            required 
+        />
+
         <p class="required-message" style="display:none; margin-left:20px;"></p>
-      </div>
     </div>
+    </div>
+
+   
 
     <h2>Account Information</h2>
     <div class="item3">
@@ -134,6 +162,19 @@
       });
     });
   </script>
+
+  <script>
+    // Compute today's date minus 18 years
+    const today = new Date();
+    const year = today.getFullYear() - 18;
+    const month = ("0" + (today.getMonth() + 1)).slice(-2);
+    const day = ("0" + today.getDate()).slice(-2);
+
+    const maxDate = `${year}-${month}-${day}`;
+
+    // Apply max date
+    document.getElementById("birthday").setAttribute("max", maxDate);
+</script>
 
   <script src="validation.js.js"></script>
 </body>

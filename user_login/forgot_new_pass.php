@@ -14,7 +14,9 @@ if (isset($_POST['new_pass'])) {
     $sql = "UPDATE user_account SET password='$hashed_password' WHERE email='$email' AND firstname='$firstname' AND lastname='$lastname'";
 
     if ($conn->query($sql) === TRUE) {
+        
     echo "<script>window.location.href = 'loading_new_password.php'</script>";
+    
     } else {
     echo "Error updating record: " . $conn->error;
     }

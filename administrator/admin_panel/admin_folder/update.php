@@ -18,7 +18,7 @@
         
         $email_edit = trim($_POST["email_edit"]);
         // $username_edit = trim($_POST["username_edit"]);
-        $password_edit = trim($_POST["password_edit"]);
+        // $password_edit = trim($_POST["password_edit"]);
 
         $age_edit = trim($_POST["age_edit"]);
        
@@ -38,10 +38,10 @@
           
 
 
-            $sql = "UPDATE admin_account SET firstname='$firstname_edit' , middlename='$middlename_edit', lastname='$lastname_edit' , gender='$gender_edit' , age='$age_edit', date_created='$date_created_edit', user_type='$user_type_edit', status='$status_edit', email='$email_edit', password= '$password_edit', age='$age_edit' WHERE user_id=$user_id";
+            $sql = "UPDATE admin_account SET firstname='$firstname_edit' , middlename='$middlename_edit', lastname='$lastname_edit' , gender='$gender_edit' , age='$age_edit', date_created='$date_created_edit', user_type='$user_type_edit', status='$status_edit', email='$email_edit', age='$age_edit' WHERE user_id=$user_id";
 
             if (mysqli_query($conn, $sql)) {
-                
+
                 echo "<script>window.location.href = 'loading_update.php';</script>";
             }
           }else{
@@ -61,14 +61,14 @@
               echo "<script>window.location.href = '/BIS/administrator/admin_panel/admin_folder/admin_manage.php';</script>";
             }else if($fileSize > 1000000){
               echo "<script>alert('Image Size Is too Large')</script>";
-              echo "<script>window.location.href = '/BIS/administrator/admin_panel/admin_folder/admin_manage.php';</script>";
+              echo "<script>window.location.href = '/BIS/administrator/admin_panel/administrator_account.php';</script>";
             }else{
               $newImageName = uniqid();
               $newImageName .= '.' . $imageExtension;
   
               move_uploaded_file($tmpName, '../../../asset/image/admin/'. $newImageName );
                 
-              $sql = "UPDATE admin_account SET firstname='$firstname_edit' , middlename='$middlename_edit', lastname='$lastname_edit' , gender='$gender_edit' , age='$age_edit', date_created='$date_created_edit', user_type='$user_type_edit', status='$status_edit', email='$email_edit' , password='$password_edit', age='$age_edit' , admin_profile='$newImageName' WHERE user_id=$user_id";
+              $sql = "UPDATE admin_account SET firstname='$firstname_edit' , middlename='$middlename_edit', lastname='$lastname_edit' , gender='$gender_edit' , age='$age_edit', date_created='$date_created_edit', user_type='$user_type_edit', status='$status_edit', email='$email_edit', age='$age_edit' , admin_profile='$newImageName' WHERE user_id=$user_id";
 
 
               if (mysqli_query($conn, $sql)) {

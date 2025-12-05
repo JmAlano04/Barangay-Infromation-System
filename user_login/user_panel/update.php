@@ -8,8 +8,15 @@ if (isset($_POST['save_Changes'])) {
     $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
     $middlename = mysqli_real_escape_string($conn, $_POST['middlename']);
     $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
-    $age = mysqli_real_escape_string($conn, $_POST['age']);
+    $suffix = mysqli_real_escape_string($conn, $_POST['suffix']); // <-- NEW suffix
+
     $birthday = mysqli_real_escape_string($conn, $_POST['birthday']);
+
+    // AUTO COMPUTE AGE FROM BIRTHDAY
+    $bday = new DateTime($birthday);
+    $today = new DateTime();
+    $age = $bday->diff($today)->y;
+
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
     $contact_no = mysqli_real_escape_string($conn, $_POST['contact_no']);
     $house_no = mysqli_real_escape_string($conn, $_POST['house_no']);
@@ -28,19 +35,18 @@ if (isset($_POST['save_Changes'])) {
         firstname = '$firstname',
         middlename = '$middlename',
         lastname = '$lastname',
-        age = '$age',
+        suffix = '$suffix',       /* <-- Added suffix */
         birthday = '$birthday',
+        age = '$age',
         gender = '$gender',
         contact_no = '$contact_no',
         house_no = '$house_no',
         sitio_pook = '$sitio_pook'";
 
-    // ✅ Only update profile image if a new one is uploaded
     if ($profileImage !== '') {
         $sql .= ", profile = '$profileImage'";
     }
 
-    // ✅ Only update supporting document if a new one is uploaded
     if ($documentImage !== '') {
         $sql .= ", support_doc = '$documentImage'";
     }
@@ -61,7 +67,7 @@ function handleImageUpload($file, $targetDir) {
     $validExtensions = ['jpg', 'jpeg', 'png'];
     $maxSize = 1000000; // 1MB
 
-    if ($file['error'] === 4) return ''; // ✅ Return empty string if no file uploaded
+    if ($file['error'] === 4) return '';
 
     $fileName = $file['name'];
     $fileTmp = $file['tmp_name'];
@@ -69,12 +75,12 @@ function handleImageUpload($file, $targetDir) {
     $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
     if (!in_array($fileExt, $validExtensions)) {
-        echo "<script>alert('Invalid file type: $fileName'); window.location.href='loading.php';</script>";
+        echo "<script>alert('Invalid file type: $fileName'); window.location.href='profile.php';</script>";
         return false;
     }
 
     if ($fileSize > $maxSize) {
-        echo "<script>alert('File too large: $fileName'); window.location.href='loading.php';</script>";
+        echo "<script>alert('File too large: $fileName'); window.location.href='profile.php';</script>";
         return false;
     }
 
@@ -82,7 +88,7 @@ function handleImageUpload($file, $targetDir) {
     $uploadPath = $targetDir . $newFileName;
 
     if (!move_uploaded_file($fileTmp, $uploadPath)) {
-        echo "<script>alert('Failed to upload file: $fileName'); window.location.href='loading.php';</script>";
+        echo "<script>alert('Failed to upload file: $fileName'); window.location.href='profile.php';</script>";
         return false;
     }
 

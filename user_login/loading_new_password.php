@@ -61,8 +61,8 @@
         setTimeout(() => {
             // Hide the loading screen after 5 seconds
         
-            alert('Password Successfully Change.');
-            window.location.href = "/BIS/user_login/user_login_page.php";
+           
+            window.location.href = "change_password.php";
             clearInterval(timerInterval);
         }, 1000); // Simulate PHP execution time
 

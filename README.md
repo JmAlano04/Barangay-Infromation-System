@@ -1,13 +1,13 @@
 # 🏘️ Web-Based Barangay Information System
 
-A comprehensive and user-friendly web application designed to streamline barangay operations and improve access to community services. Built with PHP on the server side and HTML, CSS, JavaScript/jQuery on the client side.
+A comprehensive and user-friendly web application designed to streamline barangay operations and improve access to community services. 
 
 ---
 
 ## 🚀 Technologies Used
 
 - **Server-side:** PHP  
-- **Client-side:** HTML, CSS, JavaScript, jQuery  
+- **Client-side:** HTML, CSS, JavaScript, jQuery, AJAX  
 - **Database:** MySQL (assumed)
 
 ---
@@ -18,8 +18,9 @@ A comprehensive and user-friendly web application designed to streamline baranga
 - **Home** – Overview of the barangay and system
 - **Services** – List of services offered by the barangay
 - **Barangay Officials** – Profiles of current officials
+- **Hotlines** – Emergency operation Hotlines of barangay
 - **Gallery** – Photos and events
-- **About** – Background and mission of the barangay
+- **Contact** – Contact inforamtion of barangay
 
 ---
 
@@ -56,7 +57,7 @@ A comprehensive and user-friendly web application designed to streamline baranga
 - **View Document Income** – Monitor income from document requests
 - **Change Password**  
 - **Logout**
-
+        
 ---
 
 
@@ -66,7 +67,7 @@ A comprehensive and user-friendly web application designed to streamline baranga
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/barangay-information-system.git
+   git clone https://github.com/JmAlano04ii/barangay-information-system.git
 - Import the SQL database (if provided) into your MySQL server.
 - Configure your database connection in /database/conn.php.
 - Run the project on a local server (e.g., XAMPP, WAMP) or deploy it online.
