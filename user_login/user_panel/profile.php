@@ -179,10 +179,10 @@
             </div>
             <div class="input_div">
             <input type="file"  name="image_profile" accept=".jpg, .jpeg, .png" id = "images" style = "padding-top:10px;">
-                <input type="text" id = "firstname_my_profile_id" name = "firstname" value ="" required>
-                <input type="text" id = "middlename_my_profile_id" name = "middlename" value ="" >
+                <input type="text" id = "firstname_my_profile_id" name = "firstname" value ="" placeholder="Enter Firstname" required>
+                <input type="text" id = "middlename_my_profile_id" name = "middlename" value ="" placeholder="Leave it blank if not applicable.">
              
-                <input type="text" id = "lastname_my_profile_id"  name = "lastname" value ="" required>
+                <input type="text" id = "lastname_my_profile_id"  name = "lastname" value ="" placeholder="Enter Lastname" required>
                  <input name="suffix" id = "suffix_id_my_profile" style="width: 130px; margin-right:200px;" placeholder="Enter Suffix here">
                
                 <input type="number" id = "age_my_profile_id"  style="width: 70px; margin-right:200px;" readonly name = "age" value = "" max = "110" >
@@ -191,22 +191,14 @@
                 
                 
 
-              <div class="sex_radio_group">
-
-                <label class="thin_radio">
-                    <input type="radio" name="gender" value="Male" id="gender_male" required>
-                    Male
-                </label>
-
-                <label class="thin_radio">
-                    <input type="radio" name="gender" value="Female" id="gender_female">
-                    Female
-                </label>
-
-                <label class="thin_radio">
-                    <input type="radio" name="gender" value="Prefer not to say" id="gender_none">
-                    Prefer not to say
-                </label>
+            <div>
+          
+            <select name="gender" id="gender_my_profile_id" required >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+           
+            </select><br>
             </div>
 
                 
@@ -284,17 +276,8 @@
 
                 
 
-                let gender_my_profile = document.getElementById("gender_my_profile").textContent.trim();
-
-                if (gender_my_profile === "Male") {
-                    document.getElementById("gender_male").checked = true;
-                } 
-                else if (gender_my_profile === "Female") {
-                    document.getElementById("gender_female").checked = true;
-                }
-                else {
-                    document.getElementById("gender_none").checked = true;
-                }
+                let gender_my_profile_id = document.getElementById("gender_my_profile").textContent;
+                document.getElementById("gender_my_profile_id").value = gender_my_profile_id;
 
 
                  let user_id_my_profile = document.getElementById("user_id_my_profile").textContent;

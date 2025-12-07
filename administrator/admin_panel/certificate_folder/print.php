@@ -28,7 +28,7 @@
             font-family:"sub_text";
         }
 
-        #purpose_cert,#OR_no,#amount,#date_issue_print,#purpose_print,#status_print{
+        #purpose_cert,#OR_no,#amount,#date_issue_print,#purpose_print,#status_print,#fullname{
             width: 100%;
             height:40px;
             margin-top:10px;
@@ -36,6 +36,7 @@
             padding: 0px 0px 0px 10px ;
             border:none;
             border-radius:2px;
+            font-size: medium;
         }
 
         #purpose_cert:focus,#OR_no:focus,#amount:focus,#date_issue_print:focus,#purpose_print:focus,#status_print:focus{
@@ -76,13 +77,16 @@
 <body>
 
     <header>
-        <h1>Create Payment</h1>
+        <h1 id="create_payment_header">Create Payment</h1>
     </header>
 
     <form action="/BIS/administrator/admin_panel/certificate_folder/print_insert.php" method="POST" id="certForm">
 
- 
+       
             
+        
+        <label id= "fullname_label">Fullname</label><br>
+        <input type="text" id="fullname"><br>
 
         <label>Purpose</label><br>
         <input type="text" name="purpose_print" id="purpose_print" required><br>
@@ -90,10 +94,21 @@
         <label for="amount" id="label_amount">Amount</label><br>
         <input type="number" style="margin-top: -20px;"  class="printer" name="amount" id="amount" min="0" step="0.00001" placeholder="Enter Amount" required><br>
         
+        <label hidden id="date_issue_print_label">Date issued</label><br>
 
+        <?php 
+            // Correct format for HTML date input
+            $current_date = date('Y-m-d');  
+        ?>
+
+        <input hidden type="date" 
+            name="current_date" 
+            id="date_issue_print"
+            value="<?php echo $current_date; ?>"
+        ><br>
        
-        <label hidden>Status</label><br>
-        <select hidden  id="status_print" required>
+        <label  id="status_print_label" >Status</label><br>
+        <select   id="status_print" required>
             <option value="No data">No data</option>
             <option value="Pending">Pending</option>
             <option value="Processing">Processing</option>
@@ -102,12 +117,11 @@
             <option value="Invalid Purpose">Invalid Purpose</option>
         </select><br>
 
+     
+
         <input hidden type="text" name="status_print" value="Ready to Pick-up">
 
-            <?php $current_date = date('Y-m-d'); ?>
-        <input hidden type="date" name="current_date" id="date_issue_print"
-              value="<?php echo $current_date;  ?>"
-              ><br>
+       
 
         <input type="hidden" name="firstname_print" id="firstname_print">
         <input type="hidden" name="middlename_print" id="middlename_print">

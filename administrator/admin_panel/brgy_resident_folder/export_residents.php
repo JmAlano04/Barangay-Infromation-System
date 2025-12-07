@@ -92,7 +92,7 @@ fputcsv($output, [
     'Birthday',
     'Age',
     'Civil Status',
-    'Gender',
+    'Sex',
     'Voter Status',
     'Email',
     'Contact Number',

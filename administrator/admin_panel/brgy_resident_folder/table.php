@@ -267,7 +267,7 @@ if ($result->num_rows > 0) { ?>
             </div>
             
             <div class="filter-group">
-                <label for="gender_filter">Gender:</label>
+                <label for="gender_filter">Sex:</label>
                 <select name="gender_filter" id="gender_filter">
                     <option value="">All</option>
                     <?php while ($row = $genders->fetch_assoc()): ?>
@@ -324,7 +324,7 @@ if ($result->num_rows > 0) { ?>
             <th>Contact no.</th>
             <th>Age</th>
             <th>Civil Status</th>
-            <th>Gender</th>
+            <th>Sex</th>
             <th>Voter Status</th>
             <th>Action</th>
         </tr>

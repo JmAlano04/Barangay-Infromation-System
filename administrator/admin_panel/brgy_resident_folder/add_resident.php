@@ -255,7 +255,7 @@
                         <option value="Widowed">Widowed</option>
                 </select><br>
 
-                <label for="">Gender :</label><br>
+                <label for="">Sex :</label><br>
                 <select name="gender" id="gender" required>
                 <option value="Male">Male</option>
                         <option value="Female">Female</option>

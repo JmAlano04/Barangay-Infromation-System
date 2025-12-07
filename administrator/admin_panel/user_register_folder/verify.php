@@ -73,7 +73,7 @@
         <input type="submit" name="submit_verify" value="Yes" class="submit">
         <button type="button" onclick="document.getElementById('verify_blotter').style.display='none';">No</button>
         <input type="hidden" name="id_verify" id="id_verify">
-        <input type="hidden" name="new_verify" id="new_verify" value="Verified">
+        <input type="hidden" name="new_verify" id="new_verify" value="Account Verified">
     </div>
 </form>
 

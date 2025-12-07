@@ -23,11 +23,21 @@
         <input type="text" name="fname" placeholder="Enter Firstname" required /><br />
         <p class="required-message" style="display:none;"></p>
       </div>
-      <div >
+     <!-- MIDDLENAME (optional with red message ON CLICK only) -->
+      <div>
         <label>Middlename</label><br />
-        <input type="text" name="mname" placeholder="Enter Middlename" /><br />
-        <p class="required-message" style="display:none;"></p>
+        <input 
+          type="text" 
+          name="mname" 
+          placeholder="Enter Middlename"
+          onfocus="showMiddleMessage()"
+          oninput="hideMiddleMessage(this)"
+        /><br />
+        <p id="middlename-msg" class="required-message" style="font-size:12px; display:none;">
+          Leave it blank if not applicable.
+        </p>
       </div>
+
       <div>
         <label>Lastname</label><br />
         <input type="text" name="lname" placeholder="Enter Lastname" required /><br />
@@ -35,20 +45,22 @@
         
       </div>
 
-      <div>
-        <label>Suffix</label><br />
-        <select name="suffix" style="width: 70px; margin-right:200px;">
-           <option value="">Suffix</option>
-            <option value="Jr.">Jr.</option>
-            <option value="Sr.">Sr.</option>
-            <option value="II">II</option>
-            <option value="III">III</option>
-            <option value="IV">IV</option>
-            <option value="V">V</option>
-        </select>
-         <p class="required-message" style="display:none;"></p>
-      </div>
-    
+      <!-- SUFFIX (optional with red message ON CLICK only) -->
+    <div>
+      <label>Suffix</label><br />
+      <input 
+        type="text" 
+        name="suffix" 
+        placeholder="Enter Suffix"
+        style="width:70px; margin-right:200px;"
+        onfocus="showSuffixMessage()"
+        oninput="hideSuffixMessage(this)"
+      /><br />
+      <p id="suffix-msg" class="required-message" style="font-size:12px; display:none;">
+        Leave it blank if not applicable.
+      </p>
+    </div>
+
       
 
     </div>
@@ -114,7 +126,7 @@
       </div>
 
       <input type="hidden" name="profile_default" value="images.png" />
-      <input type="hidden" name="verify" value="Not Verified" />
+      <input type="hidden" name="verify" value="Pending Verification" />
     <br>
       <div class="item4" style=" display: flex; justify-content: left; align-items: center;">
         <input type="reset" name="reset" value="Reset" id="reset" style ="margin-right:20px"/>
@@ -175,6 +187,40 @@
     // Apply max date
     document.getElementById("birthday").setAttribute("max", maxDate);
 </script>
+
+
+<script>
+function showMiddleMessage() {
+  document.getElementById("middlename-msg").style.display = "block";
+}
+
+function hideMiddleMessage(input) {
+  const msg = document.getElementById("middlename-msg");
+
+  if (input.value.trim() !== "") {
+    msg.style.display = "none";
+  } else {
+    msg.style.display = "block";
+  }
+}
+</script>
+
+<script>
+function showSuffixMessage() {
+  document.getElementById("suffix-msg").style.display = "block";
+}
+
+function hideSuffixMessage(input) {
+  const msg = document.getElementById("suffix-msg");
+
+  if (input.value.trim() !== "") {
+    msg.style.display = "none";
+  } else {
+    msg.style.display = "block";
+  }
+}
+</script>
+
 
   <script src="validation.js.js"></script>
 </body>

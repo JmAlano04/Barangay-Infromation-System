@@ -26,7 +26,7 @@ if ($input != '') {
     $output = fopen('php://output', 'w');
 
     // Write CSV headers
-    fputcsv($output, ['Firstname', 'Middlename' , 'Lastname' , 'Age', 'House Number', 'Sitio/Pook', 'Birthday' , 'Place of Birth', 'Contact #' , 'Contact Person' , 'Contact # of Contact Person', 'Live Since Year', 'Purpose', 'Gender', 'Business Name', 'Photo' , 'User ID' , 'Request Documnet' , 'Date Requst' , 'Status', 'Control Number']);
+    fputcsv($output, ['Firstname', 'Middlename' , 'Lastname' , 'Age', 'House Number', 'Sitio/Pook', 'Birthday' , 'Place of Birth', 'Contact #' , 'Contact Person' , 'Contact # of Contact Person', 'Live Since Year', 'Purpose', 'sex', 'Business Name', 'Photo' , 'User ID' , 'Request Documnet' , 'Date Requst' , 'Status', 'Control Number']);
 
     // If results are found, write them to the CSV
     if ($result->num_rows > 0) {

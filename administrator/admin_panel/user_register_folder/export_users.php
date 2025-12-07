@@ -83,7 +83,7 @@ fputcsv($output, [
     'User ID',
     'Full Name',
     'Age',
-    'Gender',
+    'Sex',
     'Email',
     'Date Registered'
 ]);

@@ -32,7 +32,7 @@
             <label for="">Place of Birth</label><br>
             <input type="text" name = "place_of_birth_add" id = "place_of_birth_add" placeholder = "Enter Place of birth"><br>
 
-            <label for="">Gender</label><br>
+            <label for="">Sex</label><br>
                 <select id = "gender_add" name = "gender_add" placeholder = "Enter gender">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>

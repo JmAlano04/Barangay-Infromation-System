@@ -3,6 +3,7 @@ require('../../database/conn_db.php');
 
 $user_id = $_SESSION['user_id'];
 
+
 // =========================
 // GET USER ACCOUNT DETAILS
 // =========================
@@ -42,7 +43,7 @@ if (mysqli_num_rows($result) > 0) {
 // =====================================================
 $sql = "SELECT * FROM user_account AS u 
         LEFT JOIN barangay_request AS r ON u.user_id = r.user_id  
-        WHERE u.user_id = $user_id 
+        WHERE u.user_id = $user_id
         ORDER BY r.id DESC LIMIT 1";
 
 $result = mysqli_query($conn, $sql);
@@ -58,16 +59,17 @@ if (mysqli_num_rows($result) > 0) {
     <p hidden id="live_since_year_my_profile"><?php echo $row['live_since_year']; ?></p>
 
 <?php
-    $user_id_rev = $row['id'];
+    $request_id = intval($row['id']);
+
     
     // ===================================================
     // GET PAYMENT FROM barangay_revenue (LATEST PAYMENT)
     // ===================================================
     // FIXED: Added backticks around OR_no (reserved keyword)
-    $sql_revenue = "SELECT * FROM barangay_revenue 
-                    WHERE user_id = $user_id 
-                    ORDER BY `OR_no` DESC 
-                    LIMIT 1";
+    $sql_revenue = "SELECT * FROM barangay_revenue AS r
+        LEFT JOIN barangay_request AS br ON r.user_id = br.id  
+        WHERE r.user_id =  $request_id
+        ORDER BY br.id DESC LIMIT 1";
 
     $result_revenue = mysqli_query($conn, $sql_revenue);
 

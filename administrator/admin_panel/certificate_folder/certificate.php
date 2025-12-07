@@ -41,7 +41,7 @@
                             rev.OR_no
                         FROM barangay_request br
                         LEFT JOIN barangay_revenue rev 
-                            ON br.user_id = rev.user_id
+                            ON br.id = rev.user_id
                         WHERE br.request_document = 'Barangay Certificate'
                         ORDER BY br.id DESC
                         LIMIT 12";
@@ -61,7 +61,7 @@
                         <tr>
                             <th>Profile</th>
                             <th>Fullname</th>
-                            <th>Gender</th>
+                            <th>Sex</th>
                             <th>Reference #</th>
                             <th>Purpose</th>
                             
@@ -181,7 +181,7 @@
                                                 <p hidden><?php echo $status ?></p>
                                             
                                                 <p hidden><?php echo  $profile ?></p>
-                                                <p hidden class="revenue-data"><?php echo $document_amount ?></p>
+                                                <p hidden class="revenue-data"><?php echo  number_format($document_amount, 2); ?></p>
                                                 <p hidden class="revenue-data"><?php echo $or_no ?></p>
                                                 <p hidden class="revenue-data"><?php echo $date_issue ?></p>
                                                 <p hidden class="revenue-data"><?php echo $expired_date ?></p>

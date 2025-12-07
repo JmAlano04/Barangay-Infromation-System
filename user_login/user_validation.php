@@ -35,7 +35,7 @@ if (isset($_POST['user_login'])) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['status_input'] = 'valid_input';
                     $_SESSION['user_id'] = $row['user_id'];
-              
+                    $_SESSION['id'] = $row['user_id'];
                     header('Location: loading.php');
                   
                     exit;

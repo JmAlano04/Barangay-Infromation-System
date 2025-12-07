@@ -152,7 +152,7 @@
             <label for="">Place of Birth</label><br>
             <input type="text" name = "place_of_birth_upd" id = "place_of_birth_upd" required><br>
 
-            <label for="">Gender</label><br>
+            <label for="">Sex</label><br>
                 <select id = "gender_upd" name = "gender_upd" required>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>

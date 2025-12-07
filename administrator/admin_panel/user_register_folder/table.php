@@ -286,7 +286,7 @@
             <th>Document</th>
             <th>Fullname</th>
             <th>Age</th>
-            <th>Gender</th>
+            <th>Sex</th>
             <th>Email</th>
             <th>Status</th>
             <th>Date Registered</th>
@@ -328,10 +328,10 @@
             <td>
                   <?php 
                                             $verify = $row["verify"];
-                                            if ($verify  == "Not Verified") {
-                                                echo "<p style='color:red;'>Not Verified</p>";
-                                            } elseif ($verify == "Verified") {
-                                                echo "<p style='color:green;'>Verified</p>";
+                                            if ($verify  == "Pending Verification") {
+                                                echo "<p style='color:red;'>Pending Verification</p>";
+                                            } elseif ($verify == "Account Verified") {
+                                                echo "<p style='color:green;'>Account Verified</p>";
                                             }
                     ?>
             </td>

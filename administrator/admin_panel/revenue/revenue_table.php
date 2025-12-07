@@ -156,7 +156,7 @@ if ($year) {
     $sql .= " AND YEAR(date_issue) = '$year'";
 }
 
-$sql .= " ORDER BY OR_no DESC LIMIT $limit OFFSET $offset";
+$sql .= " ORDER BY OR_no ASC LIMIT $limit OFFSET $offset";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) { ?>

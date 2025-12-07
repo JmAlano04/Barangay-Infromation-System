@@ -203,8 +203,11 @@
                                             <h2>Processing Fee :</h2>
 
                                             <?php
-                                                
-                                                // Correct amount source from barangay_revenue table
+                                                 $purpose = $row['purpose'];
+                                                 if(empty($purpose)){
+                                                    echo "<h2 style = 'color:#00572060;'>No data</h2>";
+                                                 }else{
+                                                      // Correct amount source from barangay_revenue table
                                                 $processing_fee = isset($rev['document_amount']) ? $rev['document_amount'] : null;
 
                                                 if (!empty($processing_fee) && $processing_fee > 0) {
@@ -212,6 +215,8 @@
                                                 } else {
                                                     echo "<h2 style='color:#00572060;'>No data</h2>";
                                                 }
+                                                 }
+                                              
                                             ?>
                                         </div>
 
@@ -308,17 +313,17 @@
 
                let verify_user = document.getElementById("verify_user").textContent.trim();
 
-    if (verify_user == "Not Verified") {
+    if (verify_user == "Pending Verification") {
         // Block of code to be executed if the user is not verified
         let svgIcon_phone = `
             <svg style="width:20px; margin-top:20px; margin-right:20px; margin-left:10px; fill:red;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"/>
             </svg>
         `;
-        document.getElementById("verify_display").innerHTML = svgIcon_phone + verify_user;
+        document.getElementById("verify_display").innerHTML = svgIcon_phone + "Pending Resident Verification";
         document.getElementById("verify_display").style.color = "red";
 
-    } else if (verify_user == "Verified") {
+    } else if (verify_user == "Account Verified") {
         // Block of code to be executed if the user is verified
         let svgIcon_phone = `
             <svg style="width:20px; margin-top:20px; margin-right:20px; margin-left:10px; fill:#4A9D4f;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">

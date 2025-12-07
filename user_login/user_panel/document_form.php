@@ -95,11 +95,11 @@
            
             <div>
                 <label for="">Cell Phone No : </label><br>
-                <input type="tel" name = "contact_no" placeholder = "Enter Contact Number" id = "contact_phone_my_profile_id" required>
+                <input type="tel" name = "contact_no" placeholder = "Enter Contact Number" pattern="[0-9]{11}" id = "contact_phone_my_profile_id" required>
                 
             </div>
             <div>
-            <label for="">Gender : </label><br>
+            <label for="">Sex : </label><br>
             <select name="gender" id="gender_my_profile_id" required >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -116,7 +116,7 @@
             <label for="">Contact Person : </label><br>
             <input type="text" name = "contact_person"  placeholder = "Enter fullname of contact Person" id = "contact_person_my_profile_id" >
             <label for="">Contact # of Contact Person: </label><br>
-            <input type="texl" name = "contact_person_no"  placeholder = "Enter your fullname" id = "contact_no_contact_person_my_profile_id" required>
+            <input type="text" name = "contact_person_no"  placeholder = "Enter your fullname" id = "contact_no_contact_person_my_profile_id" pattern="[0-9]{11}" required>
             <label for="">How long do you live here and what year (Month/Year): </label><br>
             <input type="month" name = "live_since_year"  placeholder = "Enter your fullname" id = "live_since_year_my_profile_id" required>
            
@@ -146,7 +146,7 @@
         let verify_user = document.getElementById("verify_user").textContent.trim(); // fixed typo and trimmed whitespace
         let isVerified = verify_user; // now a plain string
 
-        if (isVerified === "Not Verified") {
+        if (isVerified === "Pending Verification") {
             const restrictedOptions = [
                 "Barangay Clearance",
                 "Barangay Certificate",
