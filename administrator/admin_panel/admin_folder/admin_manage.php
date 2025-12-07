@@ -113,7 +113,7 @@
             <th>User Type</th>
             <th>Admin ID</th>
             <th>Email</th>
-            <th>Gender</th>
+            <th>Sex</th>
             <th>Status</th>
             <th>Action</th>
         </tr>

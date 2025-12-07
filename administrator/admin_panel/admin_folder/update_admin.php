@@ -34,26 +34,14 @@
         <option value="Female">Female</option>
         </select><br>
 
-        <label for="">Age</label><br>
-        <input name = "age_edit" type="number" min = "18" max = "110" placeholder ="Enter Age" id = "age_edit" required><br>
-        
     
     </div>
         
-    <div  class = "div_2" id = "div_2" style = "margin-top:320px;">
-
-    <div class = "id_number">
-        <label hidden for="">User Number</label><br>
-        <input type="hidden" style = "cursor: no-drop;"  name = "user_id" id = "id_edit" readonly><br>
-    </div>
+    <div  class = "div_2" id = "div_2" style = "margin-top:280px;">
+    
+    <label for="">Age</label><br>
+    <input name = "age_edit" type="number" min = "18" max = "110" placeholder ="Enter Age" id = "age_edit" required><br>
         
-         <label for="">Date Created</label><br>
-        <input name = "date_created_edit" type="date" style = "cursor: no-drop;" readonly id = "date_created_edit"><br>
-        <label for="">User Type</label><br>
-        <select name="user_type_edit" id="user_type_edit">
-            <option value="ADMINISTRATOR">ADMINISTRATOR</option>
-      
-        </select><br>
         <label for="">Status</label><br>
         <select name="status_edit" id="status_edit" required>
             <option value= 1>Active</option>
@@ -66,7 +54,17 @@
             <input type = "hidden" name = "password_edit" type="password" id = "password_edit" placeholder ="Enter Password" style = "cursor: no-drop;"readonly> -->
         
             <input hidden type="checkbox" id = "checkbox_edit" onclick="show_pwd_edit()"><br>
-        
+             <div class = "id_number">
+        <label hidden for="">User Number</label><br>
+        <input type="hidden" style = "cursor: no-drop;"  name = "user_id" id = "id_edit" readonly><br>
+        <label hidden for="">Date Created</label><br>
+        <input hidden name = "date_created_edit" type="date" style = "cursor: no-drop;" readonly id = "date_created_edit"><br>
+        <label hidden for="">User Type</label><br>
+        <select hidden name="user_type_edit" id="user_type_edit">
+            <option  hidden value="ADMINISTRATOR">ADMINISTRATOR</option>
+      
+        </select><br>
+    </div>
     </div>
 
   

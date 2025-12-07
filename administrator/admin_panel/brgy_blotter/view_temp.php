@@ -37,10 +37,10 @@
 
          
 
-            <label for="">DATE :</label><br>
+            <label for="">Date Filed:</label><br>
             <input type="Date" name="date_upd" id="date_view" readonly><br>
 
-            <label for="">TIME :</label><br>
+            <label for="">Time Filed :</label><br>
                 <input type = "time" name="time_upd" id="time_view"  readonly />
                    
                <br>
@@ -58,7 +58,7 @@
         <p>Ako si <input type="text" id = "complainant_view" name = "complainant_upd" style= "width:200px; margin-right:20px;" readonly>Edad <input type="number" id = "age_view" name = "age_upd" min = "1" max = "105"style = "width:50px; " readonly><br>
         Nakatira sa <input type="text" name = "address_complainant_upd" id = "address_complainant_view" style= "width:300px;" readonly> ay dumudulong sahimpilan ng Barangay Paliparan II upang aking ireklamo si <input type="text" name = "complained_name_upd" id = "complained_name_view" style= "width:300px;" readonly><br>
         Address <input type="text" name = "add_complained_name_upd" id = "add_complained_name_view" style= "width:400px;" readonly> sa kadahilanan na
-        <textarea name="details_reason_upd" id="details_reason_view" readonly>
+        <textarea style="padding:10px;" name="details_reason_upd" id="details_reason_view" readonly>
         
         </textarea>
         </p>

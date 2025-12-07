@@ -28,30 +28,28 @@
             <label for="">PLACE :</label><br>
             <input type="text" name="place_upd" id="place_blotter" value = "Barangay Paliparan II" readonly><br>
 
-            <label for="">TANOD DUTY :</label><br>
-            <input type="text" name="tanod_upd" id="tanod_blotter" placeholder = "Enter Tanod duty" required><br>
+            
         </div>
 
         <div>
-           
-
-         
-
-            <label for="">DATE :</label><br>
-            <input type="Date" name="date_upd" id="date_blotter" required><br>
-
-            <label for="">TIME :</label><br>
-                <input type = "time" name="time_upd" id="time_blotter"  required />
-                   
+            <label for="">TANOD DUTY :</label><br>
+             <input type="text" name="tanod_upd" id="tanod_blotter" placeholder = "Enter Tanod duty" required><br>
                <br>
-            <label for="">STATUS :</label><br>
+              <label for="">STATUS :</label><br>
                 <select name="status_upd" id="status_blotter" required>
                      <option value="" readonly>--Select Blotter Status--</option>
                     <option value= "Active">Active</option>
                     <option value= "Settled">Settled</option>
                     <option value= "Scheduled">Scheduled</option>
                 </select><br>
-                    <input type="hidden" name = "id_blotter" id = "id_blotter">
+
+                <label hidden for="">DATE :</label><br>
+                <input hidden type="Date" name="date_upd" id="date_blotter" required><br>
+
+                <label hidden for="">TIME :</label><br>
+                <input hidden type = "time" name="time_upd" id="time_blotter"  required />
+        
+                <input type="hidden" name = "id_blotter" id = "id_blotter">
                 <input type="hidden" name = "type_of_blotter" id = "type_blotter"value = "Blotter">
         </div>
         
@@ -63,7 +61,7 @@
         <p>Ako si <input type="text" id = "complainant_blotter" name = "complainant_upd" style= "width:200px; margin-right:20px;">Edad <input type="number" id = "age_blotter" name = "age_upd" min = "1" max = "105"style = "width:50px; "><br>
         Nakatira sa <input type="text" name = "address_complainant_upd" id = "address_complainant_blotter" style= "width:300px;"> ay dumudulong sahimpilan ng Barangay Paliparan II upang aking ireklamo si <input type="text" name = "complained_name_upd" id = "complained_name_blotter" style= "width:300px;"><br>
         Address <input type="text" name = "add_complained_name_upd" id = "add_complained_name_blotter" style= "width:400px;"> sa kadahilanan na
-        <textarea name="details_reason_upd" id="details_reason_blotter" >
+        <textarea style="padding:10px;" name="details_reason_upd" id="details_reason_blotter" >
         
         </textarea>
         </p>

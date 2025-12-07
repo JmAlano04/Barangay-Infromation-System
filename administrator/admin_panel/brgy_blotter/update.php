@@ -12,9 +12,9 @@
         $tanod = trim($_POST["tanod_upd"]);
         $date = trim($_POST["date_upd"]);
         $time = trim($_POST["time_upd"]);
-
+        
         $status = trim($_POST["status_upd"]);
-        $type = trim($_POST["type_of_blotter"]);
+      
         $complainant = trim($_POST["complainant_upd"]);
         $age = trim($_POST["age_upd"]);
 
@@ -26,7 +26,7 @@
             
     
         $sql= "UPDATE barangay_blotter
-               SET subject='$subject' , cell_no='$cell_no', tanod='$tanod' , date='$date' , time='$time', status='$status', complainant='$complainant', age='$age', address_complainant=' $address_complainant' , complained_name='$complained_name' ,add_complained_name='$add_complained_name' , details_reason='$details_reason', place='$place',type='$type' WHERE id='$id'";
+               SET subject='$subject' , cell_no='$cell_no', tanod='$tanod' , date='$date' , time='$time', status='$status', complainant='$complainant', age='$age', address_complainant=' $address_complainant' , complained_name='$complained_name' ,add_complained_name='$add_complained_name' , details_reason='$details_reason', place='$place' WHERE id='$id'";
         
       
                 

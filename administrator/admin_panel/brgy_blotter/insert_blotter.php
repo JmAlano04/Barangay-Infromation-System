@@ -7,12 +7,17 @@
         $cell_no = trim($_POST["cell_no"]);
         $place = trim($_POST["place"]);
 
+      
         $tanod = trim($_POST["tanod"]);
         $date = trim($_POST["date"]);
         $time = trim($_POST["time"]);
 
+      
+
+        
+
         $status = trim($_POST["status"]);
-        $type = trim($_POST["type_of_blotter"]);
+  
         $complainant = trim($_POST["complainant"]);
         $age = trim($_POST["age"]);
 
@@ -22,8 +27,8 @@
 
         $details_reason = trim($_POST["details_reason"]);
 
-        $sql = "INSERT INTO barangay_blotter (subject, cell_no, tanod, date, time, status, complainant, age, address_complainant, complained_name, add_complained_name, details_reason, place, type)
-        VALUES ('$subject', '$cell_no', '$tanod','$date','$time','$status','$complainant','$age','$address_complainant' , '$complained_name' ,'$add_complained_name','$details_reason', '$place' , '$type')";
+        $sql = "INSERT INTO barangay_blotter (subject, cell_no, tanod, date, time, status, complainant, age, address_complainant, complained_name, add_complained_name, details_reason, place)
+        VALUES ('$subject', '$cell_no', '$tanod','$date','$time','$status','$complainant','$age','$address_complainant' , '$complained_name' ,'$add_complained_name','$details_reason', '$place')";
 
         
         $result = $conn->multi_query($sql);

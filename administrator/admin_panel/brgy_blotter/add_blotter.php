@@ -28,17 +28,15 @@
             <input type="text" name="place" placeholder="ex. Mabuhay homes"><br>
         </div>
 
+        
+
         <div>
+
+        
             <label for="">TANOD DUTY :</label><br>
             <input type="text" name="tanod" placeholder="Enter Tanod duty" required><br>
 
-            <label for="">DATE :</label><br>
-            <input type="date" name="date" id="date" value="<?= date('Y-m-d'); ?>" required><br>
-
-            <label for="">TIME :</label><br>
-            <input type="time" name="time" id="time" value="<?= date('H:i'); ?>" required><br>
-
-            <label for="">STATUS :</label><br>
+              <label for="">STATUS :</label><br>
             <select name="status" required>
                 <option value="" readonly>--Select Blotter Status--</option>
                 <option value="Active">Active</option>
@@ -46,7 +44,14 @@
                 <option value="Scheduled">Scheduled</option>
             </select><br>
 
-            <input type="hidden" name="type_of_blotter" value="Blotter">
+            <?php date_default_timezone_set('Asia/Manila'); ?> 
+            <label hidden for="">DATE :</label><br>
+            <input hidden type="date" name="date" id="date" value="<?=  date('Y-m-d'); ?>" ><br>
+
+            <label hidden for="">TIME :</label><br>
+            <input hidden type="time" name="time" id="time" value="<?= date('H:i'); ?>"
+             ><br>
+
         </div>
     </div>
 

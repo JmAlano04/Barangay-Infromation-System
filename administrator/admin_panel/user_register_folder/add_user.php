@@ -18,14 +18,28 @@
       <div><label for="">Lastname</label><br>
       <input type="text" name = "lname" placeholder = "Enter Lastname" required><br></div>
         
-
-     
+            <!-- SUFFIX (optional with red message ON CLICK only) -->
+    <div>   
+      <label>Suffix</label><br />
+      <input 
+        type="text" 
+        name="suffix" 
+        placeholder="Enter Suffix"
+        style="width:70px; margin-right:200px;"
+      /><br />
+      <p id="suffix-msg" class="required-message" style="font-size:12px; display:none;">
+        Leave it blank if not applicable.
+      </p>
+    </div>
+    
 
         
     </div>
 
+   
+
     <div class = "item2">
-        <div> <label for="">Gender</label><br>
+        <div> <label for="">Sex</label><br>
        <select name="gender" id="" required>
         
             <option value="Male">Male</option>
@@ -36,8 +50,8 @@
 
         <div>
 
-         <label for="" style = "margin-left:-30px;">Age</label><br>
-        <input type="number" name = "age" style = "margin-left:-30px;" min = "0" max = "120" placeholder = "Enter Age" required>
+         <label for="" style = "margin-left:-30px;">Birthday</label><br>
+        <input type="date" name = "birthday" style = "margin-left:-30px;" required>
      </div>
       
        

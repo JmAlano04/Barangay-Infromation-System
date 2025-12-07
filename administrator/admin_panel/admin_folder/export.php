@@ -14,11 +14,10 @@ fputcsv($output, [
     "User Type",
     "Full Name",
     "Email",
-    "Username",
     "Password",
     "Date Created",
     "Admin Profile",
-    "Gender",
+    "Sex",
     "Age",
     "Status"
 ]);
@@ -31,7 +30,7 @@ if (!$conn) {
 }
 
 // Query
-$sql = "SELECT user_type, firstname, middlename, lastname, email, username, password, date_created, admin_profile, gender, age, status FROM admin_account";
+$sql = "SELECT user_type, firstname, middlename, lastname, email, password, date_created, admin_profile, gender, age, status FROM admin_account";
 $result = mysqli_query($conn, $sql);
 
 // Write rows
@@ -47,7 +46,6 @@ while ($row = mysqli_fetch_assoc($result)) {
         $row['user_type'] ?? '',
         $fullname,
         $row['email'] ?? '',
-        $username,
         $row['password'] ?? '',
         date('m/d/Y', strtotime($row['date_created'])),
         $row['admin_profile'] ?? '',

@@ -259,7 +259,7 @@ justify-content: space-evenly;
 .edit-modal-content,.edit-modal-contents,.edit-modal-content_blotters{
 background-color: rgb(235, 235, 235);
   margin: 2% auto; /* 15% from the top and centered */
-  padding: 60px;
+  padding: 40px 80px 40px 80px;
   border: 1px solid #888;
   width: 60%; /* Could be more or less, depending on screen size */
   animation-name: down ;
@@ -269,7 +269,7 @@ background-color: rgb(235, 235, 235);
 .edit-modal-content_blotter{
   background-color: rgb(235, 235, 235);
   margin: 2% auto; /* 15% from the top and centered */
-  padding: 90px;
+  padding: 40px 80px 40px 80px;
   border: 1px solid #888;
   width: 70%; /* Could be more or less, depending on screen size */
   animation-name: down ;
@@ -325,7 +325,7 @@ font-weight: bold;
 .view-modal-content_blotter{
   background-color: rgb(235, 235, 235);
   margin: 2% auto; /* 15% from the top and centered */
-  padding: 60px;
+  padding: 40px 80px 40px 80px;
   border: 1px solid #888;
   width: 70%; /* Could be more or less, depending on screen size */
   animation-name: down ;

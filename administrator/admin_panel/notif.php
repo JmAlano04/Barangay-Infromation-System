@@ -1,7 +1,7 @@
 <?php
 function verify(){
     require("../../database/conn_db.php");
-    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Not Verified'");
+    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Pending Verification'");
     $count = $result->num_rows;
 
     if ($count >= 1) {
@@ -15,7 +15,7 @@ function verify(){
 
 function verified(){
     require("../../database/conn_db.php");
-    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Not Verified'");
+    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Pending Verification'");
     $count = $result->num_rows;
 
     if ($count >= 1) {
@@ -36,7 +36,7 @@ function verified(){
 
 function certificate(){
     require("../../database/conn_db.php");
-    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Not Verified'");
+    $result = $conn->query("SELECT verify FROM user_account WHERE verify = 'Pending Verification'");
     $count = $result->num_rows;
 
     if ($count >= 1) {

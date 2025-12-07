@@ -231,7 +231,7 @@ $endRow = min($page * $limit, $totalRows);
     <tr>
         <th>Complainant</th>
         <th>Contact No.</th>
-        <th>Date/Time</th>
+        <th>Date/Time Filed</th>
         <th>Subject</th>
         <th>Status</th>
         <th>Action</th>
