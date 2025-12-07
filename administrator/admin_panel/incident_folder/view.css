@@ -95,7 +95,7 @@ form .div_2nd .div{
     padding-left: 0px;
     margin-top: 20px;
     line-height: 80px;
-
+    margin-left: 20px;
 
     
 }
@@ -108,14 +108,14 @@ form .div_2nd .div input{
     border: none;
     border-radius: 1px;
     border-bottom: 2px solid var(--2nd-bg-color);
-    width: 80%;
+    width: 70%;
 }
 form .div_2nd .div input:focus{
     outline: none;
 }
 form .div_3rd{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: left;
     margin-top: 50px;
 }
 form #save{
@@ -125,6 +125,7 @@ form #save{
     height: 30px;
     cursor: pointer;
     border: none;
+    margin-left: 20px;
 }
 form #save:focus{
     outline: none;

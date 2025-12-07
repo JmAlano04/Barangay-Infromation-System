@@ -124,22 +124,21 @@
 
 				$lastname = trim($data[3]);
 				$email = trim($data[4]);
-				$username = trim($data[5]);
 				
-				$password = trim($data[6]);
-                $date_created = date("Y-m-d", strtotime($data[7]));
-				$admin_profile = trim($data[8]);
+				$password = trim($data[5]);
+                $date_created = date("Y-m-d", strtotime($data[6]));
+				$admin_profile = trim($data[7]);
 
-				$gender = trim($data[9]);
-                $age = trim($data[10]);
-                $status = trim($data[11]);
+				$gender = trim($data[8]);
+                $age = trim($data[9]);
+                $status = trim($data[10]);
                 
 		
 
 
 
                
-				mysqli_query($conn, "INSERT INTO admin_account VALUES('' ,'$user_type', '$firstname', '$middlename' , '$lastname' , '$email' , '$username' , '$password' , '$date_created' , '$admin_profile', '$gender', '$age', '$status' )");
+				mysqli_query($conn, "INSERT INTO admin_account VALUES('' ,'$user_type', '$firstname', '$middlename' , '$lastname' , '$email' , '$password' , '$date_created' , '$admin_profile', '$gender', '$age', '$status' )");
                 
             
             }

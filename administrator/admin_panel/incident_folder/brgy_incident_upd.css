@@ -124,6 +124,7 @@ form #save{
     height: 30px;
     cursor: pointer;
     border: none;
+    margin-left: 20px;
 }
 form #save:focus{
     outline: none;

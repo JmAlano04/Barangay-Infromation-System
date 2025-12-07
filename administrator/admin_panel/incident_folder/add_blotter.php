@@ -14,7 +14,8 @@
 
 </head>
 <body>
-
+    <br>
+    <br>
     <form class = "form_class" action="/BIS/administrator/admin_panel/incident_folder/insert_incident.php" method="POST">
         <h1 class="h1">Add Incident Report:</h1>
         <div class="main_div_blotter">
@@ -22,11 +23,12 @@
                 <label for="">Cause of the incident:</label><br>
                 <input class = "input_class" type="text" name="cause_incident" placeholder="Enter incident cause" required><br>
 
+                <label for="">Date Happened:</label><br>
+                <input class = "input_class" type="date" name="date" required><br>
+
                 <label for="">Time of the incident:</label><br>
                 <input class = "input_class" type="time" name="time" required><br>
 
-                <label for="">Date Happened:</label><br>
-                <input class = "input_class" type="date" name="date" required><br>
 
                 <label for="">Status:</label><br>
                 <select class = "input_class" name="status" required>
@@ -35,6 +37,8 @@
                     <option value="Settled">Settled</option>
                     <option value="Scheduled">Scheduled</option>
                 </select><br>
+
+               
             </div>
         </div>
 

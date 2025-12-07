@@ -33,7 +33,8 @@
                         <th>Names</th>
                         <th>Address</th>
                      
-                        <th>Date/Time</th>
+                        <th>Date Happened</th>
+                        <th>Date/Time Filed</th>
                         <th>Vehicle</th>
                         <th>Status</th>
                         <th>Action</th>
@@ -57,7 +58,7 @@
                             $status = $row ["status"];
 
                             $cause_incident = $row ["cause_incident"];
-
+                            $date_filed = $row ["date_filed"];
                             ?>
                              <tr class = "table_hover">
                                     <td hidden><?php echo  $date ?></td>
@@ -73,7 +74,8 @@
                                     <td><?php echo  $name_involve ?></td>
                             
                                     <td><?php echo  $address ?></td>
-                                    <td><?php echo  $date . " / " .  $time ?></td>
+                                    <td><?php echo  $date?></td>
+                                    <td><?php echo $date_filed ?></td>
                                     <td><?php echo  $vehicle ?></td>
                                     
                                     <td><?php  $status;

@@ -301,7 +301,8 @@ if ($result->num_rows > 0) {?>
         <tr>
             <th>Names</th>
             <th>Address</th>
-            <th>Date/Time</th>
+            <th>Date Happened</th>
+             <th>Date/Time Filed</th>
             <th>Vehicle</th>
             <th>Status</th>
             <th>Action</th>
@@ -318,6 +319,7 @@ if ($result->num_rows > 0) {?>
             $plate_no = $row ["plate_no"];
             $status = $row ["status"];
             $cause_incident = $row ["cause_incident"];
+            $date_filed = $row["date_filed"];
         ?>
             <tr class="table_hover">
                 <td hidden><?php echo $date ?></td>
@@ -332,7 +334,8 @@ if ($result->num_rows > 0) {?>
 
                 <td><?php echo $name_involve ?></td>
                 <td><?php echo $address ?></td>
-                <td><?php echo $date . " / " . $time ?></td>
+                <td><?php echo $date  ?></td>
+                  <td><?php echo $date_filed  ?></td>
                 <td><?php echo $vehicle ?></td>
                 
                 <td><?php 

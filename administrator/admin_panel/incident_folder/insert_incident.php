@@ -16,6 +16,10 @@ if (isset($_POST["save_incident"])) {
     $licenses = $_POST["license"]; // Array of licenses
     $plates = $_POST["plate"]; // Array of plates
 
+    date_default_timezone_set('Asia/Manila'); // Philippine Time
+
+    $date_filed = date('Y-m-d H:i:s'); // Format: 2025-12-07 14:30:22
+
     // Loop through each party's data and insert it into the database
     foreach ($persons as $key => $person) {
         $address = $addresses[$key];
@@ -32,9 +36,9 @@ if (isset($_POST["save_incident"])) {
 
         // Prepare and execute the SQL insert query for each person involved
         $sql = "INSERT INTO barangay_incident 
-                (cause_incident, date, time, name_involve, address, vehicle, license, plate_no, status) 
+                (cause_incident, date, time, name_involve, address, vehicle, license, plate_no, status, date_filed) 
                 VALUES 
-                ('$cause_incident', '$date', '$time', '$person', '$address', '$vehicle', '$license', '$plate', '$status')";
+                ('$cause_incident', '$date', '$time', '$person', '$address', '$vehicle', '$license', '$plate', '$status', '$date_filed')";
 
         if (!$conn->query($sql)) {
             // If there is an error in the query, output the error

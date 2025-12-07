@@ -12,7 +12,9 @@ fwrite($output, "\xEF\xBB\xBF");
 // CSV Column Headers
 fputcsv($output, [
     "User Type",
-    "Full Name",
+    "Firstname",
+    "Middlename",
+    "Lastname",
     "Email",
     "Password",
     "Date Created",
@@ -36,15 +38,12 @@ $result = mysqli_query($conn, $sql);
 // Write rows
 while ($row = mysqli_fetch_assoc($result)) {
 
-    // Full name formatting (same logic as revenue export)
-    $fullname = ($row['firstname'] ?? '') . ' ' . ($row['middlename'] ?? '') . ' ' . ($row['lastname'] ?? '');
-
-    // Prevent Excel misformatting usernames (optional)
-    $username = "\t" . ($row['username'] ?? '');
 
     fputcsv($output, [
         $row['user_type'] ?? '',
-        $fullname,
+        $row['firstname'] ?? '',
+        $row['middlename'] ?? '',
+        $row['lastname'] ?? '',
         $row['email'] ?? '',
         $row['password'] ?? '',
         date('m/d/Y', strtotime($row['date_created'])),

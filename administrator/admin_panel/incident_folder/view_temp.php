@@ -13,7 +13,7 @@
 <body>
 
 <form action="/BIS/administrator/admin_panel/incident_folder/update.php" method = "POST">
-    <h1 class = "h1">CASE INFORMATION :</h1>
+    <h1 class = "h1">Case Information</h1>
     <div class = "main_div_blotter">
         <div>
            
