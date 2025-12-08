@@ -11,15 +11,27 @@
         $lastname_user = trim($_POST["lastname_user"]);
 
         $gender_user = trim($_POST["gender_user"]);
-        $age_user = trim($_POST["age_user"]);
+      
         $email_user = trim($_POST["username_user"]);
        
-
+         $birthday = trim($_POST['birthday_user']);
        
         
-        
+            // Compute age on backend (secure)
+        $bday = new DateTime($birthday);
+        $today = new DateTime();
+        $age = $bday->diff($today)->y;
+
+        // Prevent tampering
+        if ($age < 18) {
+            echo "<script>
+                alert('Invalid age. Must be 18 or above.');
+                 window.location.href = '/BIS/administrator/admin_panel/user_register_folder/loading_update.php';
+            </script>";
+            exit;
+        }
     
-        $sql= "UPDATE user_account SET firstname='$firstname_user' , middlename='$middlename_user', lastname='$lastname_user' , gender='$gender_user' , age='$age_user' , email='$email_user' WHERE user_id= $id_user_edit";
+        $sql= "UPDATE user_account SET firstname='$firstname_user' , middlename='$middlename_user', lastname='$lastname_user' , gender='$gender_user' , age='$age' , birthday=' $birthday' ,  email='$email_user' WHERE user_id= $id_user_edit";
         
       
                 

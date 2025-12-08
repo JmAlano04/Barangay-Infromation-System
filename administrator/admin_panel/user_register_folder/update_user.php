@@ -38,7 +38,7 @@
 
         <input 
             type="date" 
-            name="birthday" 
+            name="birthday_user" 
             id="birthday_user"
             style="margin-left:20px;" 
             required 
@@ -105,5 +105,18 @@ if (x.type === "password") {
 }
 }
     </script>
+
+
+  <script>
+    // Compute today's date minus 18 years
+    const today = new Date();
+    const year = today.getFullYear() - 18;
+    const month = ("0" + (today.getMonth() + 1)).slice(-2);
+    const day = ("0" + today.getDate()).slice(-2);
+    const maxDate = `${year}-${month}-${day}`;
+    document.getElementById("birthday").setAttribute("max", maxDate);
+    </script>
+
+   
 </body>
 </html>
