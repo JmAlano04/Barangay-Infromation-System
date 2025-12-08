@@ -17,9 +17,11 @@ document.addEventListener("mouseover", function() {
         let  middlename_user = btn.parentNode.parentNode.parentNode.cells[1].textContent;
         let  lastname_user = btn.parentNode.parentNode.parentNode.cells[2].textContent;
         let  gender = btn.parentNode.parentNode.parentNode.cells[3].textContent;
-        let  age = btn.parentNode.parentNode.parentNode.cells[4].textContent;
-        let  username_user = btn.parentNode.parentNode.parentNode.cells[5].textContent;
+        let  birthday = btn.parentNode.parentNode.parentNode.cells[4].textContent;
+        let  email_user = btn.parentNode.parentNode.parentNode.cells[5].textContent;
         let  password_user = btn.parentNode.parentNode.parentNode.cells[6].textContent;
+        
+        let  suffix = btn.parentNode.parentNode.parentNode.cells[8].textContent;
 
         document.getElementById("id_user_edit").value = id_user;
         document.getElementById("firstname_user").value = firstname_user;
@@ -28,10 +30,11 @@ document.addEventListener("mouseover", function() {
 
         document.getElementById("gender_user").value = gender;
         
-        document.getElementById("age_user").value = age;
-        
-        document.getElementById("username_user").value = username_user;
+        document.getElementById("birthday_user").value = birthday;
+        document.getElementById("suf_user").value = suffix;
+        document.getElementById("email_user").value = email_user;
         document.getElementById("password_user").value = password_user;
+         
         
     });
     });
@@ -61,13 +64,16 @@ document.addEventListener("mouseover", function() {
         // Get ID and data of record to edit
         let id_user = btn.getAttribute("data-id");
 
+       
         let  firstname_user = btn.parentNode.parentNode.parentNode.cells[0].textContent;
         let  middlename_user = btn.parentNode.parentNode.parentNode.cells[1].textContent;
         let  lastname_user = btn.parentNode.parentNode.parentNode.cells[2].textContent;
         let  gender = btn.parentNode.parentNode.parentNode.cells[3].textContent;
-        let  age = btn.parentNode.parentNode.parentNode.cells[4].textContent;
-        let  username_user = btn.parentNode.parentNode.parentNode.cells[5].textContent;
+        let  birthday = btn.parentNode.parentNode.parentNode.cells[4].textContent;
+        let  email_user = btn.parentNode.parentNode.parentNode.cells[5].textContent;
         let  password_user = btn.parentNode.parentNode.parentNode.cells[6].textContent;
+        
+        let  suffix = btn.parentNode.parentNode.parentNode.cells[8].textContent;
 
         document.getElementById("id_user_edit").value = id_user;
         document.getElementById("firstname_user").value = firstname_user;
@@ -76,11 +82,11 @@ document.addEventListener("mouseover", function() {
 
         document.getElementById("gender_user").value = gender;
         
-        document.getElementById("age_user").value = age;
-        
-        document.getElementById("username_user").value = username_user;
+        document.getElementById("birthday_user").value = birthday;
+        document.getElementById("suf_user").value = suffix;
+        document.getElementById("email_user").value = email_user;
         document.getElementById("password_user").value = password_user;
-        
+       
     });
     });
             

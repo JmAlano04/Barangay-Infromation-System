@@ -1,89 +1,100 @@
 <?php
-    require('../../../database/conn_db.php');
+require('../../../database/conn_db.php');
 
-    if (isset($_POST['registraion_user'])) {
-        $firstname = trim($_POST['fname']);
-        $middlename = trim($_POST['mname']);
-        $lastname = trim($_POST['lname']);
+if (isset($_POST['registraion_user'])) {
 
-        $gender = trim($_POST['gender']); 
-        $age = trim($_POST['age']);
+    function clean($data) {
+        return htmlspecialchars(trim($data));
+    }
 
-        $email = trim($_POST['ename']);
-        $password = trim($_POST['pword']);
-        $confirm_pword = trim($_POST['confirm_pword']);
+    $firstname       = clean($_POST['fname']);
+    $middlename      = clean($_POST['mname']);
+    $lastname        = clean($_POST['lname']);
+    $suffix          = clean($_POST['suffix']);
+    $gender          = clean($_POST['gender']);
+    $birthday        = clean($_POST['birthday']);
+    $email           = clean($_POST['ename']);
+    $password        = clean($_POST['pword']);
+    $confirm_pword   = clean($_POST['confirm_pword']);
+    $profile_default = clean($_POST['profile_default']);
+    $verify          = clean($_POST['verify']);
 
-        $profile_default = trim($_POST['profile_default']);
+    date_default_timezone_set("Asia/Manila");
+    $date_registered = date("Y-m-d");
 
-        date_default_timezone_set("Asia/Manila");
-        $date_issue = date("Y-m-d");
-        
+    // Compute age on backend (secure)
+    $bday = new DateTime($birthday);
+    $today = new DateTime();
+    $age = $bday->diff($today)->y;
 
-            if($password != $confirm_pword){
-          
-            
-                echo"
-                   <script> 
-                       window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
-                    </script> ";
+    // Prevent tampering
+    if ($age < 18) {
+        echo "<script>
+            alert('Invalid age. Must be 18 or above.');
+            // window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+        exit;
+    }
 
-                    
-                   
-         }else {
+    // Password check
+    if ($password !== $confirm_pword) {
+        echo "<script>
+            alert('Passwords do not match.');
+            window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+        exit;
+    }
 
-                    
-          
-            $checkQuery = "SELECT COUNT(*) AS count FROM  barangay_resident WHERE firstname = '$firstname'  AND lastname = '$lastname' ";
-            $result = mysqli_query($conn, $checkQuery);
-            $row = mysqli_fetch_assoc($result);
+    // Check email duplicate
+    $check_email = mysqli_query($conn, "SELECT user_id FROM user_account WHERE email='$email'");
+    if (mysqli_num_rows($check_email) > 0) {
+        echo "<script>
+            alert('Email already exists.');
+            window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+        exit;
+    }
 
-                        
-       
+    // Check person duplicate
+    $check_person = mysqli_query($conn,
+        "SELECT user_id FROM user_account 
+         WHERE firstname='$firstname'
+         AND lastname='$lastname'
+         AND birthday='$birthday'
+         AND suffix='$suffix'"
+    );
 
-            if ($row['count'] > 0) {
+    if (mysqli_num_rows($check_person) > 0) {
+        echo "<script>
+            alert('This person already has an account.');
+            window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+        exit;
+    }
 
-                  
-            $checkQuerys = "SELECT COUNT(*) AS c FROM  user_account WHERE  (firstname = '$firstname' AND lastname = '$lastname') OR email = '$email'";
-            $results = mysqli_query($conn, $checkQuerys);
-            $row = mysqli_fetch_assoc($results);
+    // Hash password
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-            if ($row['c'] == 0) {
-                    // Insert new record if date is unique
-                $query = "INSERT INTO user_account (firstname, middlename, lastname, email, password, gender, age, date_registered, profile)
-                VALUES ('$firstname', '$middlename', '$lastname', '$email', '$password' , '$gender', '$age', '$date_issue', '$profile_default')";
+    // Insert new user
+    $insert = "
+        INSERT INTO user_account 
+            (firstname, middlename, lastname, suffix, email, password, gender, birthday, age, date_registered, profile, verify)
+        VALUES
+            ('$firstname', '$middlename', '$lastname', '$suffix', '$email', '$hashed_password', '$gender', '$birthday', '$age', '$date_registered', '$profile_default', '$verify')
+    ";
 
-
-                    if (mysqli_query($conn, $query)) {
-                        echo "<script>
-                        alert('Successfully.');
-                        window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
-                        </script>";
-                    } else {
-                        echo "Error: " . mysqli_error($conn);
-                    }
-            }else{
-
-                echo "<script>alert('Name OR Email already Exists.');
-                window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
-                 </script>";
-                 
-            }
-
+    if (mysqli_query($conn, $insert)) {
+        echo "<script>
            
+            window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+    } else {
+        echo "<script>
+            alert('Database Error: " . mysqli_error($conn) . "');
+            window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+        </script>";
+    }
 
-                
-            }else{
-               
-
-                echo "<script>alert('No resident records were found.');
-                window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
-                 </script>";
-            }
-
-            // Close connection
-            mysqli_close($conn);
-        
-         }
-        }
-
+    mysqli_close($conn);
+}
 ?>

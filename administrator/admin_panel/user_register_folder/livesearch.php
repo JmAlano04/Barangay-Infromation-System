@@ -55,18 +55,20 @@
                             $password=$row["password"];
                             $date_registered=$row["date_registered"];
                             $profile=$row["profile"];
-                            
+                             $birthday = $row["birthday"];
+                                $suffix = $row["suffix"];
                             ?>
                              <tr class = "table_hover">
-                                    <td hidden><?php echo  $firstname;?></td>
-                                    <td hidden><?php echo  $middlename ;?></td>
-                                    <td hidden><?php echo  $lastname;?></td>
-
-                                    <td hidden><?php echo  $gender;?></td>
-                                    <td hidden><?php echo  $age;?></td>
+                                     <td hidden><?php echo $firstname;?></td>
+                                    <td hidden><?php echo $middlename;?></td>
+                                    <td hidden><?php echo $lastname;?></td>
+                                    <td hidden><?php echo $gender;?></td>
+                                    <td hidden><?php echo $birthday;?></td>
+                                    <td hidden><?php echo $email;?></td>
+                                    <td hidden><?php echo $password;?></td>
                                     
-                                    <td hidden><?php echo  $email;?></td>
-                                    <td hidden><?php echo  $password;?></td>
+                                    <td hidden><?php echo $verify;?></td>
+                                    <td hidden><?php echo $suffix;?></td>
                                     <td class = "img"><img src="/BIS/asset/image/user_profile/<?php echo  $profile; ?>" alt="" width = 500/></td>
                                      <td class = "img" ><button class="view_doc_btn" data-id="<?php echo $row["user_id"]; ?>" > <img src="/BIS/asset/image/user_profile/<?php echo  $support_doc; ?>" alt="" width = 500 style = "margin-left:auto;  "></button></td>
                                     <td><?php echo  $firstname . " " .$middlename ." " . $lastname;?></td>

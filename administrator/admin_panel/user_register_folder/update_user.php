@@ -18,15 +18,13 @@
       <input type="text" name = "middlename_user" placeholder = "Enter Middlename" id = "middlename_user"><br></div>
       <div><label for="">Lastname</label><br>
       <input type="text" name = "lastname_user" placeholder = "Enter Lastname" id = "lastname_user" required><br></div>
-        
+      <div><label for="">Suffix</label><br>
+      <input type="text" name = "suffix" placeholder = "Enter Suffix" id="suf_user" style="width:90px;" required><br></div>
 
-     
-
-        
     </div>
 
     <div class = "item2">
-        <div> <label for="">Gender</label><br>
+        <div> <label for="">Sex</label><br>
        <select name="gender_user" id="gender_user" required>
         
             <option value="Male">Male</option>
@@ -35,20 +33,26 @@
        </select>
     </div>
 
-        <div>
+     <div>
+        <label style="margin-left:20px;">Birthday</label><br />
 
-         <label for="" style = "margin-left:-30px;">Age</label><br>
-        <input type="number" name = "age_user" style = "margin-left:-30px;" id = "age_user" min = "18" max = "120" placeholder = "Enter Age" required>
-     </div>
-       
+        <input 
+            type="date" 
+            name="birthday" 
+            id="birthday_user"
+            style="margin-left:20px;" 
+            required 
+        />
+    </div>
+    
         
        
     </div>
-    <h2 style = "color:;"></h2>
+    <h2 ></h2>
     <div class = "item3">
        
         <div><label for="">Email</label><br>
-        <input type="email" id = "username_user" name = "username_user" placeholder = "Create username" required><br></div>
+        <input type="email" id = "email_user" name = "username_user" placeholder = "Create username" required><br></div>
         <br>
         <br>
        

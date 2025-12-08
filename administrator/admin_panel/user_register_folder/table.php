@@ -243,9 +243,9 @@
 
             
             <div class="filter-group">
-                <label for="gender_filter">Gender:</label>
+                <label for="gender_filter">Sex:</label>
                 <select name="gender_filter" id="gender_filter">
-                    <option value="">All Genders</option>
+                    <option value="">All Sex</option>
                     <option value="Male" <?php echo $gender_filter == 'Male' ? 'selected' : ''; ?>>Male</option>
                     <option value="Female" <?php echo $gender_filter == 'Female' ? 'selected' : ''; ?>>Female</option>
                     <option value="Prefer not to say" <?php echo $gender_filter == 'Prefer not to say' ? 'selected' : ''; ?>>Prefer not to say</option>
@@ -307,21 +307,25 @@
             $verify = $row["verify"];
              $support_doc = $row["support_doc"];
              $profile = $row["profile"];
+              $birthday = $row["birthday"];
+              $suffix = $row["suffix"];
         ?>
         <tr class="table_hover">
             <td hidden><?php echo $firstname;?></td>
             <td hidden><?php echo $middlename;?></td>
             <td hidden><?php echo $lastname;?></td>
             <td hidden><?php echo $gender;?></td>
-            <td hidden><?php echo $age;?></td>
+            <td hidden><?php echo $birthday;?></td>
             <td hidden><?php echo $email;?></td>
             <td hidden><?php echo $password;?></td>
+            
             <td hidden><?php echo $verify;?></td>
+            <td hidden><?php echo $suffix;?></td>
              <td hidden><?php echo "/BIS/asset/image/user_profile/" . $support_doc; ?></td>
              <td class = "img"><img src="/BIS/asset/image/user_profile/<?php echo  $profile; ?>" alt="" width = 500/></td>
              <td class = "img" ><button class="view_doc_btn" data-id="<?php echo $row["user_id"]; ?>" > <img src="/BIS/asset/image/user_profile/<?php echo  $support_doc; ?>" alt="" width = 500 style = "margin-left:auto;  "></button></td>
                                  
-            <td><?php echo $firstname . " " . $middlename . " " . $lastname; ?></td>
+            <td><?php echo $firstname . " " . $middlename . " " . $lastname . " " . $suffix; ?></td>
             <td><?php echo $age; ?></td>
             <td><?php echo $gender; ?></td>
             <td><?php echo $email; ?></td>
