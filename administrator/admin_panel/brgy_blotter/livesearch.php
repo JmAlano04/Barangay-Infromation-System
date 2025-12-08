@@ -29,14 +29,14 @@
                     <caption>Barangay Blotter List</caption>
                     <tr>
                      
-                        <th>Complainant</th>
+                         <th>Complainant</th>
                         <th>Contact No.</th>
-                     
-                        <th>Date/Time</th>
-                        <th>Type</th>
+                        <th>Date/Time Filed</th>
+                        <th>Subject</th>
+                        <th>Remarks</th>    
                         <th>Status</th>
                         <th>Action</th>
-                      
+                                    
                     </tr>
                     <?php
                          while($row = $result->fetch_assoc()) {
@@ -50,7 +50,7 @@
                             $time = $row ["time"];
                     
                             $status = $row ["status"];
-                            $type = $row ["type"];
+                            $remarks = $row ["remarks"];
                             $complainant = $row ["complainant"];
                             $age = $row ["age"];
                     
@@ -64,23 +64,24 @@
                             ?>
                              <tr class = "table_hover">
                                   
-                            
-                    <td><?php echo $row["complainant"]; ?></td>
-                    <td><?php echo $row["cell_no"]; ?></td>
-                    <td hidden><?php echo $row["subject"]; ?></td>
-                    <td hidden><?php echo $row["place"]; ?></td>
-                    <td hidden><?php echo $row["tanod"]; ?></td>
-                    <td hidden><?php echo $row["time"]; ?></td>
-                    <td hidden><?php echo $row["status"]; ?></td>
-                    <td hidden><?php echo $row["type"]; ?></td>
-                    <td hidden><?php echo $row["age"]; ?></td>
-                    <td hidden><?php echo $row["address_complainant"]; ?></td>
-                    <td hidden><?php echo $row["complained_name"]; ?></td>
-                    <td hidden><?php echo $row["add_complained_name"]; ?></td>
-                    <td hidden><?php echo $row["details_reason"]; ?></td>
-                    <td hidden><?php echo $row["date"]; ?></td>
+                   <td><?php echo $row["complainant"]; ?></td>
+                <td><?php echo $row["cell_no"]; ?></td>
+                <td hidden><?php echo $row["subject"]; ?></td>
+                <td hidden><?php echo $row["place"]; ?></td>
+                <td hidden><?php echo $row["tanod"]; ?></td>
+                <td hidden><?php echo $row["time"]; ?></td>
+                <td hidden><?php echo $row["status"]; ?></td>
+                <td hidden><?php echo $row["type"]; ?></td>
+                <td hidden><?php echo $row["age"]; ?></td>
+                <td hidden><?php echo $row["address_complainant"]; ?></td>
+                <td hidden><?php echo $row["complained_name"]; ?></td>
+                <td hidden><?php echo $row["add_complained_name"]; ?></td>
+                <td hidden><?php echo $row["details_reason"]; ?></td>
+                <td hidden><?php echo $row["date"]; ?></td>
+                <td hidden><?php echo $row["remarks"]; ?></td>
                 <td><?php echo $row["date"] . " / " . $row["time"]; ?></td>
-                <td><?php echo $row["type"]; ?></td>
+                <td><?php echo $row["subject"]; ?></td>
+                 <td><?php echo $row["remarks"]; ?></td>
                 <td>
                     <?php 
                     $status = $row["status"];
@@ -90,6 +91,10 @@
                         echo "<p style='color:green;'>Settled</p>";
                     } elseif ($status == "Scheduled") {
                         echo "<p style='color:orange;'>Scheduled</p>";
+                    }elseif ($status == "Pending") {
+                        echo "<p style='color:#53252d;'>Pending</p>";
+                    }elseif ($status == "Rejected") {
+                        echo "<p style='color:rgb(201, 114, 0);'>Rejected</p>";
                     }
                     ?>
                 </td>

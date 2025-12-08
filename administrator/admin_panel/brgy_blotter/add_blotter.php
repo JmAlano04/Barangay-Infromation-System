@@ -35,13 +35,17 @@
         
             <label for="">TANOD DUTY :</label><br>
             <input type="text" name="tanod" placeholder="Enter Tanod duty" required><br>
-
+            <label for="">REMARKS :</label><br>
+             <input type="text" name="remarks_upd" id="remarks_blotter" placeholder = "Enter Remarks" required><br>
+               <br>
               <label for="">STATUS :</label><br>
             <select name="status" required>
                 <option value="" readonly>--Select Blotter Status--</option>
                 <option value="Active">Active</option>
                 <option value="Settled">Settled</option>
                 <option value="Scheduled">Scheduled</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
             </select><br>
 
             <?php date_default_timezone_set('Asia/Manila'); ?> 
@@ -61,7 +65,7 @@
             <p>
                 Ako si <input type="text" name="complainant" style="width:600px; margin-right:20px;" required> 
                 Edad <input type="number" name="age" min="1" max="105" style="width:100px;" required><br>
-                Nakatira sa <input type="text" name="address_complainant" style="width:600px;" required> ay dumudulong sa
+                Nakatira sa <input type="text" name="address_complainant" style="width:600px;" > ay dumudulong sa
                 himpilan ng Barangay Paliparan II upang aking ireklamo si <input type="text" name="complained_name" style="width:600px;" required><br>
                 Address <input type="text" name="add_complained_name" style="width:600px;" required> sa kadahilanan na
                 <textarea name="details_reason" style="width:100%; height:100px;" required></textarea>

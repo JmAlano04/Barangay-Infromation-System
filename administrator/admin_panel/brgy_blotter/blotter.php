@@ -233,6 +233,7 @@ $endRow = min($page * $limit, $totalRows);
         <th>Contact No.</th>
         <th>Date/Time Filed</th>
         <th>Subject</th>
+        <th>Remarks</th>    
         <th>Status</th>
         <th>Action</th>
     </tr>
@@ -252,8 +253,10 @@ $endRow = min($page * $limit, $totalRows);
                 <td hidden><?php echo $row["add_complained_name"]; ?></td>
                 <td hidden><?php echo $row["details_reason"]; ?></td>
                 <td hidden><?php echo $row["date"]; ?></td>
+                <td hidden><?php echo $row["remarks"]; ?></td>
                 <td><?php echo $row["date"] . " / " . $row["time"]; ?></td>
                 <td><?php echo $row["subject"]; ?></td>
+                 <td><?php echo $row["remarks"]; ?></td>
                 <td>
                     <?php 
                     $status = $row["status"];
@@ -263,6 +266,10 @@ $endRow = min($page * $limit, $totalRows);
                         echo "<p style='color:green;'>Settled</p>";
                     } elseif ($status == "Scheduled") {
                         echo "<p style='color:orange;'>Scheduled</p>";
+                    }elseif ($status == "Pending") {
+                        echo "<p style='color:#53252d;'>Pending</p>";
+                    }elseif ($status == "Rejected") {
+                        echo "<p style='color:rgb(201, 114, 0);'>Rejected</p>";
                     }
                     ?>
                 </td>

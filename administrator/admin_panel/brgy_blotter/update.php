@@ -14,7 +14,8 @@
         $time = trim($_POST["time_upd"]);
         
         $status = trim($_POST["status_upd"]);
-      
+       $remarks_upd = trim($_POST['remarks_upd']);
+
         $complainant = trim($_POST["complainant_upd"]);
         $age = trim($_POST["age_upd"]);
 
@@ -26,7 +27,7 @@
             
     
         $sql= "UPDATE barangay_blotter
-               SET subject='$subject' , cell_no='$cell_no', tanod='$tanod' , date='$date' , time='$time', status='$status', complainant='$complainant', age='$age', address_complainant=' $address_complainant' , complained_name='$complained_name' ,add_complained_name='$add_complained_name' , details_reason='$details_reason', place='$place' WHERE id='$id'";
+               SET subject='$subject' , cell_no='$cell_no', tanod='$tanod' , date='$date' , time='$time', status='$status', complainant='$complainant', age='$age', address_complainant=' $address_complainant' , complained_name='$complained_name' ,add_complained_name='$add_complained_name' , details_reason='$details_reason', place='$place', remarks='$remarks_upd' WHERE id='$id'";
         
       
                 

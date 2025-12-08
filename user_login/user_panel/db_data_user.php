@@ -1,9 +1,7 @@
 <?php
 require('../../database/conn_db.php');
 
-$user_id = $_SESSION['user_id'];
-
-
+$user_id = intval($_SESSION['user_id']);
 // =========================
 // GET USER ACCOUNT DETAILS
 // =========================

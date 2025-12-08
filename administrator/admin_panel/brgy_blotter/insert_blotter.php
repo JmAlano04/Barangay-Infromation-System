@@ -13,7 +13,7 @@
         $time = trim($_POST["time"]);
 
       
-
+         $remarks = trim($_POST["remarks_upd"]);   
         
 
         $status = trim($_POST["status"]);
@@ -27,8 +27,8 @@
 
         $details_reason = trim($_POST["details_reason"]);
 
-        $sql = "INSERT INTO barangay_blotter (subject, cell_no, tanod, date, time, status, complainant, age, address_complainant, complained_name, add_complained_name, details_reason, place)
-        VALUES ('$subject', '$cell_no', '$tanod','$date','$time','$status','$complainant','$age','$address_complainant' , '$complained_name' ,'$add_complained_name','$details_reason', '$place')";
+        $sql = "INSERT INTO barangay_blotter (subject, cell_no, tanod, date, time, status, complainant, age, address_complainant, complained_name, add_complained_name, details_reason, place, remarks)
+        VALUES ('$subject', '$cell_no', '$tanod','$date','$time','$status','$complainant','$age','$address_complainant' , '$complained_name' ,'$add_complained_name','$details_reason', '$place' , '$remarks');";
 
         
         $result = $conn->multi_query($sql);

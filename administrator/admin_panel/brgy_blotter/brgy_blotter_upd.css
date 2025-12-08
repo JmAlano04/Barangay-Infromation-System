@@ -79,7 +79,7 @@ form textarea{
     border: none;
     padding: 0px;
     font-size: 1.2rem;
-    color: #005720;
+    color: #57000e;
     font-family: "sub_text";
     margin-top: 10px ;
     margin-bottom: 10px;
@@ -129,7 +129,7 @@ form #save:focus{
     outline: none;
 }
 form #reset{
-    background-color: red;
+    background-color: rgb(255, 145, 0);
     color: var(--bg-color);
     width: 200px;
     height: 30px;

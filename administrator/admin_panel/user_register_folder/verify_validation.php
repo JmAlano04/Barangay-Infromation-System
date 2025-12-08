@@ -12,9 +12,8 @@
 
                   ?>
                     <script>
-                    alert('Account has Been Verified!');
                     
-                    window.location.href = '/BIS/administrator/admin_panel/user_registered.php';
+                    window.location.href = '/BIS/administrator/admin_panel/user_register_folder/loading_verify.php';
                     </script>
                   <?php 
 

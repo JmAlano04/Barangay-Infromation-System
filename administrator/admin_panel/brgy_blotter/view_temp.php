@@ -44,6 +44,8 @@
                 <input type = "time" name="time_upd" id="time_view"  readonly />
                    
                <br>
+                <label for="">REMARKS :</label><br>
+            <input type="text" name="remarks_upd" id="remarks_view"readonly><br><br>
             <label for="">STATUS :</label><br>
                 <input name="status_upd" id="status_view" readonly/><br>
                     <input type="hidden" name = "id_view" id = "id_view">

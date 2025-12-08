@@ -27,7 +27,7 @@ document.addEventListener("mouseover", function() {
         let  add_complained_name = btn.parentNode.parentNode.parentNode.cells[11].textContent;
         let  details_reason = btn.parentNode.parentNode.parentNode.cells[12].textContent;
         let  date = btn.parentNode.parentNode.parentNode.cells[13].textContent;
-      
+        let remarks = btn.parentNode.parentNode.parentNode.cells[14].textContent;
 
         document.getElementById("id_blotter").value = id_blotter;
 
@@ -45,7 +45,7 @@ document.addEventListener("mouseover", function() {
         document.getElementById("add_complained_name_blotter").value = add_complained_name;
         document.getElementById("details_reason_blotter").value = details_reason;
         document.getElementById("date_blotter").value = date;
-
+        document.getElementById("remarks_blotter").value = remarks;
     });
     });
             
@@ -87,7 +87,7 @@ document.addEventListener("mouseover", function() {
         let  add_complained_name = btn.parentNode.parentNode.parentNode.cells[11].textContent;
         let  details_reason = btn.parentNode.parentNode.parentNode.cells[12].textContent;
         let  date = btn.parentNode.parentNode.parentNode.cells[13].textContent;
-      
+        let remarks = btn.parentNode.parentNode.parentNode.cells[14].textContent;
 
         document.getElementById("id_blotter").value = id_blotter;
 
@@ -105,7 +105,7 @@ document.addEventListener("mouseover", function() {
         document.getElementById("add_complained_name_blotter").value = add_complained_name;
         document.getElementById("details_reason_blotter").value = details_reason;
         document.getElementById("date_blotter").value = date;
-
+         document.getElementById("remarks_blotter").value = remarks;
     });
     });
             
