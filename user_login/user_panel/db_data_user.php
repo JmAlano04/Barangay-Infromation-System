@@ -1,7 +1,9 @@
 <?php
 require('../../database/conn_db.php');
 
-$user_id = intval($_SESSION['user_id']);
+$user_id = $_SESSION['user_id'];
+
+
 // =========================
 // GET USER ACCOUNT DETAILS
 // =========================
@@ -32,6 +34,10 @@ if (mysqli_num_rows($result) > 0) {
     <p hidden id="contact_phone_my_profile"><?php echo $row['contact_no']; ?></p>
     <p hidden id="house_no_my_profile"><?php echo $row['house_no']; ?></p>
     <p hidden id="sitio_pook_my_profile"><?php echo $row['sitio_pook']; ?></p>
+
+
+
+   
 
 <?php
 }

@@ -50,25 +50,31 @@
         <div>
             <label>Address of Complained Person:</label><br>
             <input type="text" name="add_complained_name" placeholder="Address Complained Person Name" >
+
+
         </div>
-        
-
         <div>
-            <input type="hidden"name = "firstname" id = "firstname_my_profile_id" required><br>
-            <input type="hidden"name = "middlename" id = "middlename_my_profile_id" required><br>
-            <input type="hidden"name = "lastname" id = "lastname_my_profile_id" required><br>
+        <label>Complainant Contact Number:</label><br>
+        <input type="tel" name = "contact_no" placeholder = "Enter Contact Number" pattern="[0-9]{11}" id = "contact_phone_my_profile_id" required>
+          
+        </div>
+          
+        <div>
+            <input type="hidden"name = "firstname" id = "firstname_my_profile_id" ><br>
+            <input type="hidden"name = "middlename" id = "middlename_my_profile_id" ><br>
+            <input type="hidden"name = "lastname" id = "lastname_my_profile_id" ><br>
 
-            <input type="hidden"name = "age" id = "age_my_profile_id" required><br>
+            <input type="hidden"name = "age" id = "age_my_profile_id" ><br>
+            
         </div>
 
          
         <div>
-        <input type="hidden" name = "house_no" placeholder = "Enter House Number" id = "house_no_my_profile_id" required>
+        <input type="hidden" name = "house_no" placeholder = "Enter House Number" id = "house_no_my_profile_id" >
         
-        <input type="hidden" name = "Sitio_Pook"  placeholder = "Ex. Mabuhay Homes 2000 " id = "sitio_pook_my_profile_id"  required><br>
+        <input type="hidden" name = "Sitio_Pook"  placeholder = "Ex. Mabuhay Homes 2000 " id = "sitio_pook_my_profile_id"  ><br>
         
-        <input hidden type="tel" name = "contact_no" placeholder = "Enter Contact Number" pattern="[0-9]{11}" id = "contact_phone_my_profile_id" required>
-          
+       
         </div>
        
          

@@ -157,7 +157,7 @@
             const select = document.getElementById("select");
             for (let i = 0; i < select.options.length; i++) {
                 if (restrictedOptions.includes(select.options[i].value)) {
-                    select.options[i].disabled = true;
+                    select.options[i].hidden = true;
                 }
             }
         }

@@ -13,7 +13,7 @@
 <body>
 
 
-<form action="/BIS/administrator/admin_panel/brgy_blotter/view.php" method = "POST">
+<form action="/BIS/administrator/admin_panel/brgy_blotter/print_blotter.php" method = "POST">
     <h1 class = "h1">Case Information</h1>
     <div class = "main_div_blotter">
         <div>
@@ -68,8 +68,11 @@
         
     </div>
         
+    <input type="hidden" name="id_upd" id="id_view" hidden>
     
-
+       
+        <input type="submit" name="sub_print" value="Generate PDF" id="save">
+   
     </form>
 </body>
 </html>

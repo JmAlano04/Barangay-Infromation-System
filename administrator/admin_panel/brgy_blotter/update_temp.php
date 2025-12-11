@@ -33,9 +33,9 @@
 
         <div>
             <label>TANOD DUTY :</label><br>
-            <input type="text" name="tanod_upd" id="tanod_blotter" placeholder="Enter Tanod duty" required><br><br>
+            <input type="text" name="tanod_upd" id="tanod_blotter" placeholder="Enter Tanod duty" ><br><br>
             <label for="">REMARKS :</label><br>
-            <input type="text" name="remarks_upd" id="remarks_blotter" placeholder = "Enter Remarks" required><br><br>
+            <input type="text" name="remarks_upd" id="remarks_blotter" placeholder = "Enter Remarks" ><br><br>
             <label>STATUS :</label><br>
             <select name="status_upd" id="status_blotter" required>
                 <option value="">--Select Blotter Status--</option>

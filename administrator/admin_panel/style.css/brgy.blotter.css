@@ -308,6 +308,30 @@ font-weight: bold;
   }
   to {opacity: 100%;}
 }
+.print-modal_blotter{
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: scroll; /* Enable scroll if needed */
+  background-color: rgb(153, 0, 0); /* Fallback color */
+  background-color: rgba(58, 58, 58, 0.548); /* Black w/ opacity */
+  animation-name: background ;
+  animation-duration: 0.7s; 
+ display: none;
+}
+.print-modal-content_blotter{
+   background-color: rgb(235, 235, 235);
+  margin: 2% auto; /* 15% from the top and centered */
+  padding: 40px 80px 40px 80px;
+  border: 1px solid #888;
+  width: 70%; /* Could be more or less, depending on screen size */
+  animation-name: down ;
+  animation-duration: 0.7s; 
+  border-radius: 8px;
+}
 .view-modal_blotter{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */

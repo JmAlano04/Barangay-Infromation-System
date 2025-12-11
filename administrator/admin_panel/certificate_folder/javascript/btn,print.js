@@ -45,7 +45,7 @@ document.addEventListener("mouseover", function () {
         let status_print = document.getElementById("status_print");
         let submit = document.getElementById("submit");
         let cancel = document.getElementById("cancel");
-
+        
         let amountInput = document.getElementById("amount");
         let amountLabel = document.getElementById("label_amount");
         let document_print = document.getElementById("document_print");
@@ -57,25 +57,28 @@ document.addEventListener("mouseover", function () {
         let date_issue = document.getElementById("date_issue_print");
         let date_issue_print_label = document.getElementById("date_issue_print_label");
         if (statusValue === "Ready to Pick-up" || statusValue === "Released") {
-
-            amountInput.disabled = true;
-            amountInput.required = false;
-            amountInput.style.display = "none";
-            amountLabel.style.display = "none";
-            document_print.style.display = "block";
-            fullname_label.style.display = "block";
-            amountInput.value = doc_amount; // 🔹 ensure amount is filled
-            date_issue.style.display = "block";
-            date_issue.disabled = true;
-            purpose_print.disabled = true;
+             // 🔹 Redirect to Facebook
+            
+            print_modal.style.display = "none";
+            
+          submit.click();
+            purpose_print.disabled = false;
+            amountInput.disabled = false;
+            amountInput.style.display = "block";
+            amountLabel.style.display = "block";
+            amountInput.required = true;
+            fullname.style.display = "none";
             status_print_label.style.display = "none";
             status_print.style.display = "none";
-            date_issue_print_label.style.display = "block";
-            submit.style.display = "none";
-            cancel.style.display = "none";
-            fullname.style.display = "block";
-             fullname.disabled = true;
-            create_payment_header.textContent = "Payment Created";
+            fullname_label.style.display = "none";
+            create_payment_header.textContent = "Create Payment";
+            submit.style.display = "inline-block";
+            cancel.style.display = "inline-block";
+             date_issue.style.display = "none";
+         
+             date_issue_print_label.style.display = "none";
+            
+            
 
         } else {
 

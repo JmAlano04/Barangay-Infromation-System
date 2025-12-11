@@ -225,7 +225,7 @@
 
                   <!-- UPDATE MODAL FUNCTION JS -->
            <script src = "/BIS/administrator/admin_panel/brgy_blotter/view.js"></script> 
-
+                     <script src = "/BIS/administrator/admin_panel/brgy_blotter/btn,print.js"></script> 
            
            <!-- IMPORT MODAL FUCNTION BUTTON -->
            <script src ="/BIS/administrator/admin_panel/brgy_blotter/import.js"></script>
