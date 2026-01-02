@@ -30,7 +30,7 @@ html {
 }
 
 .dasdboard_profile{
-    background-color: #ebebeb9c;
+    background-color: #ffffff;
     height: max-content;
     width: 70vw;
     margin-left: 70px;
@@ -128,7 +128,7 @@ html {
     grid-template-columns: auto auto;
     row-gap: 20px;
     column-gap: 30px;
-    background-color: #ebebeb77;
+    background-color: #ffffff;
     transition: all 0.5s;
     box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
     padding: 20px;
@@ -172,7 +172,7 @@ html {
     grid-template-columns: auto ;
     row-gap: 10px;
     column-gap: 10px;
-    background-color: #ebebeb9c;
+    background-color: #ffffff;
     box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
     padding: 40px 20px 20px 20px ;
     border-radius: 4px;
@@ -198,7 +198,7 @@ html {
 }
 @media only screen and (min-width: 320px ){
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width:75vw;
         margin-left: -180px;
@@ -312,7 +312,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 0px 0px 10px 5px;
@@ -326,7 +326,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 0px 0px 10px 5px;
@@ -373,7 +373,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+       background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 10px 10px 20px 10px;
         border-radius: 4px;
@@ -386,7 +386,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+       background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 10px 10px 20px 10px;
         border-radius: 4px;
@@ -410,7 +410,7 @@ html {
 }
 @media only screen and (min-width: 481px ){
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width:80vw;
         margin-left: -180px;
@@ -523,7 +523,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 10px 10px 20px 10px;
@@ -537,7 +537,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+       background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 0px 0px 10px 5px;
@@ -584,7 +584,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 20px 20px 25px 20px;
         border-radius: 4px;
@@ -597,7 +597,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+       background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 10px 10px 20px 10px;
         border-radius: 4px;
@@ -620,7 +620,7 @@ html {
 }
 @media only screen and (min-width: 601px ){
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width:85vw;
         margin-left: -180px;
@@ -733,7 +733,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 10px 10px 20px 10px;
@@ -747,7 +747,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 0px 0px 10px 5px;
@@ -796,7 +796,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 30px 50px 35px 50px;
         border-radius: 4px;
@@ -809,7 +809,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 10px 10px 20px 10px;
         border-radius: 4px;
@@ -832,7 +832,7 @@ html {
 }
 @media only screen and (min-width:  769px ){
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width: 90vw;
         margin-left: -180px;
@@ -945,7 +945,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 10px 50px 30px 70px;
@@ -960,7 +960,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 30px;
         column-gap: 4px;
-        background-color: #ebebeb77;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 0px 0px 10px 5px;
@@ -1011,7 +1011,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 30px 80px 35px 60px;
         border-radius: 4px;
@@ -1024,7 +1024,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 10px 10px 20px 10px;
         border-radius: 4px;
@@ -1049,7 +1049,7 @@ html {
 }
 @media only screen and (min-width:  1081px  ){
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width: 70vw;
         margin-left: 50px;
@@ -1147,7 +1147,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+         background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 20px;
@@ -1197,7 +1197,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 40px 20px 20px 20px ;
         border-radius: 4px;
@@ -1227,7 +1227,7 @@ html {
 /* Extra-Large Desktops: 1441px and up*/
 @media only screen and (min-width: 1441px) {
     .dasdboard_profile{
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         height: max-content;
         width: 80vw;
         margin-left: 60px;
@@ -1325,7 +1325,7 @@ html {
         grid-template-columns: auto auto;
         row-gap: 90px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         transition: all 0.5s;
         box-shadow: 10px 10px 10px rgba(22, 22, 22, 0.062);
         padding: 20px;
@@ -1378,7 +1378,7 @@ html {
         grid-template-columns: auto ;
         row-gap: 10px;
         column-gap: 10px;
-        background-color: #ebebeb9c;
+        background-color: #ffffff;
         box-shadow: 10px 10px 10px rgba(39, 30, 30, 0.062);
         padding: 40px 20px 20px 20px ;
         border-radius: 4px;

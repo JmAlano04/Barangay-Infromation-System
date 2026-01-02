@@ -14,6 +14,7 @@
         body::-webkit-scrollbar{
             display:none;
         }
+        
        </style>
 </head>
 <body>
@@ -55,11 +56,16 @@
     <input type="email" id = "uname" name = "ename" placeholder = "Email" required><br>
 
     <label for=""><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" transform: ;msFilter:;"><path d="M20 12c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5S7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8zM9 7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9V7z"></path></svg></span>Password</label><br>
-    <input type="Password" id = "pwd" name = "pword" placeholder = "Password"><br>
-   
-
-    <input type="checkbox" id = "checkbox" onclick="show_pwd()"><label for="" id = "check_span">SHOW PASSWORD</label><span style = "margin-left:50px; font-size:0.9rem; "> <a href="forgot_password.php" class = "forgot_pass">Forgot Password</a> </span><br>
-    
+    <input type="Password" id = "pwd" name = "pword" placeholder = "Enter Password">
+       <button type="button" id="eye" onclick="togglePassword_login()">
+        <i class="fa-solid fa-eye-slash"></i>
+    </button>
+    <p id = "p_validation" style="display: none;"> <?php
+         include ('user_validation.php');
+    ?></p>
+    <br>
+   <span > <a href="forgot_password.php" class = "forgot_pass">Forgot your passoword?</a> </span><br>
+        
     <input type="submit" id = "submit" name = "user_login" value = "Sign in"> 
     </div>
 
@@ -68,7 +74,7 @@
 
     <div class = "div_registration">
          <button id = "user_registration">
-         <span>Sign Up</span> 
+         <span>Sign up for a new account.</span> 
 
         </button>
      </div>
@@ -80,16 +86,7 @@
        
     </div>
 
-
-
-    <div id = "validation" id="test">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
-        <p><?php
-         include ('user_validation.php');?>
-        </p>
-    </div>
-
-   
+    
 
       
     </main>
@@ -104,16 +101,19 @@
 
 <!-- Js function visibility eye -->
 <script>
-    function show_pwd() {
-        var x = document.getElementById("pwd");
-        if (x.type === "password") {
-            document.getElementById("checkbox");
-            x.type = "text";
-        } else {
-            document.getElementById("checkbox");
-            x.type = "password";
-        }
-        };
+    // Show / Hide password
+function togglePassword_login() {
+    const input = document.getElementById("pwd");
+    const icon = document.querySelector("#eye i");
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.className = "fa-solid fa-eye";
+    } else {
+        input.type = "password";
+        icon.className = "fa-solid fa-eye-slash";
+    }
+}
         
 </script>
 
@@ -130,6 +130,15 @@
         setTimeout(closeModal, 3000);   
     </script>   
 
+
+    <script>
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById('p_validation').style.display = 'none';
+        }
+        // Set a timer to automatically close the modal after 5 seconds (5000 ms)
+        setTimeout(closeModal, 5000);   
+    </script>  
     
         <script>
                 let logo = document.getElementById("logo_get_image").textContent;

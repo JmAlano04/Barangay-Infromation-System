@@ -34,27 +34,36 @@ confirmpass.onkeyup = function() {
 //------------------------------------------------------------------//
 
 
-// password visibility //
-function myFunction() {
-var x = document.getElementById("pname");
-if (x.type === "password") {
-   document.getElementById("eye").className = "fa-solid fa-eye";
-   x.type = "text";
-} else {
-   document.getElementById("eye").className = "fa-solid fa-eye-slash";
-   x.type = "password";
+
+// Show / Hide password
+function togglePassword() {
+    const input = document.getElementById("pname");
+    const icon = document.querySelector("#btn_eye i");
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.className = "fa-solid fa-eye";
+    } else {
+        input.type = "password";
+        icon.className = "fa-solid fa-eye-slash";
+    }
 }
+
+// Show / Hide confirm password
+function toggleConfirmPassword() {
+    const input = document.getElementById("confirm_pname");
+    const icon = document.querySelector("#btn_eye_confirm i");
+
+    if (input.type === "password") {
+        input.type = "text";
+        icon.className = "fa-solid fa-eye";
+    } else {
+        input.type = "password";
+        icon.className = "fa-solid fa-eye-slash";
+    }
 }
-function myFunction_confirm() {
-var x = document.getElementById("confirm_pname");
-if (x.type === "password") {
-   document.getElementById("eye_confirm").className = "fa-solid fa-eye";
-   x.type = "text";
-} else {
-   document.getElementById("eye_confirm").className = "fa-solid fa-eye-slash";
-   x.type = "password";
-}
-}
+
+
 // ------------------------------------------------------//
 // password validation
 var myInput = document.getElementById("pname");

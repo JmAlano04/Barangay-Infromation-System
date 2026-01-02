@@ -211,10 +211,6 @@
 
                 let baranagy_name_get_user = document.getElementById("baranagay_name_get_user").textContent;
                 document.getElementById("baranagay_name_user").innerHTML =  baranagy_name_get_user;
-
-            
-                
-    
         </script>
 
         

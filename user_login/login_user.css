@@ -51,11 +51,9 @@ html {
     from {opacity: 10%;}
     to {opacity: 100%;}
   }
- #validation p{
+ #p_validation {
     color: var(--bg-color);
-    font-size: 20px;
-    margin-top: 0px;
-    padding: 20px;
+    font-size: 17px;
     font-family: "sub_text";
  }
 .closebtn{
@@ -129,7 +127,7 @@ body{
     width: fit-content;
    
     border-radius: 4px;
-    color: #FCFAEE;
+    color: #ec5d5d;
     
 }
 #main .div_registration{
@@ -140,7 +138,7 @@ body{
 #main .div_registration button{
     width: 80%;
     display: flex;
-   border-radius: 20px;
+    border-radius: 3px;
     margin-top: 30px;
     padding: 3px;
     justify-content: space-around;
@@ -190,7 +188,7 @@ body{
     border-radius: 2px;
 }
 #main form input:focus{
-    outline: #f7ec5681 solid 4px;
+    outline: #f7ec5681 solid 2px;
 }
 #main form #checkbox{
     width: 24px;
@@ -203,7 +201,7 @@ body{
 #main form #check_span{
     font-family: "sub_text";
     font-size: 12px;
-    color: #fcfaeec9;
+    color: #fcf1eec9;
     letter-spacing: 1px;
 }
 #main form label{
@@ -516,21 +514,3 @@ body{
   
   
 
-  .form_registration .item3 #eye{
-    position: relative;
-    left: 370px;
-    bottom: 29px;
-    font-size: 1.5vw;
-    cursor: pointer;
-    color: var(--1st-text-color);
-    width: 20px;
-}
-
-.form_registration .item3 #eye_confirm{
-    position: relative;
-    left: 370px;
-    bottom: 29px;
-    font-size: 1.5vw;
-    cursor: pointer;
-    color: var(--1st-text-color);
-}

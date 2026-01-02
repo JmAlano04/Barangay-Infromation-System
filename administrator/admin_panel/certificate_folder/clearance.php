@@ -57,7 +57,7 @@
                             <th>Date</th>
                             <th>Status</th>
                           
-                            <th>Generate To</th>
+                            <th>Action</th>
                             
                         </tr>
                         <?php

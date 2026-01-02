@@ -441,7 +441,7 @@ background-color: rgb(235, 235, 235);
                 <th>Place</th>
                 <th>Complained Person</th>
                  <th>Address of Complained Person</th>
-                <th>Date/Time Happened</th>
+                <th>Date/Time Filed</th>
                
                 <th>Status</th>
                  <th>Remarks</th>

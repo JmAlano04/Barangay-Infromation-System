@@ -80,7 +80,7 @@
         <h1 id="create_payment_header">Create Payment</h1>
     </header>
 
-    <form action="/BIS/administrator/admin_panel/certificate_folder/print_insert.php" method="POST" id="certForm">
+    <form action="/BIS/administrator/admin_panel/certificate_folder/print_insert.php" method="POST" id="certForm" target="_blank">
 
        
             

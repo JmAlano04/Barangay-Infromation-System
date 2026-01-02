@@ -63,7 +63,8 @@ if (isset($_POST['registration'])) {
     // ================================
     $email_check_sql = "SELECT user_id FROM user_account WHERE email = '$email'";
     $result = mysqli_query($conn, $email_check_sql);
-    if (mysqli_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {         
+    
         echo "<script>
             window.location.href = '/BIS/user_login/error_popup_email.php';
         </script>";
@@ -80,9 +81,10 @@ if (isset($_POST['registration'])) {
                          AND suffix='$suffix'";
     $result = mysqli_query($conn, $person_check_sql);
     if (mysqli_num_rows($result) > 0) {
-        echo "<script>
-            window.location.href = '/BIS/user_login/error_popup_information.php';
-        </script>";
+        echo "
+            <script> 
+                 window.location.href = '/BIS/user_login/error_popup_information.php';
+            </script>";
         exit;
     }
 

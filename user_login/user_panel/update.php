@@ -1,5 +1,5 @@
 <?php
-require("../../../database/conn_db.php");
+require("../../database/conn_db.php");
 
 if (isset($_POST['save_Changes'])) {
     $user_id = $_POST['user_id'];

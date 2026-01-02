@@ -18,8 +18,9 @@ if (isset($_POST['user_login'])) {
         echo "Please Fill up this form ";
         echo "
             <script> 
-                document.getElementById('validation').style.display = 'block';
-                document.getElementById('pwd').style.outline = '1px rgb(253, 42, 42) solid';
+                document.getElementById('pwd').style.outline = '2px rgb(253, 42, 42) solid';
+                 document.getElementById('uname').style.outline = '2px rgb(253, 42, 42) solid';
+                 document.getElementById('p_validation').style.display = 'block';
             </script>";
     } else {
         // Use a prepared statement to prevent SQL injection
@@ -35,7 +36,7 @@ if (isset($_POST['user_login'])) {
                 if (password_verify($password, $row['password'])) {
                     $_SESSION['status_input'] = 'valid_input';
                     $_SESSION['user_id'] = $row['user_id'];
-                    $_SESSION['id'] = $row['user_id'];
+                   
                     header('Location: loading.php');
                   
                     exit;
@@ -43,13 +44,19 @@ if (isset($_POST['user_login'])) {
                     // Incorrect password
                     $_SESSION['status_input'] = 'invalid_input';
                     echo "Incorrect password.";
-                      echo "<script>document.getElementById('validation').style.display = 'block';</script>";
+                      echo "<script>
+                       document.getElementById('pwd').style.outline = '2px rgb(253, 42, 42) solid';
+                       document.getElementById('p_validation').style.display = 'block';
+                      </script>";
                 }
             } else {
                 // No user found with that email
                 $_SESSION['status'] = 'invalid';
                 echo "Invalid credentials. Email not found.";
-                echo "<script>document.getElementById('validation').style.display = 'block';</script>";
+                echo "<script>
+                  document.getElementById('uname').style.outline = '2px rgb(253, 42, 42) solid';
+                document.getElementById('p_validation').style.display = 'block';
+                </script>";
             }
 
             // Close the prepared statement

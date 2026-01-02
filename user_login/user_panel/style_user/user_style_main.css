@@ -48,25 +48,23 @@ html {
     color: #4A9D4f;
     font-style: italic;
     font-size: 1.3rem;
+  
 }
-#selected{
-    
-    background-color: var(--bg-color);
-    color: var(--1st-text-color);
-    font-weight: 600;
-}
-#selected svg{
-    fill: #d4c603;
 
+.nav_list a.selected {
+      background-color: var(--bg-color);
+    color: var(--1st-text-color);
+    border-radius: 8px;
 }
-#selected .svg_arrow{
-    fill: #d4c603;
-    position: relative;
-    left: 60px;
-    top: 2px;
-    transform: rotate(0deg);
-   
+
+.nav_list a.selected svg {
+    fill: #adaa06ea;
 }
+
+.nav_list a.selected .link_name {
+    font-weight: bold;
+}
+
 
 .nav_list .sub_certification_folder {
     padding: 10px 5px 10px 50px;
