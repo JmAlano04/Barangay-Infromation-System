@@ -10,6 +10,40 @@
 <title>Barangay Blotter Form</title>
 </head>
 
+
+<style>
+    .full-width {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.full-width label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.full-width textarea {
+    width: 100%;
+    min-height: 150px;   /* ✅ reasonable height */
+    max-height: 400px;   /* optional */
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+    .full-width textarea {
+        min-height: 120px;
+        font-size: 13px;
+    }
+}
+
+
+</style>
+
 <body>
 
 <section id="blotter_form" class="form-request">
@@ -53,7 +87,7 @@
 
 
         </div>
-        <div>
+        <div >
         <label>Complainant Contact Number:</label><br>
         <input type="tel" name = "contact_no" placeholder = "Enter Contact Number" pattern="[0-9]{11}" id = "contact_phone_my_profile_id" required>
           
@@ -81,10 +115,16 @@
          
       
 
-        <div style="grid-column:  1/ -1;">
-            <label>Details / Reason:</label><br>
-            <textarea name="details_reason" rows="10" cols="100" style="padding:5px;"></textarea>
+       <div class="full-width">
+            <label for="details_reason">Details / Reason:</label>
+            <textarea
+                id="details_reason"
+                name="details_reason"
+                placeholder="Enter details or reason here..."
+                required
+            ></textarea>
         </div>
+
 
     </div>
 

@@ -123,7 +123,8 @@
 
 <!-- TITLE -->
 <h2 style="text-align:center; letter-spacing:5px; margin-top:40px;">B L O T T E R</h2>
-
+<br>
+<br>
 <!-- MAIN BODY -->
 <div class="content">
 
@@ -145,7 +146,7 @@
     na nakatira sa <span class="underline"><?= $add_complained_name ?></span>
     <br><br>
 
-    sa kadahilanang <span class="underline" style="width:100%; display:inline-block;">
+    sa kadahilanang <span class="underline" style=" display:inline-block;">
         <?= $details_reason ?>
     </span>
 

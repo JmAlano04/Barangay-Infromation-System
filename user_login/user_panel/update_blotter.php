@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+          .full-width {
+    grid-column: 1 / -1;
+    width: 100%;
+}
 
-     <style></style>
+
+
+ textarea {
+    width: 100%;
+    min-height: 150px;   /* ✅ reasonable height */
+    max-height: 400px;   /* optional */
+    padding: 10px;
+    font-size: 14px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+     textarea {
+        min-height: 120px;
+        font-size: 13px;
+    }
+}
+    </style>
+
 </head>
 <body>
  

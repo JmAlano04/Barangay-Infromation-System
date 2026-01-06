@@ -8,7 +8,7 @@
 
         // Execute query
         if (mysqli_query($conn, $sql)) {
-            echo "<script>alert('Record deleted sy!')</script>";
+            echo "<script>alert('Record deleted !')</script>";
             // echo "<script> window.location.href = '/BIS/administrator/admin_panel/certificate.php'
             // </script>";
         } else {

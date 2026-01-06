@@ -31,7 +31,7 @@ if (isset($_POST['save_blotter_upd'])) {
 
     // SQL UPDATE with only current submitted data
     $sql = "
-        UPDATE barangay_blotter SETaaa
+        UPDATE barangay_blotter SET
             subject = '$subject',
             cell_no = '$cell_no',
             date = '$date',

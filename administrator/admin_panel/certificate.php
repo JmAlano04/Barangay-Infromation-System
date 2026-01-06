@@ -107,7 +107,7 @@
                     </li>
                          <div class = "sub_certification_folder">
                             <?php include('notif_doc.php');?>
-
+                            
                         
                          <button id = "certificate" type ="button" onclick="loadContent('certificate_folder/certificate.php')">Barangay Certificate  <span class = "notif" id = "notif">
                            <?php echo certificate_notif()?>
