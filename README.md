@@ -8,7 +8,7 @@ A comprehensive and user-friendly web application designed to streamline baranga
 
 - **Server-side:** PHP  
 - **Client-side:** HTML, CSS, JavaScript, jQuery, AJAX  
-- **Database:** MySQL (assumed)
+- **Database:** MySQL
 
 ---
 
@@ -62,6 +62,11 @@ A comprehensive and user-friendly web application designed to streamline baranga
 
 
 ---
+
+## Link : 
+admin : https://brgypaliparan2portal.fwh.is/BIS/administrator/login.php
+email : admin@example.com
+password : admin123
 
 ## 📄 Installation
 
