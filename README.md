@@ -68,6 +68,10 @@ admin : https://brgypaliparan2portal.fwh.is/BIS/administrator/login.php
 email : admin@example.com
 password : admin123
 
+User : https://brgypaliparan2portal.fwh.is/
+email : jenmaracantilado.alano@gmail.com
+password : User12345
+
 ## 📄 Installation
 
 1. Clone the repository:
