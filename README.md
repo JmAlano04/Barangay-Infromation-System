@@ -90,7 +90,7 @@ Feel free to fork this repository and submit pull requests. Suggestions and impr
 
 
 📧 Contact
-For questions or support, reach out via GitHub Issues or email me at jenmaracantilado.alano@gmail.com.
+For questions or support, reach out via GitHub Issues or email me at alanojenmar19@gmail.com.
 
 
 
