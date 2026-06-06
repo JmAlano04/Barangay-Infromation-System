@@ -83,7 +83,7 @@ password : User12345
    git clone https://github.com/JmAlano04ii/barangay-information-system.git
 - Import the SQL database (if provided) into your MySQL server.
 - Configure your database connection in /database/conn.php.
-- Run the project on a local server (e.g., XAMPP, WAMP) or deploy it online.
+- Run the project on a local server (e.g., XAMPP, WAMP).
 
 - 🙌 Contribution
 Feel free to fork this repository and submit pull requests. Suggestions and improvements are always welcome!
